@@ -5,71 +5,73 @@
   box-sizing: border-box;
 }
 
-/* Body Styles
-   - Dark background with subtle gradient
-   - Monospace font for that "code-like" feel 
+/* 
+  Body Styles
+  - Teal gradient background 
+  - Monospace font for code-like appearance 
 */
 body {
   font-family: "Courier New", Courier, monospace;
-  background: linear-gradient(135deg, #A9A9A9 0%, #1a1a1a 100%);
-  color: #d1d1d1;
+  background: linear-gradient(135deg, #006666 0%, #004F4F 100%);
+  color: #F0F0F0;
   line-height: 1.6;
 }
 
 /* Links */
 a {
-  color: #00ffc2;
+  color: #4FFFE9; /* a lighter, bright teal for links */
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section
-   - Keep it dark, but highlight the title with neon green text
+/* Hero Section 
+   - Lighter teal background for the header 
+   - White text for headings 
 */
 .hero {
-  background: #101010;
+  background: #007B7A;
   padding: 2rem 1rem;
   text-align: center;
-  border-bottom: 2px solid #00ffc2; /* A neon "divider" line */
+  border-bottom: 2px solid #4FFFE9; /* Subtle divider */
 }
 .hero-content .name {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #00ffc2;
+  color: #FFFFFF; 
 }
 .hero-content .subheading {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: #E0FFFF; /* pale teal/white for contrast */
 }
 .contact-info a {
   margin: 0 0.5rem;
 }
 .contact-info a:hover {
-  color: #00ffc2;
+  color: #4FFFE9;
 }
 
 /* Section Styles 
-   - Give each section a slightly translucent background 
-   - Provide a neon border or subtle glow
+   - Translucent overlay on top of teal background 
+   - Subtle border and glow 
 */
 section {
   max-width: 1000px;
   margin: 2rem auto;
-  background: rgba(30, 30, 30, 0.7);
+  background: rgba(0, 100, 100, 0.7);
   padding: 1.5rem;
   border-radius: 4px;
-  border: 1px solid #00ffc2;
-  box-shadow: 0 0 8px rgba(0, 255, 194, 0.2);
+  border: 1px solid #4FFFE9;
+  box-shadow: 0 0 8px rgba(79, 255, 233, 0.2);
 }
 section h2 {
   margin-bottom: 1rem;
   font-size: 1.75rem;
-  color: #00ffc2;
-  border-bottom: 2px solid #00ffc2;
+  color: #4FFFE9;
+  border-bottom: 2px solid #4FFFE9;
   padding-bottom: 0.5rem;
 }
 
@@ -80,12 +82,12 @@ section h2 {
 .job h3 {
   font-size: 1.3rem;
   margin-bottom: 0.25rem;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 .job-info {
   font-style: italic;
   margin-bottom: 0.5rem;
-  color: #b8b8b8;
+  color: #C0F0F0;
 }
 .job ul {
   list-style: disc;
@@ -99,11 +101,11 @@ section h2 {
 .education-item h3 {
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 .education-item p {
   margin-bottom: 0.5rem;
-  color: #b8b8b8;
+  color: #C0F0F0;
 }
 
 /* Awards */
@@ -120,7 +122,7 @@ section h2 {
 }
 .skills-lists h3 {
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 1.15rem;
 }
 .skills-lists ul {
@@ -135,11 +137,11 @@ section h2 {
 .portfolio .project h3 {
   font-size: 1.3rem;
   margin-bottom: 0.25rem;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 .portfolio .project p {
   margin-bottom: 0.5rem;
-  color: #b8b8b8;
+  color: #C0F0F0;
 }
 
 /* Footer */
@@ -150,6 +152,6 @@ section h2 {
   color: #666;
 }
 .footer p {
-  color: #666;
+  color: #88aaaa; 
 }
 
