@@ -5,16 +5,20 @@
   box-sizing: border-box;
 }
 
-/* 
+/*
   Body Styles
   - Teal gradient background 
-  - Monospace font for code-like appearance 
+  - Larger sans-serif font for better readability
+  - Slightly increased line-height
 */
+html {
+  font-size: 18px; /* Increase base font size from the default 16px */
+}
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Open Sans", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   background: linear-gradient(135deg, #006666 0%, #004F4F 100%);
   color: #F0F0F0;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Links */
@@ -26,26 +30,27 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section 
-   - Lighter teal background for the header 
-   - White text for headings 
+/*
+  Hero Section 
+  - A mid-level teal background
+  - White subheading for contrast
 */
 .hero {
   background: #007B7A;
   padding: 2rem 1rem;
   text-align: center;
-  border-bottom: 2px solid #4FFFE9; /* Subtle divider */
+  border-bottom: 2px solid #4FFFE9;
 }
 .hero-content .name {
-  font-size: 3rem;
+  font-size: 2rem; /* Adjusted for readability at the new base size */
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #FFFFFF; 
+  color: #FFFFFF;
 }
 .hero-content .subheading {
-  font-size: 1.3rem;
+  font-size: 1.25rem; /* Slightly smaller than the main name but still readable */
   margin-bottom: 1rem;
-  color: #E0FFFF; /* pale teal/white for contrast */
+  color: #E0FFFF;
 }
 .contact-info a {
   margin: 0 0.5rem;
@@ -54,9 +59,10 @@ a:hover {
   color: #4FFFE9;
 }
 
-/* Section Styles 
-   - Translucent overlay on top of teal background 
-   - Subtle border and glow 
+/*
+  Section Styles 
+  - Semi-translucent overlay 
+  - Subtle border and glow
 */
 section {
   max-width: 1000px;
@@ -69,7 +75,7 @@ section {
 }
 section h2 {
   margin-bottom: 1rem;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #4FFFE9;
   border-bottom: 2px solid #4FFFE9;
   padding-bottom: 0.5rem;
@@ -80,7 +86,7 @@ section h2 {
   margin-bottom: 1.5rem;
 }
 .job h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 0.25rem;
   color: #FFFFFF;
 }
@@ -135,7 +141,7 @@ section h2 {
   margin-bottom: 1.5rem;
 }
 .portfolio .project h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 0.25rem;
   color: #FFFFFF;
 }
