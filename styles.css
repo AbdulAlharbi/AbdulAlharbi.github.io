@@ -6,16 +6,13 @@
 }
 
 /*
-  Body Styles
-  - Teal gradient background 
-  - Larger sans-serif font for better readability
-  - Slightly increased line-height
+  Use a larger base font size and Arial for clarity
 */
 html {
-  font-size: 18px; /* Increase base font size from the default 16px */
+  font-size: 18px; /* Increase base font size from default 16px */
 }
 body {
-  font-family: "Open Sans", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-family: "Arial", "Helvetica", sans-serif;
   background: linear-gradient(135deg, #006666 0%, #004F4F 100%);
   color: #F0F0F0;
   line-height: 1.7;
@@ -23,7 +20,7 @@ body {
 
 /* Links */
 a {
-  color: #4FFFE9; /* a lighter, bright teal for links */
+  color: #4FFFE9; 
   text-decoration: none;
 }
 a:hover {
@@ -32,8 +29,8 @@ a:hover {
 
 /*
   Hero Section 
-  - A mid-level teal background
-  - White subheading for contrast
+  - Teal background
+  - Contrasting text
 */
 .hero {
   background: #007B7A;
@@ -42,13 +39,13 @@ a:hover {
   border-bottom: 2px solid #4FFFE9;
 }
 .hero-content .name {
-  font-size: 2rem; /* Adjusted for readability at the new base size */
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: #FFFFFF;
 }
 .hero-content .subheading {
-  font-size: 1.25rem; /* Slightly smaller than the main name but still readable */
+  font-size: 1.25rem;
   margin-bottom: 1rem;
   color: #E0FFFF;
 }
@@ -62,7 +59,7 @@ a:hover {
 /*
   Section Styles 
   - Semi-translucent overlay 
-  - Subtle border and glow
+  - Subtle border/glow
 */
 section {
   max-width: 1000px;
