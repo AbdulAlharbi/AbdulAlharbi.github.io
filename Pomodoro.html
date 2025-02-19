@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LessonConnect Pomodoro Timer</title>
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="Pomodoro.css" />
+  <!-- Optional Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>LessonConnect Pomodoro Timer</h1>
+  </header>
+
+  <main>
+    <!-- Timer Display + Circle Progress -->
+    <div class="timer-container">
+      <svg class="progress-ring" width="280" height="280">
+        <!-- Circle background -->
+        <circle
+          class="progress-ring__background"
+          stroke="#ccc"
+          stroke-width="12"
+          fill="transparent"
+          r="125"
+          cx="140"
+          cy="140">
+        </circle>
+        <!-- Circle progress -->
+        <circle
+          class="progress-ring__circle"
+          stroke="#FF6B6B"
+          stroke-width="12"
+          fill="transparent"
+          r="125"
+          cx="140"
+          cy="140">
+        </circle>
+      </svg>
+      <div class="time-display" id="time-display">25:00</div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="start-btn" class="btn primary">Start</button>
+      <button id="pause-btn" class="btn">Pause</button>
+      <button id="reset-btn" class="btn">Reset</button>
+    </div>
+
+    <!-- Session Toggle -->
+    <div class="session-controls">
+      <button id="work-session" class="session-btn active">Work 25</button>
+      <button id="short-break" class="session-btn">Break 5</button>
+      <button id="long-break" class="session-btn">Break 15</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Powered by LessonConnect</p>
+    <p>&copy; 2025. Created by Abdulrahman Alharbi</p>
+  </footer>
+
+  <!-- JavaScript (inline for simplicity) -->
+  <script>
+    // ----------- INITIAL SETTINGS -----------
+    // Circle
+    const circle = document.querySelector('.progress-ring__circle');
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+    circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset = circumference;
+
+    // Default times (in minutes)
+    const defaultWork = 25;
+    const defaultShortBreak = 5;
+    const defaultLongBreak = 15;
+
+    // DOM Elements
+    const timeDisplay = document.getElementById('time-display');
+    const startBtn = document.getElementById('start-btn');
+    const pauseBtn = document.getElementById('pause-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const workBtn = document.getElementById('work-session');
+    const shortBreakBtn = document.getElementById('short-break');
+    const longBreakBtn = document.getElementById('long-break');
+
+    // State Variables
+    let totalTime = defaultWork * 60;     // totalTime in seconds
+    let remainingTime = totalTime;       // remaining time in seconds
+    let isRunning = false;
+    let timerInterval = null;
+
+    // -------------- HELPER FUNCTIONS --------------
+    // Format seconds into mm:ss
+    function formatTime(sec) {
+      const minutes = Math.floor(sec / 60);
+      const seconds = sec % 60;
+      return (
+        (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds
+      );
+    }
+
+    // Set progress ring offset
+    function setProgress(value, max) {
+      const percent = value / max;
+      const offset = circumference - percent * circumference;
+      circle.style.strokeDashoffset = offset;
+    }
+
+    // Update timer display
+    function updateDisplay() {
+      timeDisplay.textContent = formatTime(remainingTime);
+      setProgress(remainingTime, totalTime);
+    }
+
+    // -------------- TIMER CONTROLS --------------
+    function startTimer() {
+      if (isRunning) return;
+      isRunning = true;
+      timerInterval = setInterval(() => {
+        if (remainingTime <= 0) {
+          clearInterval(timerInterval);
+          isRunning = false;
+          // Here I was thinking maybe: 
+                //maybe: Add a chime or alert to indicate completion
+          alert('Time is up!');
+          return;
+        }
+        remainingTime--;
+        updateDisplay();
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      isRunning = false;
+      clearInterval(timerInterval);
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      remainingTime = totalTime;
+      updateDisplay();
+    }
+
+    // -------------- SESSION SWITCH --------------
+    function setSessionTime(minutes) {
+      pauseTimer();
+      totalTime = minutes * 60;
+      remainingTime = totalTime;
+      updateDisplay();
+    }
+
+    // -------------- EVENT LISTENERS --------------
+    startBtn.addEventListener('click', startTimer);
+    pauseBtn.addEventListener('click', pauseTimer);
+    resetBtn.addEventListener('click', resetTimer);
+
+    workBtn.addEventListener('click', () => {
+      activateSessionButton(workBtn);
+      setSessionTime(defaultWork);
+    });
+
+    shortBreakBtn.addEventListener('click', () => {
+      activateSessionButton(shortBreakBtn);
+      setSessionTime(defaultShortBreak);
+    });
+
+    longBreakBtn.addEventListener('click', () => {
+      activateSessionButton(longBreakBtn);
+      setSessionTime(defaultLongBreak);
+    });
+
+    function activateSessionButton(selectedBtn) {
+      [workBtn, shortBreakBtn, longBreakBtn].forEach(btn => {
+        btn.classList.remove('active');
+      });
+      selectedBtn.classList.add('active');
+    }
+
+    // Initialize display
+    updateDisplay();
+  </script>
+</body>
+</html>
