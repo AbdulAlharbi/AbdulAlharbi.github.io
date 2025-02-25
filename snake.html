@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Snake Game</title>
   <style>
+    /* Body / Canvas Styling */
     body {
       background: #000;
       color: #0f0;
@@ -21,11 +22,107 @@
       margin: 0 auto;
       border: 2px solid #0f0;
     }
+
+    /* On-screen controls container */
+    .controls {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+    }
+    .controls .arrow-btn {
+      background-color: #222;
+      color: #0f0;
+      border: 2px solid #0f0;
+      font-size: 1.2rem;
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .arrow-btn:active {
+      background-color: #333;
+    }
+
+    /* We arrange the arrows in a cross shape */
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 60px 60px 60px;
+      grid-template-rows: 60px 60px 60px;
+      grid-gap: 5px;
+      /* center the grid horizontally */
+      margin: 0 auto;
+    }
+    /* Place the up arrow in the center top cell */
+    .btn-up {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    /* Place left arrow in the first column, second row */
+    .btn-left {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    /* Place right arrow in the third column, second row */
+    .btn-right {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    /* Place down arrow in the center bottom cell */
+    .btn-down {
+      grid-column: 2;
+      grid-row: 3;
+    }
+
+    /* GAME OVER OVERLAY */
+    #gameOverOverlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      color: #0f0;
+      display: none; /* hidden by default */
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      z-index: 999; /* on top of everything */
+    }
+    #gameOverOverlay h2 {
+      margin-bottom: 1rem;
+    }
+    .play-again-btn {
+      background-color: #222;
+      color: #0f0;
+      border: 2px solid #0f0;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .play-again-btn:active {
+      background-color: #333;
+    }
   </style>
 </head>
 <body>
   <h1>Snake Game</h1>
   <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+  <!-- On-screen controls (mobile-friendly) -->
+  <div class="controls">
+    <div class="controls-grid">
+      <button class="arrow-btn btn-up" id="upBtn">▲</button>
+      <button class="arrow-btn btn-left" id="leftBtn">◀</button>
+      <button class="arrow-btn btn-right" id="rightBtn">▶</button>
+      <button class="arrow-btn btn-down" id="downBtn">▼</button>
+    </div>
+  </div>
+
+  <!-- GAME OVER OVERLAY -->
+  <div id="gameOverOverlay">
+    <h2 id="gameOverText">Game Over!</h2>
+    <button class="play-again-btn" id="playAgainBtn">Play Again</button>
+  </div>
 
   <script>
     const canvas = document.getElementById("gameCanvas");
@@ -37,8 +134,26 @@
     let food = { x: 5, y: 5 };
     let score = 0;
     let gameOver = false;
+    let gameInterval;
 
-    // Main game loop (called repeatedly)
+    // Start the game
+    startGame();
+
+    function startGame() {
+      score = 0;
+      snake = [{ x: 10, y: 10 }];
+      direction = { x: 1, y: 0 };
+      placeFood();
+      gameOver = false;
+      
+      // In case there's an old interval
+      if (gameInterval) {
+        clearInterval(gameInterval);
+      }
+      gameInterval = setInterval(gameLoop, 200);
+      hideGameOverOverlay();
+    }
+
     function gameLoop() {
       update();
       draw();
@@ -47,9 +162,9 @@
     // Update snake position & game state
     function update() {
       // Move snake head in direction
-      const head = { 
-        x: snake[0].x + direction.x, 
-        y: snake[0].y + direction.y 
+      const head = {
+        x: snake[0].x + direction.x,
+        y: snake[0].y + direction.y
       };
       snake.unshift(head);
 
@@ -64,24 +179,19 @@
 
       // Check wall collision
       if (
-        head.x < 0 || 
+        head.x < 0 ||
         head.x >= canvas.width / gridSize ||
-        head.y < 0 || 
+        head.y < 0 ||
         head.y >= canvas.height / gridSize
       ) {
-        gameOver = true;
+        endGame();
       }
 
       // Check self collision
       for (let i = 1; i < snake.length; i++) {
         if (head.x === snake[i].x && head.y === snake[i].y) {
-          gameOver = true;
+          endGame();
         }
-      }
-
-      if (gameOver) {
-        alert("Game Over! Your score is " + score);
-        document.location.reload();
       }
     }
 
@@ -93,9 +203,9 @@
       ctx.fillStyle = "lime";
       snake.forEach(part => {
         ctx.fillRect(
-          part.x * gridSize, 
-          part.y * gridSize, 
-          gridSize, 
+          part.x * gridSize,
+          part.y * gridSize,
+          gridSize,
           gridSize
         );
       });
@@ -103,9 +213,9 @@
       // Draw food
       ctx.fillStyle = "red";
       ctx.fillRect(
-        food.x * gridSize, 
-        food.y * gridSize, 
-        gridSize, 
+        food.x * gridSize,
+        food.y * gridSize,
+        gridSize,
         gridSize
       );
 
@@ -115,40 +225,68 @@
       ctx.fillText("Score: " + score, 10, 20);
     }
 
-    // Place food in random spot
+    // Place food in a random spot
     function placeFood() {
       food.x = Math.floor(Math.random() * (canvas.width / gridSize));
       food.y = Math.floor(Math.random() * (canvas.height / gridSize));
     }
 
-    // Listen for arrow key presses
+    // End the game
+    function endGame() {
+      gameOver = true;
+      clearInterval(gameInterval);
+      showGameOverOverlay();
+    }
+
+    // Show overlay
+    function showGameOverOverlay() {
+      const overlay = document.getElementById("gameOverOverlay");
+      const gameOverText = document.getElementById("gameOverText");
+      gameOverText.textContent = "Game Over! Your Score: " + score;
+      overlay.style.display = "flex";
+    }
+
+    // Hide overlay
+    function hideGameOverOverlay() {
+      document.getElementById("gameOverOverlay").style.display = "none";
+    }
+
+    // Listen for arrow key presses (desktop)
     document.addEventListener("keydown", e => {
       switch (e.key) {
         case "ArrowLeft":
-          if (direction.x !== 1) {
-            direction = { x: -1, y: 0 };
-          }
+          if (direction.x !== 1) direction = { x: -1, y: 0 };
           break;
         case "ArrowUp":
-          if (direction.y !== 1) {
-            direction = { x: 0, y: -1 };
-          }
+          if (direction.y !== 1) direction = { x: 0, y: -1 };
           break;
         case "ArrowRight":
-          if (direction.x !== -1) {
-            direction = { x: 1, y: 0 };
-          }
+          if (direction.x !== -1) direction = { x: 1, y: 0 };
           break;
         case "ArrowDown":
-          if (direction.y !== -1) {
-            direction = { x: 0, y: 1 };
-          }
+          if (direction.y !== -1) direction = { x: 0, y: 1 };
           break;
       }
     });
 
-    // Start the game
-    setInterval(gameLoop, 200);
+    // Mobile-friendly control buttons
+    document.getElementById("leftBtn").addEventListener("click", () => {
+      if (direction.x !== 1) direction = { x: -1, y: 0 };
+    });
+    document.getElementById("upBtn").addEventListener("click", () => {
+      if (direction.y !== 1) direction = { x: 0, y: -1 };
+    });
+    document.getElementById("rightBtn").addEventListener("click", () => {
+      if (direction.x !== -1) direction = { x: 1, y: 0 };
+    });
+    document.getElementById("downBtn").addEventListener("click", () => {
+      if (direction.y !== -1) direction = { x: 0, y: 1 };
+    });
+
+    // "Play Again" button
+    document.getElementById("playAgainBtn").addEventListener("click", () => {
+      startGame();
+    });
   </script>
 </body>
 </html>

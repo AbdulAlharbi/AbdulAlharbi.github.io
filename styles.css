@@ -5,9 +5,7 @@
   box-sizing: border-box;
 }
 
-/*
-  Use a larger base font size and Arial for clarity
-*/
+/* Use a larger base font size and Arial for clarity */
 html {
   font-size: 18px; /* Increase base font size from default 16px */
 }
@@ -20,18 +18,14 @@ body {
 
 /* Links */
 a {
-  color: #4FFFE9; 
+  color: #4FFFE9;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
-/*
-  Hero Section 
-  - Teal background
-  - Contrasting text
-*/
+/* Hero Section */
 .hero {
   background: #007B7A;
   padding: 2rem 1rem;
@@ -155,34 +149,167 @@ section h2 {
   color: #666;
 }
 .footer p {
-  color: #88aaaa; 
+  color: #88aaaa;
 }
 
-/* NEW: Additional Skills Section */
+/* Additional Skills Section */
 #skills-section {
-  background-color: rgba(0, 100, 100, 0.7); /* a teal overlay for consistency */
+  background-color: rgba(0, 100, 100, 0.7);
   padding: 80px 0;
   border-radius: 4px;
   border: 1px solid #4FFFE9;
   box-shadow: 0 0 8px rgba(79, 255, 233, 0.2);
   margin: 2rem auto;
-  max-width: 1000px; /* same width as your other sections */
+  max-width: 1000px;
 }
-
-/* Make skill logos consistent with your site */
 #skills-section img {
   width: 60px;
   height: auto;
   margin-bottom: 20px;
-  /* Optional: a subtle filter if you want them teal-ish, remove if undesired:
-  filter: drop-shadow(0 0 5px #00ffc2);
-  */
 }
-
-/* Optional: center text in the skill blocks */
 .logo-container p {
   color: #C0F0F0;
   text-align: center;
   margin: 0 auto;
   max-width: 250px;
+}
+
+/* NAVBAR (Desktop & Default) */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #007B7A;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #4FFFE9;
+  position: relative; /* for absolute dropdown in mobile */
+}
+.nav-brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+.nav-links li a:hover {
+  color: #4fffe9;
+}
+
+/* FRONT HERO (Home Page) */
+.hero-front {
+  background: #007B7A;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.hero-front .front-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.hero-front .front-subheading {
+  font-size: 1.25rem;
+  color: #e0ffff;
+  max-width: 700px;
+  margin: 0.5rem auto 1.5rem auto;
+}
+
+/* CTA BUTTON */
+.cta-button {
+  display: inline-block;
+  background-color: #4fffe9;
+  color: #007b7a;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.cta-button:hover {
+  background-color: #2afad7;
+  color: #003f3f;
+}
+
+/* FRONT-INFO SECTION */
+.front-info {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: rgba(0, 100, 100, 0.7);
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid #4fffe9;
+  box-shadow: 0 0 8px rgba(79, 255, 233, 0.2);
+  text-align: center;
+}
+.front-info h2 {
+  font-size: 1.5rem;
+  color: #4fffe9;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #4fffe9;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+.front-info p {
+  color: #c0f0f0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0.5rem auto;
+}
+
+/* HAMBURGER MENU (Mobile) */
+.hamburger {
+  display: none; /* Show via media query on mobile */
+  cursor: pointer;
+}
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+/* RESPONSIVE MEDIA QUERY */
+@media (max-width: 768px) {
+  /* Show the hamburger icon on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide nav links by default on mobile */
+  .nav-links {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #007B7A;
+    border: 2px solid #4FFFE9;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    width: 150px;
+    text-align: left;
+    padding: 0.5rem 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+  }
+
+  /* Nav items in a vertical list on mobile */
+  .nav-links li {
+    margin: 0.5rem 1rem;
+  }
+
+  /* If .nav-open class is applied (via JS), show the menu */
+  .nav-links.nav-open {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
 }
