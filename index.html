@@ -77,23 +77,17 @@
 <!--  </body>-->
 <!--</html>-->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Abdulrahman Alharbi - Portfolio</title>
-  <!-- 1) BOOTSTRAP CSS -->
-  <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-          crossorigin="anonymous"
-  />
-  <!-- Link to your CSS file -->
+  <meta name="description" content="Abdulrahman Alharbi — Computer Science graduate focused on software engineering, AI, and cybersecurity. UNLV Global student worker.">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Minimal JS for the hamburger toggle -->
   <script>
     function toggleMenu() {
       const navLinks = document.querySelector(".nav-links");
@@ -101,436 +95,232 @@
     }
   </script>
 </head>
-
 <body>
-<!-- NAVBAR (identical to index.html) -->
-<nav class="navbar">
+
+<!-- NAVBAR -->
+<nav class="navbar" aria-label="Primary">
   <div class="nav-brand">A. Alharbi</div>
-  <div class="hamburger" onclick="toggleMenu()">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
+  <button class="hamburger" aria-label="Toggle navigation" onclick="toggleMenu()">
+    <span class="line"></span><span class="line"></span><span class="line"></span>
+  </button>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="current-page">About Me</a></li>
+    <li><a href="index.html" class="current-page" aria-current="page">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
     <li><a href="pomodoro.html">Pomodoro</a></li>
-    <li><a href="snake.html" target="_blank">Snake Game</a></li>
+    <li><a href="snake.html" target="_blank" rel="noopener noreferrer">Snake Game</a></li>
     <li>
-      <a
-              href="Abdulrahman_Alharbi_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-      >
+      <a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener noreferrer">
         Resume (PDF)
       </a>
     </li>
   </ul>
 </nav>
-</head>
-<body>
-<!-- HEADER / HERO SECTION -->
+
+<!-- HERO -->
 <header class="hero">
   <div class="hero-content">
     <h1 class="name">Abdulrahman Alharbi</h1>
-    <p class="subheading">
-      Graduate Student | Software Engineer | Cybersecurity Enthusiast
+    <p class="subheading">CS Graduate • AI & Cybersecurity • UNLV Global Student Worker</p>
+    <p class="mt-2">
+      <a href="mailto:alhara2@unlv.nevada.edu">alhara2@unlv.nevada.edu</a> ·
+      <a href="https://github.com/AbdulAlharbi" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+      <a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
     </p>
-    <!-- <div class="contact-info">
-      <a href="mailto:alhara2@unlv.nevada.edu">alhara2@unlv.nevada.edu</a> |
-      <a
-        href="https://github.com/AbdulAlharbi/Portfolio"
-        target="_blank"
-        rel="noopener noreferrer"
-        >GitHub</a
-      > -->
-    <!-- | -->
-    <a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener noreferrer">
-      My Resume / CV (Click here for PDF)
-    </a>
-  </div>
-
-  <!-- Add PDF link here: -->
-  <!-- <p>
-   | <a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener noreferrer">
-       My Resume / CV (PDF)
-    </a>
-  </p> -->
   </div>
 </header>
 
-<!-- SUMMARY SECTION -->
-<section class="summary">
+<!-- ABOUT -->
+<section class="summary" id="about">
   <h2>About me</h2>
   <p>
-    Diligent and dependable Computer Science graduate student with a strong
-    foundation in software engineering, cybersecurity, AI, and compiler
-    construction. Exceptionally organized, proactive, and results-driven,
-    with proven leadership experience in technical project management, agile
-    development, and collaborative software design. Adept at problem-solving
-    in high-impact environments, excelling in team-oriented and
-    research-driven settings.
+    Computer Science graduate with a focus on software engineering, cybersecurity, and AI. Organized, dependable, and hands-on with experience leading projects, building a compiler, and supporting international students at UNLV Global. I like clear problems, tight teams, and shipping reliable work.
   </p>
 </section>
 
-<!-- EXPERIENCE SECTION -->
-<section class="experience">
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
   <h2>Work Experience</h2>
 
   <div class="job">
-    <h3>Software Product Design & Development</h3>
-    <p class="job-info">Special Project Manager, UNLV | Jan 2025 - May 2025</p>
-    <ul>
-      <li>
-        Led an 11-member team in the CS 472 Software Product Design and Development I course, managing the
-        complete software development lifecycle, from requirements gathering to implementation.
-      </li>
-      <li>
-        Applied architecture-first development principles to design and implement a scalable software product,
-        aligning with user requirements and system specifications.
-      </li>
-      <li>
-        Oversaw project planning, GitHub repository management, and agile methodologies (e.g., sprint planning,
-        stand-ups, retrospectives) to ensure efficient team collaboration.
-      </li>
-      <li>
-        Conducted team meetings, peer reviews, and pull request evaluations, enforcing code quality standards and
-        best practices.
-      </li>
-      <li>
-        Integrated unit testing, CI/CD pipelines, and UML design principles to enhance product reliability and
-        maintainability.
-      </li>
-      <li>
-        Strengthened software architecture, leadership, and collaborative development skills through cross-functional
-        teamwork and iterative refinement.
-      </li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <h3>Espresso Compiler Implementation</h3>
-    <p class="job-info">
-      Course Project, University of Nevada, Las Vegas | Aug 2024 - Dec 2024
-    </p>
-    <ul>
-      <li>
-        Developed a compiler for the Espresso language, a Java subset, as part of CSC 460/660 (Compiler
-        Construction) coursework.
-      </li>
-      <li>
-        Implemented key compiler phases: lexical analysis, parsing, syntax tree generation, symbol table
-        management, type checking, and code generation.
-      </li>
-      <li>
-        Used JFlex and Java CUP for scanner and parser construction.
-      </li>
-      <li>
-        Designed and optimized intermediate representation and Java bytecode generation using Jasmin assembler.
-      </li>
-      <li>
-        Conducted rigorous compiler testing with positive/negative test cases, comparing outputs to a reference
-        compiler.
-      </li>
-      <li>
-        Strengthened skills in automata theory, context-free grammars, and programming language design.
-      </li>
-    </ul>
-  </div>
-
-  <div class="job">
     <h3>Student Worker</h3>
-    <p class="job-info">
-      Office of International Students and Scholars, UNLV | Jan 2023 - May
-      2023
-    </p>
-    <ul>
-      <li>
-        Performed accurate data entry and management for up-to-date records.
-      </li>
-      <li>
-        Managed front desk operations with excellent interpersonal and
-        communication skills.
-      </li>
-      <li>
-        Handled email/phone inquiries and directed concerns to the right
-        personnel.
-      </li>
-      <li>
-        Assisted in solving student issues, showcasing strong
-        problem-solving and organizational skills.
-      </li>
-      <li>
-        Contributed to planning/executing office events, ensuring smooth
-        operations and schedules.
-      </li>
-    </ul>
+    <p class="job-info">UNLV Global, University of Nevada, Las Vegas — Aug 2025 – May 2026</p>
+<ul>
+  <li>Develop expertise in compliance processes and intercultural communication while supporting international students.</li>
+  <li>Manage data entry, records, and correspondence to ensure accuracy and adherence to university policies.</li>
+  <li>Assist students with inquiries and route them to appropriate resources and offices.</li>
+  <li>Support events, scheduling, and daily operations to keep office workflows smooth.</li>
+  <li>Contribute to a compliance-focused, multicultural environment requiring professionalism and confidentiality.</li>
+</ul>
+
   </div>
 
+      <div class="job">
+        <h3>Software Product Design & Development</h3>
+        <p class="job-info">Special Project Manager, UNLV | Jan 2025 - May 2025</p>
+<ul>
+  <li>Led an 11-member team through the full SDLC (requirements → design → implementation) using agile practices.</li>
+  <li>Applied architecture-first principles to design a scalable product aligned with user requirements and constraints.</li>
+  <li>Owned project planning and GitHub workflows (repo organization, PR reviews, sprint planning, stand-ups, retrospectives).</li>
+  <li>Established code quality practices and enforced reviews, unit testing, and CI/CD for reliability and maintainability.</li>
+  <li>Produced UML artifacts (use cases, class and sequence diagrams) to communicate design decisions and interfaces.</li>
+  <li>Strengthened software architecture, leadership, and cross-functional collaboration through iterative delivery.</li>
+</ul>
+
+      </div>
+
+      <div class="job">
+        <h3>Espresso Compiler Implementation</h3>
+        <p class="job-info">
+          Course Project, University of Nevada, Las Vegas | Aug 2024 - Dec 2024
+        </p>
+        <ul>
+  <li>Built a compiler for Espresso (Java subset): lexing, parsing, AST construction, symbol tables, type checking, and code generation.</li>
+  <li>Implemented scanner and parser with JFlex and Java CUP; generated bytecode via Jasmin.</li>
+  <li>Designed intermediate representation and optimized codegen; validated with positive/negative test suites against a reference compiler.</li>
+  <li>Deepened mastery of automata theory, context-free grammars, and language design.</li>
+</ul>
+
+      </div>
+
+      <div class="job">
+        <h3>Student Worker</h3>
+        <p class="job-info">
+          Office of International Students and Scholars, UNLV | Jan 2023 - May
+          2023
+        </p>
+<ul>
+  <li>Maintained accurate records and handled front-desk operations with consistent, detail-oriented service.</li>
+  <li>Managed email/phone inquiries and triaged requests to appropriate personnel for timely resolution.</li>
+  <li>Resolved student issues professionally, demonstrating strong communication and problem-solving.</li>
+  <li>Supported planning and execution of office events, ensuring smooth logistics and schedules.</li>
+</ul>
+
+      </div>
 </section>
 
-<!-- EDUCATION SECTION -->
-<section class="education">
+<!-- EDUCATION -->
+<section class="education" id="education">
   <h2>Education</h2>
 
-  <!-- Master's -->
   <div class="education-item">
-    <h3>
-      <a href="https://www.unlv.edu" target="_blank" rel="noopener noreferrer">
-        University of Nevada, Las Vegas
-      </a>
-      – Las Vegas, NV, USA (2025 – 2026)
-    </h3>
-    <p>Master of Science in Computer Science, Artificial Intelligence & Cybersecurity</p>
+    <h3><a href="https://www.unlv.edu/elc/intensive-program" target="_blank" rel="noopener noreferrer">University of Nevada, Las Vegas (UNLV) — English Language Center</a> — Las Vegas, NV, USA (Aug 2025 – Dec 2025)</h3>
+    <p>Intensive English Program — 16-week, full-time academic & professional communication program.</p>
   </div>
 
-  <!-- Bachelor's at UNLV -->
   <div class="education-item">
-    <h3>
-      <a href="https://www.unlv.edu" target="_blank" rel="noopener noreferrer">
-        University of Nevada, Las Vegas
-      </a>
-      – Las Vegas, NV, USA (2022 – 2025)
-    </h3>
-    <p>BS in Computer Science, Information Assurance Concentration</p>
+    <h3><a href="https://www.unlv.edu" target="_blank" rel="noopener noreferrer">University of Nevada, Las Vegas (UNLV)</a> — Las Vegas, NV, USA (Sep 2022 – May 2025)</h3>
+    <p>BS in Computer Science, Information Assurance (Cybersecurity) Concentration</p>
   </div>
 
-  <!-- Prince Sultan University -->
   <div class="education-item">
-    <h3>
-      <a href="https://www.psu.edu.sa/en" target="_blank" rel="noopener noreferrer">
-        Prince Sultan University
-      </a>
-      – Riyadh, Saudi Arabia (2020 – 2022)
-    </h3>
-    <p>Completed 34 credit hours toward BS in Information Systems, Cyber Security</p>
+    <h3><a href="https://www.psu.edu.sa/en" target="_blank" rel="noopener noreferrer">Prince Sultan University (PSU)</a> — Riyadh, Saudi Arabia (2020 – 2022)</h3>
+    <p>Completed <strong>34 credit hours</strong> toward B.S. in Information Systems, Cyber Security</p>
   </div>
 
-  <!-- Carleton University -->
   <div class="education-item">
-    <h3>
-      <a href="https://carleton.ca" target="_blank" rel="noopener noreferrer">
-        Carleton University
-      </a>
-      – Ottawa, ON, Canada (2019 – 2020)
-    </h3>
-    <p>Completed 27 credit hours toward BS in Information Technology, Optical Systems and Sensors (OSS)</p>
+    <h3><a href="https://carleton.ca" target="_blank" rel="noopener noreferrer">Carleton University</a> — Ottawa, ON, Canada (2019 – 2020)</h3>
+    <p>Completed <strong>27 credit hours</strong> toward B.S. in Information Technology, Optical Systems & Sensors (OSS)</p>
   </div>
 
-  <!-- Ridgemont High School -->
   <div class="education-item">
-    <h3>
-      <a href="https://ridgemonths.ocdsb.ca/" target="_blank" rel="noopener noreferrer">
-        Ridgemont High School
-      </a>
-      – Ottawa, ON, Canada (2016 – 2019)
-    </h3>
+    <h3><a href="https://ridgemonths.ocdsb.ca/" target="_blank" rel="noopener noreferrer">Ridgemont High School</a> — Ottawa, ON, Canada (2016 – 2019)</h3>
     <p>High School Diploma</p>
   </div>
 </section>
 
-
-<!-- AWARDS & HONORS SECTION -->
-<section class="awards">
+<!-- AWARDS -->
+<section class="awards" id="awards">
   <h2>Awards & Honors</h2>
   <ul>
-    <li>
-      Saudi Arabian Cultural Mission Elite Students Scholarship (Fall 2019 –
-      August 2026)
-    </li>
-    <li>
-      The National Society of Leadership And Success Nomination (Fall 2023,
-      Fall 2024, Spring 2025)
-    </li>
-    <li>
-      AWS Academy Graduate - AWS Academy Cloud Foundations (Fall 2024)
-    </li>
-    <li>
-      Howard R. Hughes College of Engineering Dean’s List UNLV (Fall 2022,
-      Fall 2023, Spring 2024)
-    </li>
-    <li>Dean’s List PSU (Spring 2022)</li>
-    <li>High GPA Award - Ridgemont HS Engineering Electives (Jul 2019)</li>
+    <li><strong>SDAIA</strong> — Fundamentals of Artificial Intelligence (Aug 2025)</li>
+    <li><strong>SDAIA</strong> — Artificial Intelligence Concepts & Advanced Applications (Aug 2025)</li>
+    <li>AWS Academy Graduate — AWS Academy Cloud Foundations (Fall 2024)</li>
+    <li>Saudi Arabian Cultural Mission — Elite Students Scholarship (Fall 2019 – Spring 2025)</li>
+    <li>Howard R. Hughes College of Engineering Dean’s List, UNLV (Fall 2022, Fall 2023, Spring 2024, Spring 2025)</li>
+    <li>National Society of Leadership & Success — Nomination (Fall 2023, Fall 2024, Spring 2025)</li>
+    <li>High GPA Award — Ridgemont HS Engineering Electives (Jul 2019)</li>
   </ul>
 </section>
 
-<!-- SKILLS SECTION -->
-<section class="skills">
+<!-- SKILLS -->
+<section class="skills" id="skills">
   <h2>Skills</h2>
   <div class="skills-lists">
     <div class="technical">
       <h3>Technical Skills</h3>
       <ul>
-        <li>Languages: Python, Java, C++, SQL, JavaScript, HTML, CSS</li>
-        <li>Tools: Git, GitHub, VS Code, IntelliJ, Eclipse</li>
-        <li>
-          Cybersecurity: Network Security, Ethical Hacking, Penetration
-          Testing, Cryptography
-        </li>
-        <li>Cloud: AWS (EC2, S3, Lambda), Google Cloud</li>
-        <li>Databases: MySQL, PostgreSQL, Firebase</li>
-        <li>OS: Windows, Linux (Ubuntu, Kali)</li>
-        <li>ML & AI: TensorFlow, Scikit-learn, OpenCV</li>
+        <li><strong>Programming & Development:</strong> Python, Java, C/C++, SQL, JavaScript, HTML/CSS, Git/GitHub</li>
+        <li><strong>Cybersecurity (IA Concentration):</strong> Network Security, Ethical Hacking, Pen Testing, Cryptography</li>
+        <li><strong>AI & Data:</strong> TensorFlow, Scikit-learn, OpenCV</li>
+        <li><strong>Cloud & Systems:</strong> AWS (EC2, S3, Lambda), Linux (Ubuntu, Kali), Windows</li>
       </ul>
     </div>
     <div class="soft-skills">
       <h3>Soft Skills</h3>
       <ul>
-        <li>Analytical & Problem-Solving</li>
-        <li>Effective Communication & Teamwork</li>
-        <li>Leadership & Time Management</li>
-        <li>Adaptability & Quick Learning</li>
-        <li>Attention to Detail & Organization</li>
+        <li>Analytical Problem-Solving • Communication & Teamwork • Leadership • Adaptability • Attention to Detail</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO SECTION -->
-<section class="portfolio">
+<!-- PORTFOLIO -->
+<section class="portfolio" id="projects">
   <h2>Portfolio</h2>
-  <!-- Tic Tac Toe (Easy) -->
+
   <div class="project">
-    <h3>Tic Tac Toe Game</h3>
-    <p>
-      A simple tic tac toe game implemented in Python. This project helped
-      me understand the basics of game development and GUI programming.
-    </p>
-    <p>
-      <a
-              href="https://github.com/AbdulAlharbi/Portfolio/tree/main/TicTacToePython"
-              target="_blank"
-              rel="noopener noreferrer"
-      >
-        View on GitHub
-      </a>
-    </p>
+    <h3>Tic Tac Toe (Python)</h3>
+    <p>Simple GUI game; clean state handling and win-logic.</p>
+    <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/TicTacToePython" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
   </div>
 
-  <!-- Chess Game (Medium) -->
   <div class="project">
-    <h3>Chess Game</h3>
-    <p>
-      A fully functional chess game developed in Java. This project involved
-      implementing the rules of chess, developing a user interface, and
-      creating an AI opponent.
-    </p>
-    <p>
-      <a
-              href="https://github.com/AbdulAlharbi/Portfolio/tree/main/ChessGameJava"
-              target="_blank"
-              rel="noopener noreferrer"
-      >
-        View on GitHub
-      </a>
-    </p>
+    <h3>Chess (Java)</h3>
+    <p>Rules engine, UI, and basic AI opponent.</p>
+    <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/ChessGameJava" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
   </div>
 
-  <!-- x86 Assembly Code for Stacks and Overflow (Hard) -->
   <div class="project">
-    <h3>x86 Assembly Code for Stacks and Overflow</h3>
-    <p>
-      This project focused on low-level programming with x86 assembly
-      language. It involved writing code to demonstrate stack operations and
-      overflow handling.
-    </p>
-    <p>
-      <a
-              href="https://github.com/AbdulAlharbi/Portfolio/tree/main/StacksOverflowAsm"
-              target="_blank"
-              rel="noopener noreferrer"
-      >
-        View on GitHub
-      </a>
-    </p>
+    <h3>x86 Stacks & Overflow (Assembly)</h3>
+    <p>Low-level stack ops and overflow handling demonstration.</p>
+    <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/StacksOverflowAsm" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
   </div>
 
-  <!-- Bank Account System (Hard) -->
   <div class="project">
-    <h3>Bank Account System</h3>
-    <p>
-      A C++ project that demonstrated the concepts of encapsulation and
-      polymorphism through a bank account management system. This project
-      involved creating classes and managing inheritance and dynamic
-      binding.
-    </p>
-    <p>
-      <a
-              href="https://github.com/AbdulAlharbi/Portfolio/tree/main/BankAccountSystem"
-              target="_blank"
-              rel="noopener noreferrer"
-      >
-        View on GitHub
-      </a>
-    </p>
+    <h3>Bank Account System (C++)</h3>
+    <p>Encapsulation, inheritance, and dynamic binding in practice.</p>
+    <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/BankAccountSystem" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
   </div>
 </section>
-<!-- ADDITIONAL SKILLS SECTION (new) -->
-<section id="skills-section">
+
+<!-- ICON GRID (kept, with proper alts) -->
+<section id="skills-section" aria-label="Additional Skills Logos">
   <div class="container mt-4">
-    <h2
-            style="
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 30px;
-            font-weight: 600;
-          "
-    >
-      Additional Skills
-    </h2>
+    <h2 style="text-align:center;margin-bottom:60px;font-size:30px;font-weight:600;">Additional Skills</h2>
     <div class="row g-5">
       <div class="col-12 col-md-6 col-lg-3">
         <div class="logo-container text-center">
-          <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
-                  alt="HTML logo"
-          />
-          <p>
-            Building structured web content with semantic HTML to
-            improve accessibility and enhance user experience.
-          </p>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML5 logo" />
+          <p>Semantic HTML for accessible, structured content.</p>
         </div>
       </div>
-
       <div class="col-12 col-md-6 col-lg-3">
         <div class="logo-container text-center">
-          <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
-                  alt="CSS logo"
-          />
-          <p>
-            Crafting responsive layouts and visually appealing
-            designs using CSS and modern techniques like Flexbox and
-            Grid.
-          </p>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="CSS3 logo" />
+          <p>Responsive layouts with Flexbox and Grid.</p>
         </div>
       </div>
-
       <div class="col-12 col-md-6 col-lg-3">
         <div class="logo-container text-center">
-          <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg"
-                  alt="Bootstrap-logo"
-          />
-          <p>
-            Utilizing Bootstrap to create responsive designs
-            quickly, leveraging its pre-built components and grid
-            system for consistent styling.
-          </p>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg" alt="Bootstrap logo" />
+          <p>Bootstrap components and grid for rapid UI.</p>
         </div>
       </div>
-
       <div class="col-12 col-md-6 col-lg-3">
         <div class="logo-container text-center">
-          <img
-                  src="https://wildcardcorp.com/image-repository/javascript-icon.png/@@images/image.png"
-                  alt="JavaScript logo"
-          />
-          <p>
-            Enhancing user interactions and dynamic content through
-            JavaScript, allowing for engaging and interactive web
-            experiences.
-          </p>
+          <img src="https://wildcardcorp.com/image-repository/javascript-icon.png/@@images/image.png" alt="JavaScript logo" />
+          <p>Interactive, dynamic behavior with vanilla JS.</p>
         </div>
       </div>
     </div>
@@ -539,28 +329,17 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <!-- <p>&copy; 2025. Created by Abdulrahman Alharbi</p> -->
   <p style="margin-top: 1rem;">
-    <a href="snake.html" target="_blank" rel="noopener noreferrer">
-      Play My Snake Game
-    </a> |
-    <a href="pomodoro.html" target="_blank" rel="noopener noreferrer">
-      My Pomodoro Timer
-    </a>
+    <a href="snake.html" target="_blank" rel="noopener noreferrer">Play My Snake Game</a> |
+    <a href="pomodoro.html" target="_blank" rel="noopener noreferrer">My Pomodoro Timer</a>
   </p>
-  <!-- <p style="margin-top: 1rem;">
-    <a href="Pomodoro.html" target="_blank" rel="noopener noreferrer">
-      Pomodoro Timer
-    </a>
-  </p> -->
   <p>&copy; 2025. Created by Abdulrahman Alharbi</p>
 </footer>
-<!-- 3) BOOTSTRAP JS BUNDLE -->
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
-></script>
+        crossorigin="anonymous"></script>
 </body>
 </html>
 
