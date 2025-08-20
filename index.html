@@ -1,345 +1,576 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--  <head>-->
-<!--    <meta charset="UTF-8" />-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
-<!--    <title>Welcome - Abdulrahman Alharbi</title>-->
-<!--    &lt;!&ndash; Your existing styles &ndash;&gt;-->
-<!--    <link rel="stylesheet" href="styles.css" />-->
-
-<!--    &lt;!&ndash; Minimal optional JS for toggling the menu &ndash;&gt;-->
-<!--    <script>-->
-<!--      // We'll call this from the hamburger icon's onclick.-->
-<!--      function toggleMenu() {-->
-<!--        const navLinks = document.querySelector(".nav-links");-->
-<!--        navLinks.classList.toggle("nav-open");-->
-<!--      }-->
-<!--    </script>-->
-<!--  </head>-->
-
-<!--  <body>-->
-<!--    &lt;!&ndash; NAVBAR &ndash;&gt;-->
-<!--    <nav class="navbar">-->
-<!--      <div class="nav-brand">A. Alharbi</div>-->
-<!--      -->
-<!--      &lt;!&ndash; Hamburger icon (shown in mobile) &ndash;&gt;-->
-<!--      <div class="hamburger" onclick="toggleMenu()">-->
-<!--        &lt;!&ndash; 3 lines to form the hamburger &ndash;&gt;-->
-<!--        <div class="line"></div>-->
-<!--        <div class="line"></div>-->
-<!--        <div class="line"></div>-->
-<!--      </div>-->
-
-<!--      <ul class="nav-links">-->
-<!--        <li><a href="index.html">Home</a></li>-->
-<!--        <li><a href="about.html">About Me</a></li>-->
-<!--        <li><a href="pomodoro.html">Pomodoro</a></li>-->
-<!--        <li><a href="snake.html" target="_blank">Snake Game</a></li>-->
-<!--        <li>-->
-<!--          <a-->
-<!--            href="Abdulrahman_Alharbi_CV.pdf"-->
-<!--            target="_blank"-->
-<!--            rel="noopener noreferrer"-->
-<!--          >-->
-<!--            Resume (PDF)-->
-<!--          </a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </nav>-->
-
-<!--    &lt;!&ndash; HERO SECTION &ndash;&gt;-->
-<!--    <header class="hero hero-front">-->
-<!--      <div class="hero-content">-->
-<!--        <h1 class="front-title">Welcome to My Portfolio</h1>-->
-<!--        <p class="front-subheading">-->
-<!--          I’m Abdulrahman Alharbi — a passionate Computer Science graduate-->
-<!--          student and technology enthusiast. Explore my journey in software-->
-<!--          engineering, cybersecurity, compiler design, and beyond!-->
-<!--        </p>-->
-<!--        <a class="cta-button" href="about.html">Learn More About Me</a>-->
-<!--      </div>-->
-<!--    </header>-->
-
-<!--    &lt;!&ndash; MAIN CONTENT (Optional) &ndash;&gt;-->
-<!--    <section class="front-info">-->
-<!--      <h2>What You'll Find Here</h2>-->
-<!--      <p>-->
-<!--        Dive into my projects, including a custom Pomodoro Timer and a classic-->
-<!--        Snake Game! You’ll also discover details about my academic and-->
-<!--        professional experiences.-->
-<!--      </p>-->
-<!--    </section>-->
-
-<!--    &lt;!&ndash; FOOTER &ndash;&gt;-->
-<!--    <footer class="footer">-->
-<!--      <p>&copy; 2025. Created by Abdulrahman Alharbi</p>-->
-<!--    </footer>-->
-<!--  </body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abdulrahman Alharbi - Portfolio</title>
-  <meta name="description" content="Abdulrahman Alharbi — Computer Science graduate focused on software engineering, AI, and cybersecurity. UNLV Global student worker.">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="stylesheet" href="styles.css" />
-  <script>
-    function toggleMenu() {
-      const navLinks = document.querySelector(".nav-links");
-      navLinks.classList.toggle("nav-open");
+  <title>Abdulrahman Alharbi — Portfolio</title>
+  <meta name="description" content="Abdulrahman Alharbi — Computer Science graduate focused on AI & Cybersecurity. Projects, experience, and contact." />
+  <meta name="theme-color" content="#0b3b3b" />
+  <link rel="canonical" href="https://your-domain.example/" />
+  <meta name="robots" content="index,follow" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Abdulrahman Alharbi — Portfolio" />
+  <meta property="og:description" content="Computer Science graduate focused on AI & Cybersecurity. Projects, experience, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Performance: Preload hero image -->
+  <link rel="preload" as="image" href="images/2.png" imagesrcset="images/2.png 320w, images/2.png 640w, images/2.png 960w" imagesizes="(max-width: 900px) 70vw, 320px" />
+
+  <!-- Bootstrap for grid/utilities (kept lightweight via CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+  <!-- ===== Inline CSS (move to styles.css on deploy) ===== -->
+  <style>
+    /* CSS Variables for light/dark + brand */
+    :root {
+      --bg: #0b3b3b;           /* page background */
+      --bg-elev: rgba(0, 60, 60, 0.72);
+      --text: #eaf6f6;         /* body text */
+      --muted: #bfe9e6;        /* secondary text */
+      --brand: #4fffe9;        /* accents */
+      --brand-2: #2afad7;
+      --border: #4fffe981;     /* translucent border */
+      --card-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      --radius: 14px;
+      --focus: 2px solid #4fffe9;
     }
-  </script>
+    [data-theme="light"] {
+      --bg: #f7fbfb;
+      --bg-elev: #ffffff;
+      --text: #0b2c2c;
+      --muted: #3b6b6b;
+      --brand: #0b8e8a;
+      --brand-2: #066e6b;
+      --border: #cde9e7;
+      --card-shadow: 0 6px 22px rgba(0,0,0,0.08);
+      --focus: 2px solid #0b8e8a;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fbfb;
+        --bg-elev: #ffffff;
+        --text: #0b2c2c;
+        --muted: #3b6b6b;
+        --brand: #0b8e8a;
+        --brand-2: #066e6b;
+        --border: #cde9e7;
+        --card-shadow: 0 6px 22px rgba(0,0,0,0.08);
+        --focus: 2px solid #0b8e8a;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: linear-gradient(135deg, #0c4c4c 0%, var(--bg) 60%);
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--brand-2); }
+    :focus-visible { outline: var(--focus); outline-offset: 3px; border-radius: 8px; }
+
+    /* RTL support */
+    html[dir="rtl"] body { font-family: system-ui, -apple-system, "Tajawal", "Cairo", Segoe UI, Roboto, Helvetica, Arial; }
+
+    /* Skip link */
+    .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip-link:focus { left: 1rem; top: 1rem; width:auto; height:auto; padding:.5rem .75rem; background:#000; color:#fff; border-radius:8px; z-index: 9999; }
+
+    /* Navbar */
+    .nav-wrap { position: sticky; top: 0; z-index: 100; backdrop-filter: saturate(180%) blur(12px); background: color-mix(in hsl, var(--bg) 70%, transparent); border-bottom: 1px solid var(--border); }
+    .nav { max-width: 1200px; margin: 0 auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .75rem 1rem; }
+    .brand { display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:.2px; color: var(--text); }
+    .brand img { width: 28px; height: 28px; border-radius: 6px; }
+    .nav a { color: var(--text); opacity:.9; }
+    .nav a:hover { opacity:1; }
+    .nav ul { display:flex; flex-wrap:wrap; gap:.6rem; list-style:none; margin:0; padding:0; align-items:center; }
+    .btn-ghost { border:1px solid var(--border); padding:.45rem .75rem; border-radius:10px; background:transparent; color:var(--text); cursor:pointer; }
+
+    /* Hero */
+    header.hero { max-width:1200px; margin: 2.2rem auto; display:grid; grid-template-columns: 1.2fr .9fr; gap: 2rem; align-items:center; padding: 0 1rem; }
+    @media (max-width: 900px) { header.hero { grid-template-columns:1fr; } }
+    .hero-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--card-shadow); }
+    .hero h1 { font-size: clamp(1.9rem, 3.2vw, 2.6rem); margin: 0 0 .5rem 0; letter-spacing: .3px; }
+    .hero .subtitle { color: var(--muted); margin: 0 0 .75rem 0; font-weight: 500; }
+    .badges { display:flex; flex-wrap:wrap; gap:.4rem; margin:.4rem 0 1rem; }
+    .badge { border:1px solid var(--border); padding:.25rem .5rem; border-radius: 999px; font-size:.85rem; background: color-mix(in hsl, var(--bg-elev) 70%, transparent); }
+    .hero .meta { display:flex; flex-wrap: wrap; gap:.5rem .8rem; margin-top:.5rem; }
+    .hero .meta a { white-space: nowrap; }
+    .hero-portrait { justify-self: center; }
+    .headshot { display:block; width:min(360px, 70vw); max-width:100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 18px; border:1px solid var(--border); box-shadow: var(--card-shadow); }
+
+    /* Sections */
+    section { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .section-card { background: var(--bg-elev); border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--card-shadow); padding: 1.25rem; }
+    .section-card h2 { font-size: 1.35rem; border-bottom:1px solid var(--border); padding-bottom:.5rem; margin-bottom: 1rem; color: var(--brand); }
+
+    /* Experience */
+    .job + .job { margin-top: 1.25rem; }
+    .job h3 { margin: 0 0 .2rem 0; }
+    .job .job-info { color: var(--muted); font-style: italic; margin-bottom:.4rem; }
+    .job ul { margin: 0; padding-left: 1.2rem; }
+
+    /* Highlights (impact chips) */
+    .impact { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.5rem; }
+    .impact .chip { border:1px solid var(--border); background: color-mix(in hsl, var(--bg-elev) 70%, transparent); padding:.35rem .6rem; border-radius: 999px; font-size:.85rem; }
+
+    /* Education */
+    .edu-grid { display:grid; gap:1rem; }
+    .edu-item h3 { font-size: 1rem; margin: 0 0 .25rem 0; }
+    .edu-item p { margin: 0; color: var(--muted); }
+
+    /* Skills */
+    .chips { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .chip { border:1px solid var(--border); background: color-mix(in hsl, var(--bg-elev) 70%, transparent); padding:.35rem .6rem; border-radius: 999px; font-size:.9rem; }
+    .skill-cols { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
+    @media (max-width: 700px) { .skill-cols { grid-template-columns: 1fr; } }
+
+    /* Projects + filters */
+    .proj-toolbar { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom: .75rem; }
+    .filter { border:1px solid var(--border); background:transparent; color:var(--text); border-radius:999px; padding:.3rem .7rem; cursor:pointer; }
+    .filter.active { background: color-mix(in hsl, var(--bg-elev) 85%, transparent); }
+    .proj-grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:1rem; }
+    @media (max-width: 900px) { .proj-grid { grid-template-columns: 1fr; } }
+    .proj { border:1px solid var(--border); border-radius: var(--radius); padding:1rem; background: color-mix(in hsl, var(--bg-elev) 80%, transparent); box-shadow: var(--card-shadow); }
+    .proj h3 { margin: 0 0 .25rem 0; }
+    .proj p { margin: 0 0 .5rem 0; color: var(--muted); }
+    .proj .tags { display:flex; gap:.4rem; flex-wrap:wrap; }
+
+    /* Gallery */
+    .gallery-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .75rem; }
+    @media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    .gallery-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; border:1px solid var(--border); cursor: zoom-in; }
+    dialog#lightbox { border:none; border-radius: 16px; padding:0; background: transparent; }
+    dialog::backdrop { backdrop-filter: blur(4px) saturate(110%); background: rgba(0,0,0,.4); }
+    .lightbox-img { max-width: min(92vw, 1100px); max-height: 85vh; border-radius: 16px; border:1px solid var(--border); box-shadow: var(--card-shadow); }
+
+    /* Footer */
+    footer { text-align:center; padding: 2rem 1rem; color: var(--muted); }
+    footer a { color: var(--brand); }
+
+    /* Motion (scroll-reveal) */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- NAVBAR -->
-<nav class="navbar" aria-label="Primary">
-  <div class="nav-brand">A. Alharbi</div>
-  <button class="hamburger" aria-label="Toggle navigation" onclick="toggleMenu()">
-    <span class="line"></span><span class="line"></span><span class="line"></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="index.html" class="current-page" aria-current="page">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
-    <li><a href="pomodoro.html">Pomodoro</a></li>
-    <li><a href="snake.html" target="_blank" rel="noopener noreferrer">Snake Game</a></li>
-    <li>
-      <a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener noreferrer">
-        Resume (PDF)
+  <!-- ===== NAV ===== -->
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Home">
+        <img src="images/4.png" alt="AA logo" />
+        <span>A. Alharbi</span>
       </a>
-    </li>
-  </ul>
-</nav>
+      <ul>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="#education" data-i18n="nav_education">Education</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+        <li><a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener" data-i18n="nav_resume">Resume</a></li>
+        <li><button class="btn-ghost" id="modeBtn" aria-label="Toggle color mode">🌓</button></li>
+        <li><button class="btn-ghost" id="langBtn" aria-label="Toggle language">عربي</button></li>
+      </ul>
+    </nav>
+  </div>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-content">
-    <h1 class="name">Abdulrahman Alharbi</h1>
-    <p class="subheading">CS Graduate • AI & Cybersecurity • UNLV Global Student Worker</p>
-    <p class="mt-2">
-      <a href="mailto:alhara2@unlv.nevada.edu">alhara2@unlv.nevada.edu</a> ·
-      <a href="https://github.com/AbdulAlharbi" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
-      <a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="top">
+    <div class="hero-card reveal">
+      <h1 data-i18n="hero_name">Abdulrahman Alharbi</h1>
+      <p class="subtitle" data-i18n="hero_sub">CS Graduate · AI & Cybersecurity · UNLV Global Student Worker</p>
+      <div class="badges" aria-hidden="true">
+        <span class="badge">AI</span><span class="badge">Cybersecurity</span><span class="badge">Systems</span>
+      </div>
+      <div class="impact" aria-label="Highlights">
+        <span class="chip" data-i18n="hero_chip1">Compiler & static analysis foundations</span>
+        <span class="chip" data-i18n="hero_chip2">Agile leadership (11‑person team)</span>
+        <span class="chip" data-i18n="hero_chip3">AWS & Linux</span>
+      </div>
+      <div class="meta">
+        <a href="mailto:alhara2@unlv.nevada.edu" rel="me">alhara2@unlv.nevada.edu</a>
+        <a href="https://github.com/AbdulAlharbi" target="_blank" rel="me noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank" rel="me noopener">LinkedIn</a>
+        <a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </div>
+    <div class="hero-portrait reveal">
+      <picture>
+        <img class="headshot" src="images/2.png" srcset="images/2.png 320w, images/2.png 640w, images/2.png 960w" sizes="(max-width: 900px) 70vw, 360px" width="360" height="360" alt="Portrait of Abdulrahman Alharbi" loading="eager" decoding="async" />
+      </picture>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== ABOUT ===== -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-card reveal">
+        <h2 id="about-title" data-i18n="about_title">About me</h2>
+        <p data-i18n="about_body">Computer Science graduate focused on software engineering, cybersecurity, and AI. Organized, dependable, and hands‑on with experience leading projects, building a compiler, and supporting international students at UNLV Global. I like clear problems, tight teams, and shipping reliable work.</p>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" aria-labelledby="exp-title">
+      <div class="section-card reveal">
+        <h2 id="exp-title" data-i18n="exp_title">Work Experience</h2>
+
+        <article class="job">
+          <h3>Student Worker</h3>
+          <p class="job-info">UNLV Global, University of Nevada, Las Vegas — Aug 2025 – May 2026</p>
+          <ul>
+            <li>Develop expertise in compliance processes and intercultural communication while supporting international students.</li>
+            <li>Manage data entry, records, and correspondence to ensure accuracy and adherence to university policies.</li>
+            <li>Assist students with inquiries and route them to appropriate resources and offices.</li>
+            <li>Support events, scheduling, and daily operations to keep office workflows smooth.</li>
+            <li>Contribute to a compliance‑focused, multicultural environment requiring professionalism and confidentiality.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>Software Product Design & Development</h3>
+          <p class="job-info">Special Project Manager, UNLV — Jan 2025 – May 2025</p>
+          <ul>
+            <li>Led an 11‑member team across the SDLC using agile practices; owned GitHub workflows and CI/CD.</li>
+            <li>Applied architecture‑first principles; produced UML artifacts to communicate design decisions.</li>
+            <li>Established code quality practices, reviews, unit testing for reliability and maintainability.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>Espresso Compiler Implementation</h3>
+          <p class="job-info">Course Project, UNLV — Aug 2024 – Dec 2024</p>
+          <ul>
+            <li>Built a compiler for Espresso (Java subset): lexing, parsing, AST, symbols, types, and bytecode gen (Jasmin).</li>
+            <li>Implemented scanner with JFlex and parser with Java CUP; validated via positive/negative suites.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <h3>Student Worker</h3>
+          <p class="job-info">Office of International Students & Scholars, UNLV — Jan 2023 – May 2023</p>
+          <ul>
+            <li>Front‑desk operations; accurate records and triaging requests for timely resolution.</li>
+            <li>Supported office event logistics and schedules; professional communication with stakeholders.</li>
+          </ul>
+        </article>
+
+        <div class="impact" aria-label="Focus areas">
+          <span class="chip">Threat modeling</span>
+          <span class="chip">Secure coding practices</span>
+          <span class="chip">Incident response (academic)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" aria-labelledby="edu-title">
+      <div class="section-card reveal">
+        <h2 id="edu-title" data-i18n="edu_title">Education</h2>
+        <div class="edu-grid">
+          <div class="edu-item">
+            <h3><a href="https://www.unlv.edu/elc/intensive-program" target="_blank" rel="noopener">UNLV — English Language Center</a> · Las Vegas, NV (Aug 2025 – Dec 2025)</h3>
+            <p>Intensive English Program — 16‑week academic & professional communication program.</p>
+          </div>
+          <div class="edu-item">
+            <h3><a href="https://www.unlv.edu" target="_blank" rel="noopener">University of Nevada, Las Vegas (UNLV)</a> · Las Vegas, NV (Sep 2022 – May 2025)</h3>
+            <p>BS in Computer Science, Information Assurance (Cybersecurity) Concentration.</p>
+          </div>
+          <div class="edu-item">
+            <h3><a href="https://www.psu.edu.sa/en" target="_blank" rel="noopener">Prince Sultan University (PSU)</a> · Riyadh, Saudi Arabia (2020 – 2022)</h3>
+            <p>Completed 34 credit hours toward B.S. in Information Systems, Cyber Security.</p>
+          </div>
+          <div class="edu-item">
+            <h3><a href="https://carleton.ca" target="_blank" rel="noopener">Carleton University</a> · Ottawa, ON, Canada (2019 – 2020)</h3>
+            <p>Completed 27 credit hours toward B.S. in Information Technology, Optical Systems & Sensors (OSS).</p>
+          </div>
+          <div class="edu-item">
+            <h3><a href="https://ridgemonths.ocdsb.ca/" target="_blank" rel="noopener">Ridgemont High School</a> · Ottawa, ON (2016 – 2019)</h3>
+            <p>High School Diploma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AWARDS ===== -->
+    <section id="awards">
+      <div class="section-card reveal">
+        <h2 data-i18n="awards_title">Awards & Honors</h2>
+        <ul class="mb-0">
+          <li><strong>SDAIA</strong> — Fundamentals of Artificial Intelligence (Aug 2025)</li>
+          <li><strong>SDAIA</strong> — Artificial Intelligence Concepts & Advanced Applications (Aug 2025)</li>
+          <li>AWS Academy Graduate — AWS Academy Cloud Foundations (Fall 2024)</li>
+          <li>Saudi Arabian Cultural Mission — Elite Students Scholarship (Fall 2019 – Spring 2025)</li>
+          <li>Howard R. Hughes College of Engineering Dean’s List, UNLV (Fall 2022, Fall 2023, Spring 2024, Spring 2025)</li>
+          <li>National Society of Leadership & Success — Nomination (Fall 2023, Fall 2024, Spring 2025)</li>
+          <li>High GPA Award — Ridgemont HS Engineering Electives (Jul 2019)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills">
+      <div class="section-card reveal">
+        <h2 data-i18n="skills_title">Skills</h2>
+        <div class="skill-cols">
+          <div>
+            <h3 class="h6" data-i18n="skills_tech">Technical</h3>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Java</span>
+              <span class="chip">C/C++</span>
+              <span class="chip">SQL</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">HTML/CSS</span>
+              <span class="chip">Git/GitHub</span>
+              <span class="chip">AWS (EC2, S3, Lambda)</span>
+              <span class="chip">Linux (Ubuntu, Kali)</span>
+              <span class="chip">TensorFlow</span>
+              <span class="chip">scikit‑learn</span>
+              <span class="chip">OpenCV</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="h6" data-i18n="skills_core">Core</h3>
+            <div class="chips">
+              <span class="chip">Analytical Problem‑Solving</span>
+              <span class="chip">Communication</span>
+              <span class="chip">Leadership</span>
+              <span class="chip">Adaptability</span>
+              <span class="chip">Attention to Detail</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+      <div class="section-card reveal">
+        <h2 data-i18n="projects_title">Projects</h2>
+        <div class="proj-toolbar" role="toolbar" aria-label="Project filters">
+          <button class="filter active" data-filter="all" data-i18n="filter_all">All</button>
+          <button class="filter" data-filter="ai" data-i18n="filter_ai">AI</button>
+          <button class="filter" data-filter="sec" data-i18n="filter_sec">Security</button>
+          <button class="filter" data-filter="sys" data-i18n="filter_sys">Systems</button>
+        </div>
+        <div class="proj-grid">
+          <article class="proj" data-tags="ai,python">
+            <h3>Tic Tac Toe (Python)</h3>
+            <p>Simple GUI game with clean state handling and win‑logic.</p>
+            <div class="tags"><span class="chip">Python</span><span class="chip">AI</span></div>
+            <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/TicTacToePython" target="_blank" rel="noopener">View on GitHub</a></p>
+          </article>
+          <article class="proj" data-tags="sys,java">
+            <h3>Chess (Java)</h3>
+            <p>Rules engine, UI, and basic AI opponent.</p>
+            <div class="tags"><span class="chip">Java</span><span class="chip">Systems</span></div>
+            <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/ChessGameJava" target="_blank" rel="noopener">View on GitHub</a></p>
+          </article>
+          <article class="proj" data-tags="sec,asm">
+            <h3>x86 Stacks & Overflow (Assembly)</h3>
+            <p>Low‑level stack ops and overflow handling demonstration.</p>
+            <div class="tags"><span class="chip">Assembly</span><span class="chip">Security</span></div>
+            <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/StacksOverflowAsm" target="_blank" rel="noopener">View on GitHub</a></p>
+          </article>
+          <article class="proj" data-tags="sys,cpp">
+            <h3>Bank Account System (C++)</h3>
+            <p>Encapsulation, inheritance, and dynamic binding in practice.</p>
+            <div class="tags"><span class="chip">C++</span><span class="chip">OOP</span></div>
+            <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/BankAccountSystem" target="_blank" rel="noopener">View on GitHub</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY (your new professional photos) ===== -->
+    <section id="gallery" aria-labelledby="gallery-title">
+      <div class="section-card reveal">
+        <h2 id="gallery-title" data-i18n="gallery_title">Gallery</h2>
+        <div class="gallery-grid">
+          <img src="images/1.png" alt="Portrait 1 of Abdulrahman" loading="lazy" decoding="async" />
+          <img src="images/2.png" alt="Portrait 2 of Abdulrahman" loading="lazy" decoding="async" />
+          <img src="images/3.png" alt="Portrait 3 of Abdulrahman" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADDITIONAL SKILLS LOGOS ===== -->
+    <section aria-label="Additional Skills Logos">
+      <div class="section-card reveal">
+        <h2 class="mb-3" data-i18n="logos_title">Additional Skills</h2>
+        <div class="row g-3 row-cols-2 row-cols-md-4">
+          <div class="col">
+            <div class="p-3 border rounded-4" style="border-color: var(--border); background: color-mix(in hsl, var(--bg-elev) 80%, transparent);">
+              <img class="d-block mx-auto mb-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML5 logo" width="56" height="56" />
+              <p class="text-center m-0" style="color: var(--muted);">Semantic HTML for accessible, structured content.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded-4" style="border-color: var(--border); background: color-mix(in hsl, var(--bg-elev) 80%, transparent);">
+              <img class="d-block mx-auto mb-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="CSS3 logo" width="56" height="56" />
+              <p class="text-center m-0" style="color: var(--muted);">Responsive layouts with Flexbox and Grid.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded-4" style="border-color: var(--border); background: color-mix(in hsl, var(--bg-elev) 80%, transparent);">
+              <img class="d-block mx-auto mb-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg" alt="Bootstrap logo" width="56" height="56" />
+              <p class="text-center m-0" style="color: var(--muted);">Bootstrap components and grid for rapid UI.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded-4" style="border-color: var(--border); background: color-mix(in hsl, var(--bg-elev) 80%, transparent);">
+              <img class="d-block mx-auto mb-2" src="https://wildcardcorp.com/image-repository/javascript-icon.png/@@images/image.png" alt="JavaScript logo" width="56" height="56" />
+              <p class="text-center m-0" style="color: var(--muted);">Interactive behavior with vanilla JS.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT CTA ===== -->
+    <section id="contact">
+      <div class="section-card reveal">
+        <h2 data-i18n="contact_title">Contact</h2>
+        <p class="m-0"><a href="mailto:alhara2@unlv.nevada.edu?subject=Hello%20Abdulrahman%20—%20Opportunity&body=Hi%20Abdulrahman,%20..." class="btn btn-outline-info">Email me</a>
+        <span class="ms-2" aria-hidden="true">·</span>
+        <a href="Abdulrahman_Alharbi_CV.pdf" target="_blank" rel="noopener" class="btn btn-outline-info ms-2">Download Resume</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="snake.html" target="_blank" rel="noopener">Play my Snake Game</a> ·
+      <a href="pomodoro.html" target="_blank" rel="noopener">Pomodoro Timer</a>
     </p>
-  </div>
-</header>
+    <p>© 2025. Created by Abdulrahman Alharbi</p>
+  </footer>
 
-<!-- ABOUT -->
-<section class="summary" id="about">
-  <h2>About me</h2>
-  <p>
-    Computer Science graduate with a focus on software engineering, cybersecurity, and AI. Organized, dependable, and hands-on with experience leading projects, building a compiler, and supporting international students at UNLV Global. I like clear problems, tight teams, and shipping reliable work.
-  </p>
-</section>
+  <!-- Color mode + i18n + utilities -->
+  <script>
+    // === Theme toggle ===
+    const themeKey = 'aa-theme';
+    const root = document.documentElement;
+    const modeBtn = document.getElementById('modeBtn');
+    const savedTheme = localStorage.getItem(themeKey);
+    if (savedTheme) root.setAttribute('data-theme', savedTheme);
+    modeBtn?.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? '' : 'light';
+      if (next) root.setAttribute('data-theme', next); else root.removeAttribute('data-theme');
+      localStorage.setItem(themeKey, next);
+    });
 
-<!-- EXPERIENCE -->
-<section class="experience" id="experience">
-  <h2>Work Experience</h2>
+    // === i18n (EN/AR) ===
+    const i18n = {
+      en: {
+        nav_about: 'About', nav_experience: 'Experience', nav_education: 'Education', nav_projects: 'Projects', nav_gallery: 'Gallery', nav_resume: 'Resume',
+        hero_name: 'Abdulrahman Alharbi', hero_sub: 'CS Graduate · AI & Cybersecurity · UNLV Global Student Worker', hero_chip1: 'Compiler & static analysis foundations', hero_chip2: 'Agile leadership (11‑person team)', hero_chip3: 'AWS & Linux',
+        about_title: 'About me', about_body: 'Computer Science graduate focused on software engineering, cybersecurity, and AI. Organized, dependable, and hands‑on with experience leading projects, building a compiler, and supporting international students at UNLV Global. I like clear problems, tight teams, and shipping reliable work.',
+        exp_title: 'Work Experience', edu_title: 'Education', awards_title: 'Awards & Honors', skills_title: 'Skills', skills_tech: 'Technical', skills_core: 'Core', projects_title: 'Projects',
+        filter_all: 'All', filter_ai: 'AI', filter_sec: 'Security', filter_sys: 'Systems',
+        gallery_title: 'Gallery', logos_title: 'Additional Skills', contact_title: 'Contact'
+      },
+      ar: {
+        nav_about: 'نبذة', nav_experience: 'الخبرات', nav_education: 'التعليم', nav_projects: 'المشاريع', nav_gallery: 'الصور', nav_resume: 'السيرة الذاتية',
+        hero_name: 'عبدالرحمن الحربي', hero_sub: 'خريج علوم الحاسوب · الذكاء الاصطناعي والأمن السيبراني · موظف طلابي في UNLV Global', hero_chip1: 'أسس المترجمات والتحليل الساكن', hero_chip2: 'قيادة رشيقة (فريق 11 فردًا)', hero_chip3: 'خدمات AWS و لينكس',
+        about_title: 'نبذة عني', about_body: 'خريج علوم الحاسوب مع تركيز على هندسة البرمجيات والأمن السيبراني والذكاء الاصطناعي. منظم ويمكن الاعتماد عليه وعملي — قُدتُ مشاريع، وبنيتُ مُصرّفًا، ودعمتُ الطلاب الدوليين في UNLV Global. أحب المشاكل الواضحة والعمل ضمن فرق صغيرة وإخراج عمل موثوق.',
+        exp_title: 'الخبرات العملية', edu_title: 'التعليم', awards_title: 'الجوائز والتكريم', skills_title: 'المهارات', skills_tech: 'تقنية', skills_core: 'أساسية', projects_title: 'المشاريع',
+        filter_all: 'الكل', filter_ai: 'ذكاء اصطناعي', filter_sec: 'أمن', filter_sys: 'أنظمة',
+        gallery_title: 'معرض الصور', logos_title: 'مهارات إضافية', contact_title: 'تواصل'
+      }
+    };
 
-  <div class="job">
-    <h3>Student Worker</h3>
-    <p class="job-info">UNLV Global, University of Nevada, Las Vegas — Aug 2025 – May 2026</p>
-<ul>
-  <li>Develop expertise in compliance processes and intercultural communication while supporting international students.</li>
-  <li>Manage data entry, records, and correspondence to ensure accuracy and adherence to university policies.</li>
-  <li>Assist students with inquiries and route them to appropriate resources and offices.</li>
-  <li>Support events, scheduling, and daily operations to keep office workflows smooth.</li>
-  <li>Contribute to a compliance-focused, multicultural environment requiring professionalism and confidentiality.</li>
-</ul>
+    const langKey = 'aa-lang';
+    const langBtn = document.getElementById('langBtn');
+    function setLang(lang) {
+      const L = (lang === 'ar') ? 'ar' : 'en';
+      document.documentElement.lang = L;
+      document.documentElement.dir = (L === 'ar') ? 'rtl' : 'ltr';
+      for (const el of document.querySelectorAll('[data-i18n]')) {
+        const key = el.getAttribute('data-i18n');
+        const val = i18n[L][key];
+        if (val) el.textContent = val;
+      }
+      langBtn.textContent = (L === 'ar') ? 'EN' : 'عربي';
+      localStorage.setItem(langKey, L);
+    }
+    langBtn?.addEventListener('click', () => setLang(document.documentElement.lang === 'ar' ? 'en' : 'ar'));
+    setLang(localStorage.getItem(langKey) || (navigator.language?.startsWith('ar') ? 'ar' : 'en'));
 
-  </div>
+    // === Scroll‑reveal ===
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    }
 
-      <div class="job">
-        <h3>Software Product Design & Development</h3>
-        <p class="job-info">Special Project Manager, UNLV | Jan 2025 - May 2025</p>
-<ul>
-  <li>Led an 11-member team through the full SDLC (requirements → design → implementation) using agile practices.</li>
-  <li>Applied architecture-first principles to design a scalable product aligned with user requirements and constraints.</li>
-  <li>Owned project planning and GitHub workflows (repo organization, PR reviews, sprint planning, stand-ups, retrospectives).</li>
-  <li>Established code quality practices and enforced reviews, unit testing, and CI/CD for reliability and maintainability.</li>
-  <li>Produced UML artifacts (use cases, class and sequence diagrams) to communicate design decisions and interfaces.</li>
-  <li>Strengthened software architecture, leadership, and cross-functional collaboration through iterative delivery.</li>
-</ul>
+    // === Active section highlight ===
+    const links = [...document.querySelectorAll('.nav a[href^="#"]')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = '#' + entry.target.id;
+        const link = links.find(a => a.getAttribute('href') === id);
+        if (link) link.classList.toggle('active', entry.isIntersecting);
+      });
+    }, { rootMargin: '-50% 0px -45% 0px', threshold: 0 });
+    sections.forEach(sec => spy.observe(sec));
 
-      </div>
+    // === Project filters ===
+    const btns = document.querySelectorAll('.filter');
+    btns.forEach(btn => btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.dataset.filter;
+      document.querySelectorAll('.proj').forEach(card => {
+        const tags = (card.dataset.tags || '').split(',');
+        card.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+      });
+    }));
 
-      <div class="job">
-        <h3>Espresso Compiler Implementation</h3>
-        <p class="job-info">
-          Course Project, University of Nevada, Las Vegas | Aug 2024 - Dec 2024
-        </p>
-        <ul>
-  <li>Built a compiler for Espresso (Java subset): lexing, parsing, AST construction, symbol tables, type checking, and code generation.</li>
-  <li>Implemented scanner and parser with JFlex and Java CUP; generated bytecode via Jasmin.</li>
-  <li>Designed intermediate representation and optimized codegen; validated with positive/negative test suites against a reference compiler.</li>
-  <li>Deepened mastery of automata theory, context-free grammars, and language design.</li>
-</ul>
+    // === Lightbox for gallery ===
+    const dlg = document.createElement('dialog');
+    dlg.id = 'lightbox';
+    dlg.innerHTML = '<img class="lightbox-img" alt="" />';
+    document.body.appendChild(dlg);
+    const lbImg = dlg.querySelector('img');
+    document.querySelectorAll('.gallery-grid img').forEach(img => {
+      img.addEventListener('click', () => { lbImg.src = img.src; lbImg.alt = img.alt; dlg.showModal(); });
+    });
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  </script>
 
-      </div>
+  <!-- JSON-LD Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdulrahman Alharbi",
+    "email": "mailto:alhara2@unlv.nevada.edu",
+    "url": "https://your-domain.example/",
+    "image": "images/1.png",
+    "sameAs": [
+      "https://github.com/AbdulAlharbi",
+      "https://www.linkedin.com/in/abdulrahman-alharbi-191837210"
+    ],
+    "alumniOf": [{"@type":"CollegeOrUniversity","name":"University of Nevada, Las Vegas"}],
+    "knowsAbout": ["Cybersecurity", "Artificial Intelligence", "Software Engineering"],
+    "hasOccupation": {"@type":"Occupation","name":"Software/AI Engineer"}
+  }
+  </script>
 
-      <div class="job">
-        <h3>Student Worker</h3>
-        <p class="job-info">
-          Office of International Students and Scholars, UNLV | Jan 2023 - May
-          2023
-        </p>
-<ul>
-  <li>Maintained accurate records and handled front-desk operations with consistent, detail-oriented service.</li>
-  <li>Managed email/phone inquiries and triaged requests to appropriate personnel for timely resolution.</li>
-  <li>Resolved student issues professionally, demonstrating strong communication and problem-solving.</li>
-  <li>Supported planning and execution of office events, ensuring smooth logistics and schedules.</li>
-</ul>
-
-      </div>
-</section>
-
-<!-- EDUCATION -->
-<section class="education" id="education">
-  <h2>Education</h2>
-
-  <div class="education-item">
-    <h3><a href="https://www.unlv.edu/elc/intensive-program" target="_blank" rel="noopener noreferrer">University of Nevada, Las Vegas (UNLV) — English Language Center</a> — Las Vegas, NV, USA (Aug 2025 – Dec 2025)</h3>
-    <p>Intensive English Program — 16-week, full-time academic & professional communication program.</p>
-  </div>
-
-  <div class="education-item">
-    <h3><a href="https://www.unlv.edu" target="_blank" rel="noopener noreferrer">University of Nevada, Las Vegas (UNLV)</a> — Las Vegas, NV, USA (Sep 2022 – May 2025)</h3>
-    <p>BS in Computer Science, Information Assurance (Cybersecurity) Concentration</p>
-  </div>
-
-  <div class="education-item">
-    <h3><a href="https://www.psu.edu.sa/en" target="_blank" rel="noopener noreferrer">Prince Sultan University (PSU)</a> — Riyadh, Saudi Arabia (2020 – 2022)</h3>
-    <p>Completed <strong>34 credit hours</strong> toward B.S. in Information Systems, Cyber Security</p>
-  </div>
-
-  <div class="education-item">
-    <h3><a href="https://carleton.ca" target="_blank" rel="noopener noreferrer">Carleton University</a> — Ottawa, ON, Canada (2019 – 2020)</h3>
-    <p>Completed <strong>27 credit hours</strong> toward B.S. in Information Technology, Optical Systems & Sensors (OSS)</p>
-  </div>
-
-  <div class="education-item">
-    <h3><a href="https://ridgemonths.ocdsb.ca/" target="_blank" rel="noopener noreferrer">Ridgemont High School</a> — Ottawa, ON, Canada (2016 – 2019)</h3>
-    <p>High School Diploma</p>
-  </div>
-</section>
-
-<!-- AWARDS -->
-<section class="awards" id="awards">
-  <h2>Awards & Honors</h2>
-  <ul>
-    <li><strong>SDAIA</strong> — Fundamentals of Artificial Intelligence (Aug 2025)</li>
-    <li><strong>SDAIA</strong> — Artificial Intelligence Concepts & Advanced Applications (Aug 2025)</li>
-    <li>AWS Academy Graduate — AWS Academy Cloud Foundations (Fall 2024)</li>
-    <li>Saudi Arabian Cultural Mission — Elite Students Scholarship (Fall 2019 – Spring 2025)</li>
-    <li>Howard R. Hughes College of Engineering Dean’s List, UNLV (Fall 2022, Fall 2023, Spring 2024, Spring 2025)</li>
-    <li>National Society of Leadership & Success — Nomination (Fall 2023, Fall 2024, Spring 2025)</li>
-    <li>High GPA Award — Ridgemont HS Engineering Electives (Jul 2019)</li>
-  </ul>
-</section>
-
-<!-- SKILLS -->
-<section class="skills" id="skills">
-  <h2>Skills</h2>
-  <div class="skills-lists">
-    <div class="technical">
-      <h3>Technical Skills</h3>
-      <ul>
-        <li><strong>Programming & Development:</strong> Python, Java, C/C++, SQL, JavaScript, HTML/CSS, Git/GitHub</li>
-        <li><strong>Cybersecurity (IA Concentration):</strong> Network Security, Ethical Hacking, Pen Testing, Cryptography</li>
-        <li><strong>AI & Data:</strong> TensorFlow, Scikit-learn, OpenCV</li>
-        <li><strong>Cloud & Systems:</strong> AWS (EC2, S3, Lambda), Linux (Ubuntu, Kali), Windows</li>
-      </ul>
-    </div>
-    <div class="soft-skills">
-      <h3>Soft Skills</h3>
-      <ul>
-        <li>Analytical Problem-Solving • Communication & Teamwork • Leadership • Adaptability • Attention to Detail</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="portfolio" id="projects">
-  <h2>Portfolio</h2>
-
-  <div class="project">
-    <h3>Tic Tac Toe (Python)</h3>
-    <p>Simple GUI game; clean state handling and win-logic.</p>
-    <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/TicTacToePython" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-  </div>
-
-  <div class="project">
-    <h3>Chess (Java)</h3>
-    <p>Rules engine, UI, and basic AI opponent.</p>
-    <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/ChessGameJava" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-  </div>
-
-  <div class="project">
-    <h3>x86 Stacks & Overflow (Assembly)</h3>
-    <p>Low-level stack ops and overflow handling demonstration.</p>
-    <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/StacksOverflowAsm" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-  </div>
-
-  <div class="project">
-    <h3>Bank Account System (C++)</h3>
-    <p>Encapsulation, inheritance, and dynamic binding in practice.</p>
-    <p><a href="https://github.com/AbdulAlharbi/Portfolio/tree/main/BankAccountSystem" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-  </div>
-</section>
-
-<!-- ICON GRID (kept, with proper alts) -->
-<section id="skills-section" aria-label="Additional Skills Logos">
-  <div class="container mt-4">
-    <h2 style="text-align:center;margin-bottom:60px;font-size:30px;font-weight:600;">Additional Skills</h2>
-    <div class="row g-5">
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="logo-container text-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML5 logo" />
-          <p>Semantic HTML for accessible, structured content.</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="logo-container text-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="CSS3 logo" />
-          <p>Responsive layouts with Flexbox and Grid.</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="logo-container text-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg" alt="Bootstrap logo" />
-          <p>Bootstrap components and grid for rapid UI.</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="logo-container text-center">
-          <img src="https://wildcardcorp.com/image-repository/javascript-icon.png/@@images/image.png" alt="JavaScript logo" />
-          <p>Interactive, dynamic behavior with vanilla JS.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p style="margin-top: 1rem;">
-    <a href="snake.html" target="_blank" rel="noopener noreferrer">Play My Snake Game</a> |
-    <a href="pomodoro.html" target="_blank" rel="noopener noreferrer">My Pomodoro Timer</a>
-  </p>
-  <p>&copy; 2025. Created by Abdulrahman Alharbi</p>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+  <!-- Bootstrap bundle (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
-
