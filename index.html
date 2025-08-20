@@ -471,41 +471,41 @@
     });
 
     // === i18n (EN/AR) ===
-    const i18n = {
-      en: {
-        nav_about: 'About', nav_experience: 'Experience', nav_education: 'Education', nav_projects: 'Projects', nav_gallery: 'Gallery', nav_resume: 'Resume',
-        hero_name: 'Abdulrahman Alharbi', hero_sub: 'CS Graduate · AI & Cybersecurity · UNLV Global Student Worker', hero_chip1: 'Compiler & static analysis foundations', hero_chip2: 'Agile leadership (11‑person team)', hero_chip3: 'AWS & Linux',
-        about_title: 'About me', about_body: 'Computer Science graduate focused on software engineering, cybersecurity, and AI. Organized, dependable, and hands‑on with experience leading projects, building a compiler, and supporting international students at UNLV Global. I like clear problems, tight teams, and shipping reliable work.',
-        exp_title: 'Work Experience', edu_title: 'Education', awards_title: 'Awards & Honors', skills_title: 'Skills', skills_tech: 'Technical', skills_core: 'Core', projects_title: 'Projects',
-        filter_all: 'All', filter_ai: 'AI', filter_sec: 'Security', filter_sys: 'Systems',
-        gallery_title: 'Gallery', logos_title: 'Additional Skills', contact_title: 'Contact'
-      },
-      ar: {
-        nav_about: 'نبذة', nav_experience: 'الخبرات', nav_education: 'التعليم', nav_projects: 'المشاريع', nav_gallery: 'الصور', nav_resume: 'السيرة الذاتية',
-        hero_name: 'عبدالرحمن الحربي', hero_sub: 'خريج علوم الحاسوب · الذكاء الاصطناعي والأمن السيبراني · موظف طلابي في UNLV Global', hero_chip1: 'أسس المترجمات والتحليل الساكن', hero_chip2: 'قيادة رشيقة (فريق 11 فردًا)', hero_chip3: 'خدمات AWS و لينكس',
-        about_title: 'نبذة عني', about_body: 'خريج علوم الحاسوب مع تركيز على هندسة البرمجيات والأمن السيبراني والذكاء الاصطناعي. منظم ويمكن الاعتماد عليه وعملي — قُدتُ مشاريع، وبنيتُ مُصرّفًا، ودعمتُ الطلاب الدوليين في UNLV Global. أحب المشاكل الواضحة والعمل ضمن فرق صغيرة وإخراج عمل موثوق.',
-        exp_title: 'الخبرات العملية', edu_title: 'التعليم', awards_title: 'الجوائز والتكريم', skills_title: 'المهارات', skills_tech: 'تقنية', skills_core: 'أساسية', projects_title: 'المشاريع',
-        filter_all: 'الكل', filter_ai: 'ذكاء اصطناعي', filter_sec: 'أمن', filter_sys: 'أنظمة',
-        gallery_title: 'معرض الصور', logos_title: 'مهارات إضافية', contact_title: 'تواصل'
-      }
-    };
+    // const i18n = {
+    //   en: {
+    //     nav_about: 'About', nav_experience: 'Experience', nav_education: 'Education', nav_projects: 'Projects', nav_gallery: 'Gallery', nav_resume: 'Resume',
+    //     hero_name: 'Abdulrahman Alharbi', hero_sub: 'CS Graduate · AI & Cybersecurity · UNLV Global Student Worker', hero_chip1: 'Compiler & static analysis foundations', hero_chip2: 'Agile leadership (11‑person team)', hero_chip3: 'AWS & Linux',
+    //     about_title: 'About me', about_body: 'Computer Science graduate focused on software engineering, cybersecurity, and AI. Organized, dependable, and hands‑on with experience leading projects, building a compiler, and supporting international students at UNLV Global. I like clear problems, tight teams, and shipping reliable work.',
+    //     exp_title: 'Work Experience', edu_title: 'Education', awards_title: 'Awards & Honors', skills_title: 'Skills', skills_tech: 'Technical', skills_core: 'Core', projects_title: 'Projects',
+    //     filter_all: 'All', filter_ai: 'AI', filter_sec: 'Security', filter_sys: 'Systems',
+    //     gallery_title: 'Gallery', logos_title: 'Additional Skills', contact_title: 'Contact'
+    //   },
+    //   ar: {
+    //     nav_about: 'نبذة', nav_experience: 'الخبرات', nav_education: 'التعليم', nav_projects: 'المشاريع', nav_gallery: 'الصور', nav_resume: 'السيرة الذاتية',
+    //     hero_name: 'عبدالرحمن الحربي', hero_sub: 'خريج علوم الحاسوب · الذكاء الاصطناعي والأمن السيبراني · موظف طلابي في UNLV Global', hero_chip1: 'أسس المترجمات والتحليل الساكن', hero_chip2: 'قيادة رشيقة (فريق 11 فردًا)', hero_chip3: 'خدمات AWS و لينكس',
+    //     about_title: 'نبذة عني', about_body: 'خريج علوم الحاسوب مع تركيز على هندسة البرمجيات والأمن السيبراني والذكاء الاصطناعي. منظم ويمكن الاعتماد عليه وعملي — قُدتُ مشاريع، وبنيتُ مُصرّفًا، ودعمتُ الطلاب الدوليين في UNLV Global. أحب المشاكل الواضحة والعمل ضمن فرق صغيرة وإخراج عمل موثوق.',
+    //     exp_title: 'الخبرات العملية', edu_title: 'التعليم', awards_title: 'الجوائز والتكريم', skills_title: 'المهارات', skills_tech: 'تقنية', skills_core: 'أساسية', projects_title: 'المشاريع',
+    //     filter_all: 'الكل', filter_ai: 'ذكاء اصطناعي', filter_sec: 'أمن', filter_sys: 'أنظمة',
+    //     gallery_title: 'معرض الصور', logos_title: 'مهارات إضافية', contact_title: 'تواصل'
+    //   }
+    // };
 
-    const langKey = 'aa-lang';
-    const langBtn = document.getElementById('langBtn');
-    function setLang(lang) {
-      const L = (lang === 'ar') ? 'ar' : 'en';
-      document.documentElement.lang = L;
-      document.documentElement.dir = (L === 'ar') ? 'rtl' : 'ltr';
-      for (const el of document.querySelectorAll('[data-i18n]')) {
-        const key = el.getAttribute('data-i18n');
-        const val = i18n[L][key];
-        if (val) el.textContent = val;
-      }
-      langBtn.textContent = (L === 'ar') ? 'EN' : 'عربي';
-      localStorage.setItem(langKey, L);
-    }
-    langBtn?.addEventListener('click', () => setLang(document.documentElement.lang === 'ar' ? 'en' : 'ar'));
-    setLang(localStorage.getItem(langKey) || (navigator.language?.startsWith('ar') ? 'ar' : 'en'));
+    // const langKey = 'aa-lang';
+    // const langBtn = document.getElementById('langBtn');
+    // function setLang(lang) {
+    //   const L = (lang === 'ar') ? 'ar' : 'en';
+    //   document.documentElement.lang = L;
+    //   document.documentElement.dir = (L === 'ar') ? 'rtl' : 'ltr';
+    //   for (const el of document.querySelectorAll('[data-i18n]')) {
+    //     const key = el.getAttribute('data-i18n');
+    //     const val = i18n[L][key];
+    //     if (val) el.textContent = val;
+    //   }
+    //   langBtn.textContent = (L === 'ar') ? 'EN' : 'عربي';
+    //   localStorage.setItem(langKey, L);
+    // }
+    // langBtn?.addEventListener('click', () => setLang(document.documentElement.lang === 'ar' ? 'en' : 'ar'));
+    // setLang(localStorage.getItem(langKey) || (navigator.language?.startsWith('ar') ? 'ar' : 'en'));
 
     // === Scroll‑reveal ===
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
