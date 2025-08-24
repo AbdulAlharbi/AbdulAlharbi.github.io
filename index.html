@@ -219,87 +219,165 @@
       </div>
     </section>
 
-    <!-- ===== EXPERIENCE ===== -->
-    <section id="experience" aria-labelledby="exp-title">
-      <div class="section-card reveal">
-        <h2 id="exp-title" data-i18n="exp_title">Work Experience</h2>
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" aria-labelledby="exp-title">
+  <div class="section-card reveal">
+    <h2 id="exp-title" data-i18n="exp_title">Work Experience</h2>
 
-        <article class="job">
-          <h3>Student Worker</h3>
-          <p class="job-info">UNLV Global, University of Nevada, Las Vegas — Aug 2025 – May 2026</p>
-          <ul>
-            <li>Develop expertise in compliance processes and intercultural communication while supporting international students.</li>
-            <li>Manage data entry, records, and correspondence to ensure accuracy and adherence to university policies.</li>
-            <li>Assist students with inquiries and route them to appropriate resources and offices.</li>
-            <li>Support events, scheduling, and daily operations to keep office workflows smooth.</li>
-            <li>Contribute to a compliance‑focused, multicultural environment requiring professionalism and confidentiality.</li>
-          </ul>
-        </article>
+    <!-- Current GA (auto-updating dates) -->
+    <article class="job">
+      <h3>Graduate Assistant — Digital Enablement (IT)</h3>
+      <p class="job-info">
+        University of Nevada, Las Vegas —
+        <span class="date-range" data-start="2025-08" data-end="present"></span>
+        <noscript>Aug 2025 – Present</noscript>
+      </p>
+      <ul>
+        <li>Support enterprise platforms: <strong>MyUNLV</strong>, <strong>Salesforce CRM</strong>, <strong>SAS operational reporting</strong>, and integration tools.</li>
+        <li>Design, develop, test, and deploy apps & integrations that streamline university business processes.</li>
+        <li>Build/evaluate POCs for new technologies and integration strategies; document technical designs and user guides.</li>
+        <li>Deliver solutions with an emphasis on <strong>secure workflows</strong> and policy compliance.</li>
+      </ul>
+    </article>
 
-        <article class="job">
-          <h3>Software Product Design & Development</h3>
-          <p class="job-info">Special Project Manager, UNLV — Jan 2025 – May 2025</p>
-          <ul>
-            <li>Led an 11‑member team across the SDLC using agile practices; owned GitHub workflows and CI/CD.</li>
-            <li>Applied architecture‑first principles; produced UML artifacts to communicate design decisions.</li>
-            <li>Established code quality practices, reviews, unit testing for reliability and maintainability.</li>
-          </ul>
-        </article>
+    <article class="job">
+      <h3>Software Product Design &amp; Development</h3>
+      <p class="job-info">Special Project Manager, UNLV — <span class="date-range" data-start="2025-01" data-end="2025-05"></span><noscript>Jan 2025 – May 2025</noscript></p>
+      <ul>
+        <li>Led an 11-member team across the SDLC using agile practices; owned GitHub workflows and CI/CD.</li>
+        <li>Applied architecture-first principles; produced UML artifacts to communicate design decisions.</li>
+        <li>Established code quality practices, reviews, and unit testing for reliability and maintainability.</li>
+      </ul>
+    </article>
 
-        <article class="job">
-          <h3>Espresso Compiler Implementation</h3>
-          <p class="job-info">Course Project, UNLV — Aug 2024 – Dec 2024</p>
-          <ul>
-            <li>Built a compiler for Espresso (Java subset): lexing, parsing, AST, symbols, types, and bytecode gen (Jasmin).</li>
-            <li>Implemented scanner with JFlex and parser with Java CUP; validated via positive/negative suites.</li>
-          </ul>
-        </article>
+    <article class="job">
+      <h3>Espresso Compiler Implementation</h3>
+      <p class="job-info">Course Project, UNLV — <span class="date-range" data-start="2024-08" data-end="2024-12"></span><noscript>Aug 2024 – Dec 2024</noscript></p>
+      <ul>
+        <li>Built a compiler for Espresso (Java subset): lexing, parsing, AST, symbols, types, and bytecode gen (Jasmin).</li>
+        <li>Implemented scanner with JFlex and parser with Java CUP; validated via positive/negative suites.</li>
+      </ul>
+    </article>
 
-        <article class="job">
-          <h3>Student Worker</h3>
-          <p class="job-info">Office of International Students & Scholars, UNLV — Jan 2023 – May 2023</p>
-          <ul>
-            <li>Front‑desk operations; accurate records and triaging requests for timely resolution.</li>
-            <li>Supported office event logistics and schedules; professional communication with stakeholders.</li>
-          </ul>
-        </article>
+    <article class="job">
+      <h3>Student Worker</h3>
+      <p class="job-info">Office of International Students &amp; Scholars, UNLV — <span class="date-range" data-start="2023-01" data-end="2023-05"></span><noscript>Jan 2023 – May 2023</noscript></p>
+      <ul>
+        <li>Front-desk operations; accurate records and triaging requests for timely resolution.</li>
+        <li>Supported event logistics and schedules; professional communication with stakeholders.</li>
+      </ul>
+    </article>
 
-        <div class="impact" aria-label="Focus areas">
-          <span class="chip">Threat modeling</span>
-          <span class="chip">Secure coding practices</span>
-          <span class="chip">Incident response (academic)</span>
-        </div>
+    <div class="impact" aria-label="Focus areas">
+      <span class="chip">Enterprise integrations</span>
+      <span class="chip">Secure workflows</span>
+      <span class="chip">AI/ML for Cybersecurity</span>
+    </div>
+  </div>
+</section>
+
+<!-- Minimal date formatter (include once, after the section) -->
+<!-- <script>
+  (function () {
+    function fmt(ym) {
+      if (!ym || ym.toLowerCase() === 'present') return 'Present';
+      const [y, m] = ym.split('-').map(x => parseInt(x, 10));
+      const dt = new Date(y, (m || 1) - 1, 1);
+      return dt.toLocaleString(undefined, { month: 'short', year: 'numeric' });
+    }
+    document.querySelectorAll('.date-range').forEach(el => {
+      const start = el.getAttribute('data-start');
+      const end = el.getAttribute('data-end');
+      el.textContent = `${fmt(start)} \u2013 ${fmt(end)}`;
+    });
+  })();
+</script> -->
+
+<!-- ===== EDUCATION ===== -->
+<section id="education" aria-labelledby="edu-title">
+  <div class="section-card reveal">
+    <h2 id="edu-title" data-i18n="edu_title">Education</h2>
+
+    <div class="edu-grid">
+      <!-- Current MS -->
+      <div class="edu-item">
+        <h3>
+          <a href="https://www.unlv.edu" target="_blank" rel="noopener">
+            University of Nevada, Las Vegas (UNLV)
+          </a> · Las Vegas, NV
+          (<span class="date-range" data-start="2025-08" data-end="present"></span>
+          <noscript>Aug 2025 – Present</noscript>)
+        </h3>
+        <p>Master of Science in Computer Science — Focus: Artificial Intelligence &amp; Cybersecurity.</p>
       </div>
-    </section>
 
-    <!-- ===== EDUCATION ===== -->
-    <section id="education" aria-labelledby="edu-title">
-      <div class="section-card reveal">
-        <h2 id="edu-title" data-i18n="edu_title">Education</h2>
-        <div class="edu-grid">
-          <div class="edu-item">
-            <h3><a href="https://www.unlv.edu/elc/intensive-program" target="_blank" rel="noopener">UNLV — English Language Center</a> · Las Vegas, NV (Aug 2025 – Dec 2025)</h3>
-            <p>Intensive English Program — 16‑week academic & professional communication program.</p>
-          </div>
-          <div class="edu-item">
-            <h3><a href="https://www.unlv.edu" target="_blank" rel="noopener">University of Nevada, Las Vegas (UNLV)</a> · Las Vegas, NV (Sep 2022 – May 2025)</h3>
-            <p>BS in Computer Science, Information Assurance (Cybersecurity) Concentration.</p>
-          </div>
-          <div class="edu-item">
-            <h3><a href="https://www.psu.edu.sa/en" target="_blank" rel="noopener">Prince Sultan University (PSU)</a> · Riyadh, Saudi Arabia (2020 – 2022)</h3>
-            <p>Completed 34 credit hours toward B.S. in Information Systems, Cyber Security.</p>
-          </div>
-          <div class="edu-item">
-            <h3><a href="https://carleton.ca" target="_blank" rel="noopener">Carleton University</a> · Ottawa, ON, Canada (2019 – 2020)</h3>
-            <p>Completed 27 credit hours toward B.S. in Information Technology, Optical Systems & Sensors (OSS).</p>
-          </div>
-          <div class="edu-item">
-            <h3><a href="https://ridgemonths.ocdsb.ca/" target="_blank" rel="noopener">Ridgemont High School</a> · Ottawa, ON (2016 – 2019)</h3>
-            <p>High School Diploma.</p>
-          </div>
-        </div>
+      <!-- UNLV BS -->
+      <div class="edu-item">
+        <h3>
+          <a href="https://www.unlv.edu" target="_blank" rel="noopener">
+            University of Nevada, Las Vegas (UNLV)
+          </a> · Las Vegas, NV
+          (<span class="date-range" data-start="2022-09" data-end="2025-05"></span>
+          <noscript>Sep 2022 – May 2025</noscript>)
+        </h3>
+        <p>BS in Computer Science — Information Assurance (Cybersecurity) Concentration.</p>
       </div>
-    </section>
+
+      <!-- PSU -->
+      <div class="edu-item">
+        <h3>
+          <a href="https://www.psu.edu.sa/en" target="_blank" rel="noopener">
+            Prince Sultan University (PSU)
+          </a> · Riyadh, Saudi Arabia
+          (<span class="date-range" data-start="2020-09" data-end="2022-05"></span>
+          <noscript>Sep 2020 – May 2022</noscript>)
+        </h3>
+        <p>Completed 34 credits toward B.S. in Information Systems, Cyber Security.</p>
+      </div>
+
+      <!-- Carleton -->
+      <div class="edu-item">
+        <h3>
+          <a href="https://carleton.ca" target="_blank" rel="noopener">
+            Carleton University
+          </a> · Ottawa, ON, Canada
+          (<span class="date-range" data-start="2019-09" data-end="2020-08"></span>
+          <noscript>Sep 2019 – Aug 2020</noscript>)
+        </h3>
+        <p>Completed 27 credits toward B.S. in Information Technology — Optical Systems &amp; Sensors.</p>
+      </div>
+
+      <!-- High School -->
+      <div class="edu-item">
+        <h3>
+          <a href="https://ridgemonths.ocdsb.ca/" target="_blank" rel="noopener">
+            Ridgemont High School
+          </a> · Ottawa, ON, Canada
+          (<span class="date-range" data-start="2016-09" data-end="2019-07"></span>
+          <noscript>Sep 2016 – Jul 2019</noscript>)
+        </h3>
+        <p>High School Diploma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Minimal date formatter (include once, after the section) -->
+<script>
+  (function () {
+    function fmt(ym) {
+      if (!ym || ym.toLowerCase() === 'present') return 'Present';
+      const [y, m] = ym.split('-').map(x => parseInt(x, 10));
+      const dt = new Date(y, (m || 1) - 1, 1);
+      return dt.toLocaleString(undefined, { month: 'short', year: 'numeric' });
+    }
+    document.querySelectorAll('.date-range').forEach(el => {
+      const start = el.getAttribute('data-start');
+      const end = el.getAttribute('data-end');
+      el.textContent = `${fmt(start)} \u2013 ${fmt(end)}`;
+    });
+  })();
+</script>
+
 
     <!-- ===== AWARDS ===== -->
     <section id="awards">
