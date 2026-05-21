@@ -1,0 +1,138 @@
+/* Basic reset and typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #006666 0%, #004F4F 100%);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styling */
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer p {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Main container */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Timer container */
+.timer-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin-bottom: 2rem;
+}
+
+/* Progress ring background */
+.progress-ring__background {
+  stroke: rgba(255, 255, 255, 0.25);
+}
+
+/* Progress ring circle */
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Time display (in the center) */
+.time-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Control buttons */
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  color: #fff;
+  background-color: #ff6b6b;
+}
+
+.btn:hover {
+  background-color: #ff4a4a;
+}
+
+.primary {
+  background-color: #4ecdc4 !important;
+}
+
+.primary:hover {
+  background-color: #3bc2b9 !important;
+}
+
+/* Session controls */
+.session-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.session-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.session-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.session-btn.active {
+  background-color: #fed766;
+  color: #333;
+}
