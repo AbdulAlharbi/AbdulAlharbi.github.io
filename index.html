@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Abdulrahman Alharbi — AI &amp; Cybersecurity</title>
-  <meta name="description" content="Saudi computer scientist — M.S. in AI &amp; Cybersecurity at UNLV. Thesis on machine-learning detection of APT beaconing in encrypted network traffic. Mobile software engineer in test." />
+  <meta name="description"
+    content="Saudi computer scientist — M.S. in AI &amp; Cybersecurity at UNLV. Thesis on machine-learning detection of APT beaconing in encrypted network traffic. Mobile software engineer in test." />
   <meta name="theme-color" content="#f6f3ec" />
   <link rel="canonical" href="https://abdulalharbi.github.io/" />
   <meta name="robots" content="index,follow" />
@@ -17,7 +19,9 @@
   <!-- Fonts: Fraunces (editorial display serif), IBM Plex Sans (body), IBM Plex Mono (meta) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
   <style>
     /* =====================================================
@@ -25,38 +29,57 @@
     ===================================================== */
     :root {
       /* Palette — warm cream paper with deep ink and burnished gold */
-      --bg:        #f6f3ec;
+      --bg: #f6f3ec;
       --bg-raised: #fffcf4;
       --bg-sunken: #ede8dc;
-      --ink:       #141210;
-      --ink-dim:   #5a544c;
+      --ink: #141210;
+      --ink-dim: #5a544c;
       --ink-faint: #a29b90;
-      --rule:      rgba(20, 18, 16, 0.12);
-      --rule-hi:   rgba(20, 18, 16, 0.22);
-      --accent:    #996200;
+      --rule: rgba(20, 18, 16, 0.12);
+      --rule-hi: rgba(20, 18, 16, 0.22);
+      --accent: #996200;
       --accent-hi: #7a4e00;
-      --accent-dim:rgba(153, 98, 0, 0.10);
+      --accent-dim: rgba(153, 98, 0, 0.10);
       --accent-line: rgba(153, 98, 0, 0.5);
 
       /* Typography */
-      --serif:  'Fraunces', 'Times New Roman', Georgia, serif;
-      --sans:   'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-      --mono:   'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
+      --serif: 'Fraunces', 'Times New Roman', Georgia, serif;
+      --sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      --mono: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
 
       /* Rhythm */
       --measure: 68ch;
-      --col:     720px;
-      --col-wide:980px;
-      --ease:    cubic-bezier(.22, 1, .36, 1);
-      --trans:   0.35s var(--ease);
+      --col: 720px;
+      --col-wide: 980px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --trans: 0.35s var(--ease);
     }
 
     /* =====================================================
        RESET
     ===================================================== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 17px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-    a, button { -webkit-tap-highlight-color: transparent; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     body {
       font-family: var(--sans);
       font-weight: 400;
@@ -67,8 +90,18 @@
       overflow-x: hidden;
     }
 
-    img, svg { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; transition: color var(--trans); }
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--trans);
+    }
+
     :focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
@@ -76,22 +109,35 @@
     }
 
     .skip-link {
-      position: absolute; left: -9999px; top: auto;
-      width: 1px; height: 1px; overflow: hidden;
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
     }
+
     .skip-link:focus {
-      left: 1rem; top: 1rem; width: auto; height: auto;
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
       padding: .55rem .9rem;
-      background: var(--accent); color: var(--bg);
-      border-radius: 3px; z-index: 9999;
-      font-family: var(--mono); font-size: .8rem;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 3px;
+      z-index: 9999;
+      font-family: var(--mono);
+      font-size: .8rem;
     }
 
     /* Subtle paper grain overlay */
     body::before {
       content: '';
-      position: fixed; inset: 0;
-      pointer-events: none; z-index: 1;
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
       mix-blend-mode: overlay;
     }
@@ -99,7 +145,11 @@
     /* =====================================================
        TYPOGRAPHY UTILITIES
     ===================================================== */
-    .serif { font-family: var(--serif); font-optical-sizing: auto; }
+    .serif {
+      font-family: var(--serif);
+      font-optical-sizing: auto;
+    }
+
     .mono-meta {
       font-family: var(--mono);
       font-size: .72rem;
@@ -108,6 +158,7 @@
       text-transform: uppercase;
       color: var(--ink-dim);
     }
+
     .section-index {
       font-family: var(--mono);
       font-size: .68rem;
@@ -119,19 +170,37 @@
     /* =====================================================
        LAYOUT
     ===================================================== */
-    .col      { max-width: var(--col);      margin-left: auto; margin-right: auto; padding: 0 1.5rem; position: relative; z-index: 2; }
-    .col-wide { max-width: var(--col-wide); margin-left: auto; margin-right: auto; padding: 0 1.5rem; position: relative; z-index: 2; }
+    .col {
+      max-width: var(--col);
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .col-wide {
+      max-width: var(--col-wide);
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
 
     /* =====================================================
        NAV
     ===================================================== */
     .nav-wrap {
-      position: sticky; top: 0; z-index: 100;
+      position: sticky;
+      top: 0;
+      z-index: 100;
       background: color-mix(in srgb, var(--bg) 78%, transparent);
       backdrop-filter: blur(20px) saturate(140%);
       -webkit-backdrop-filter: blur(20px) saturate(140%);
       border-bottom: 1px solid var(--rule);
     }
+
     .nav {
       max-width: var(--col-wide);
       margin: 0 auto;
@@ -141,6 +210,7 @@
       justify-content: space-between;
       gap: 1rem;
     }
+
     .nav-brand {
       font-family: var(--serif);
       font-size: 1.05rem;
@@ -149,17 +219,20 @@
       color: var(--ink);
       letter-spacing: .01em;
     }
+
     .nav-brand::before {
       content: '— ';
       color: var(--accent);
       font-style: normal;
     }
+
     .nav-links {
       display: flex;
       align-items: center;
       gap: .25rem;
       list-style: none;
     }
+
     .nav-links a {
       font-family: var(--mono);
       font-size: .72rem;
@@ -169,13 +242,35 @@
       letter-spacing: .06em;
       transition: color var(--trans);
     }
-    .nav-links a:hover { color: var(--ink); }
-    .nav-links a.active { color: var(--accent); }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
     @media (max-width: 720px) {
-      .nav { padding: .85rem 1.1rem; }
-      .nav-links { gap: 0; }
-      .nav-links a { font-size: .65rem; padding: .4rem .5rem; letter-spacing: .04em; }
-      .nav-links li:nth-child(4) { display: none; } /* hide Education on phone; section still reachable via scroll */
+      .nav {
+        padding: .85rem 1.1rem;
+      }
+
+      .nav-links {
+        gap: 0;
+      }
+
+      .nav-links a {
+        font-size: .65rem;
+        padding: .4rem .5rem;
+        letter-spacing: .04em;
+      }
+
+      .nav-links li:nth-child(4) {
+        display: none;
+      }
+
+      /* hide Education on phone; section still reachable via scroll */
     }
 
     /* =====================================================
@@ -185,6 +280,7 @@
       padding: 8rem 1.5rem 5rem;
       position: relative;
     }
+
     .hero-inner {
       max-width: var(--col-wide);
       margin: 0 auto;
@@ -193,10 +289,21 @@
       gap: 4rem;
       align-items: start;
     }
+
     @media (max-width: 900px) {
-      .hero { padding: 4rem 1.5rem 3rem; }
-      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-portrait { order: -1; max-width: 160px; }
+      .hero {
+        padding: 4rem 1.5rem 3rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-portrait {
+        order: -1;
+        max-width: 160px;
+      }
     }
 
     .hero-meta {
@@ -211,17 +318,29 @@
       gap: .6rem;
       flex-wrap: wrap;
     }
+
     .hero-meta .dot {
       display: inline-block;
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--accent);
       box-shadow: 0 0 12px var(--accent);
       animation: pulse 2.4s var(--ease) infinite;
     }
+
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: .55; transform: scale(.85); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .55;
+        transform: scale(.85);
+      }
     }
 
     .hero h1 {
@@ -233,6 +352,7 @@
       margin-bottom: 1.5rem;
       color: var(--ink);
     }
+
     .hero h1 em {
       font-style: italic;
       font-weight: 400;
@@ -248,6 +368,7 @@
       max-width: 58ch;
       margin-bottom: 2.2rem;
     }
+
     .hero-lede em {
       color: var(--ink);
       font-style: italic;
@@ -259,6 +380,7 @@
       gap: .6rem;
       margin-bottom: 2.5rem;
     }
+
     .btn {
       font-family: var(--mono);
       font-size: .72rem;
@@ -273,23 +395,33 @@
       align-items: center;
       gap: .5rem;
     }
+
     .btn:hover {
       border-color: var(--accent);
       color: var(--accent);
       transform: translateY(-1px);
     }
+
     .btn-primary {
       background: var(--accent);
       color: var(--bg);
       border-color: var(--accent);
     }
+
     .btn-primary:hover {
       background: var(--accent-hi);
       border-color: var(--accent-hi);
       color: var(--bg);
     }
-    .btn .arr { display: inline-block; transition: transform var(--trans); }
-    .btn:hover .arr { transform: translateX(3px); }
+
+    .btn .arr {
+      display: inline-block;
+      transition: transform var(--trans);
+    }
+
+    .btn:hover .arr {
+      transform: translateX(3px);
+    }
 
     /* Featured metric strip — the thing that sells the whole page */
     .hero-metric {
@@ -301,11 +433,13 @@
       gap: 1.5rem;
       max-width: 560px;
     }
+
     .hero-metric .m {
       display: flex;
       flex-direction: column;
       gap: .3rem;
     }
+
     .hero-metric .m-value {
       font-family: var(--serif);
       font-size: 1.85rem;
@@ -315,6 +449,7 @@
       letter-spacing: -0.02em;
       font-variant-numeric: tabular-nums;
     }
+
     .hero-metric .m-label {
       font-family: var(--mono);
       font-size: .62rem;
@@ -323,6 +458,7 @@
       text-transform: uppercase;
       line-height: 1.3;
     }
+
     .hero-metric-caption {
       font-family: var(--mono);
       font-size: .65rem;
@@ -331,15 +467,23 @@
       text-transform: uppercase;
       margin-top: .9rem;
     }
+
     @media (max-width: 520px) {
-      .hero-metric { grid-template-columns: 1fr; gap: 1rem; }
-      .hero-metric .m-value { font-size: 1.6rem; }
+      .hero-metric {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .hero-metric .m-value {
+        font-size: 1.6rem;
+      }
     }
 
     .hero-portrait {
       position: relative;
       width: 220px;
     }
+
     .hero-portrait img {
       width: 100%;
       aspect-ratio: 4 / 5;
@@ -348,11 +492,14 @@
       filter: grayscale(0.15) contrast(1.02);
       border: 1px solid var(--rule-hi);
     }
+
     .hero-portrait::after {
       content: '';
       position: absolute;
-      left: -10px; top: -10px;
-      right: 10px; bottom: 10px;
+      left: -10px;
+      top: -10px;
+      right: 10px;
+      bottom: 10px;
       border: 1px solid var(--accent-line);
       pointer-events: none;
       z-index: -1;
@@ -361,8 +508,15 @@
     /* =====================================================
        SECTION COMMON
     ===================================================== */
-    section { padding: 5rem 0; }
-    @media (max-width: 720px) { section { padding: 3.5rem 0; } }
+    section {
+      padding: 5rem 0;
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 3.5rem 0;
+      }
+    }
 
     .sec-head {
       display: flex;
@@ -372,6 +526,7 @@
       padding-bottom: 1rem;
       border-bottom: 1px solid var(--rule);
     }
+
     .sec-head h2 {
       font-family: var(--serif);
       font-size: clamp(1.8rem, 3vw, 2.4rem);
@@ -381,7 +536,10 @@
       color: var(--ink);
       flex: 1;
     }
-    .sec-head .section-index { flex-shrink: 0; }
+
+    .sec-head .section-index {
+      flex-shrink: 0;
+    }
 
     /* =====================================================
        ABOUT
@@ -394,14 +552,22 @@
       color: var(--ink);
       max-width: var(--measure);
     }
-    .about-text p + p { margin-top: 1.2rem; }
-    .about-text em { color: var(--accent); font-style: italic; }
+
+    .about-text p+p {
+      margin-top: 1.2rem;
+    }
+
+    .about-text em {
+      color: var(--accent);
+      font-style: italic;
+    }
 
     .interests {
       margin-top: 2.5rem;
       padding-top: 1.5rem;
       border-top: 1px solid var(--rule);
     }
+
     .interests-label {
       font-family: var(--mono);
       font-size: .7rem;
@@ -410,6 +576,7 @@
       text-transform: uppercase;
       margin-bottom: .9rem;
     }
+
     .interests-list {
       font-family: var(--serif);
       font-size: 1.05rem;
@@ -417,7 +584,10 @@
       color: var(--ink-dim);
       line-height: 1.75;
     }
-    .interests-list span { color: var(--ink); }
+
+    .interests-list span {
+      color: var(--ink);
+    }
 
     /* =====================================================
        RESEARCH (featured + list)
@@ -429,13 +599,17 @@
       position: relative;
       margin-bottom: 3rem;
     }
+
     .featured::before {
       content: '';
       position: absolute;
-      top: 0; left: 0;
-      width: 3px; height: 48px;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 48px;
       background: var(--accent);
     }
+
     .featured-label {
       font-family: var(--mono);
       font-size: .65rem;
@@ -444,6 +618,7 @@
       color: var(--accent);
       margin-bottom: 1.2rem;
     }
+
     .featured h3 {
       font-family: var(--serif);
       font-size: clamp(1.45rem, 2.4vw, 1.9rem);
@@ -455,6 +630,7 @@
       margin-bottom: .8rem;
       max-width: 28ch;
     }
+
     .featured-context {
       font-family: var(--mono);
       font-size: .72rem;
@@ -462,6 +638,7 @@
       letter-spacing: .06em;
       margin-bottom: 1.6rem;
     }
+
     .featured-desc {
       font-size: .98rem;
       line-height: 1.7;
@@ -469,7 +646,11 @@
       max-width: 62ch;
       margin-bottom: 2rem;
     }
-    .featured-desc strong { color: var(--ink); font-weight: 500; }
+
+    .featured-desc strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
 
     .featured-metrics {
       display: grid;
@@ -480,16 +661,29 @@
       border-bottom: 1px solid var(--rule);
       margin-bottom: 1.8rem;
     }
+
     @media (max-width: 620px) {
-      .featured-metrics { grid-template-columns: 1fr; gap: 1.2rem; }
-      .featured { padding: 1.5rem; }
-      .featured h3 { font-size: 1.35rem; max-width: none; }
+      .featured-metrics {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .featured {
+        padding: 1.5rem;
+      }
+
+      .featured h3 {
+        font-size: 1.35rem;
+        max-width: none;
+      }
     }
+
     .fm {
       display: flex;
       flex-direction: column;
       gap: .4rem;
     }
+
     .fm-value {
       font-family: var(--serif);
       font-size: clamp(2rem, 4vw, 2.8rem);
@@ -499,6 +693,7 @@
       letter-spacing: -0.02em;
       font-variant-numeric: tabular-nums;
     }
+
     .fm-label {
       font-family: var(--mono);
       font-size: .65rem;
@@ -506,6 +701,7 @@
       letter-spacing: .08em;
       text-transform: uppercase;
     }
+
     .fm-sub {
       font-family: var(--mono);
       font-size: .6rem;
@@ -518,6 +714,7 @@
       flex-wrap: wrap;
       gap: .5rem;
     }
+
     .tag {
       font-family: var(--mono);
       font-size: .68rem;
@@ -528,7 +725,11 @@
       letter-spacing: .03em;
       transition: all var(--trans);
     }
-    .tag:hover { border-color: var(--accent-line); color: var(--ink); }
+
+    .tag:hover {
+      border-color: var(--accent-line);
+      color: var(--ink);
+    }
 
     /* Inline link inside featured/research blocks */
     .link-inline {
@@ -536,13 +737,18 @@
       border-bottom: 1px solid var(--accent-line);
       transition: color var(--trans), border-color var(--trans);
     }
-    .link-inline:hover { color: var(--accent-hi); border-color: var(--accent-hi); }
+
+    .link-inline:hover {
+      color: var(--accent-hi);
+      border-color: var(--accent-hi);
+    }
 
     /* Research list */
     .research-list {
       display: flex;
       flex-direction: column;
     }
+
     .research-item {
       padding: 2rem 0;
       border-top: 1px solid var(--rule);
@@ -551,10 +757,18 @@
       gap: 2rem;
       align-items: start;
     }
-    .research-item:last-child { border-bottom: 1px solid var(--rule); }
-    @media (max-width: 720px) {
-      .research-item { grid-template-columns: 1fr; gap: .8rem; }
+
+    .research-item:last-child {
+      border-bottom: 1px solid var(--rule);
     }
+
+    @media (max-width: 720px) {
+      .research-item {
+        grid-template-columns: 1fr;
+        gap: .8rem;
+      }
+    }
+
     .research-num {
       font-family: var(--mono);
       font-size: .75rem;
@@ -563,6 +777,7 @@
       padding-top: .35rem;
       min-width: 3ch;
     }
+
     .research-body h3 {
       font-family: var(--serif);
       font-size: 1.3rem;
@@ -573,6 +788,7 @@
       line-height: 1.3;
       letter-spacing: -0.005em;
     }
+
     .research-meta {
       font-family: var(--mono);
       font-size: .7rem;
@@ -580,6 +796,7 @@
       letter-spacing: .05em;
       margin-bottom: .9rem;
     }
+
     .research-desc {
       font-size: .95rem;
       line-height: 1.65;
@@ -587,8 +804,16 @@
       max-width: 62ch;
       margin-bottom: 1rem;
     }
-    .research-desc strong { color: var(--ink); font-weight: 500; }
-    .research-body .featured-tags .tag { font-size: .64rem; padding: .28rem .6rem; }
+
+    .research-desc strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .research-body .featured-tags .tag {
+      font-size: .64rem;
+      padding: .28rem .6rem;
+    }
 
     /* =====================================================
        EXPERIENCE
@@ -600,15 +825,20 @@
       grid-template-columns: 10rem 1fr;
       gap: 2rem;
     }
-    .job:last-child { border-bottom: 1px solid var(--rule); }
+
+    .job:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
 
     /* Job variant: with image to the right of bullets */
     .job--has-image {
       grid-template-columns: 10rem 1fr 14rem;
     }
+
     .job-image {
       margin-top: .35rem;
     }
+
     .job-image img {
       width: 100%;
       height: auto;
@@ -621,8 +851,12 @@
     }
 
     @media (max-width: 720px) {
-      .job { grid-template-columns: 1fr; gap: .6rem; }
+      .job {
+        grid-template-columns: 1fr;
+        gap: .6rem;
+      }
     }
+
     .job-date {
       font-family: var(--mono);
       font-size: .7rem;
@@ -630,6 +864,7 @@
       letter-spacing: .06em;
       padding-top: .35rem;
     }
+
     .job-body h3 {
       font-family: var(--serif);
       font-size: 1.3rem;
@@ -639,6 +874,7 @@
       line-height: 1.3;
       margin-bottom: .3rem;
     }
+
     .job-org {
       font-family: var(--mono);
       font-size: .72rem;
@@ -646,12 +882,14 @@
       letter-spacing: .04em;
       margin-bottom: 1rem;
     }
+
     .job-body ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: .6rem;
     }
+
     .job-body li {
       font-size: .93rem;
       line-height: 1.65;
@@ -660,14 +898,21 @@
       position: relative;
       max-width: 62ch;
     }
+
     .job-body li::before {
       content: '';
       position: absolute;
-      left: 0; top: .7em;
-      width: 8px; height: 1px;
+      left: 0;
+      top: .7em;
+      width: 8px;
+      height: 1px;
       background: var(--accent);
     }
-    .job-body li strong { color: var(--ink); font-weight: 500; }
+
+    .job-body li strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
 
     /* =====================================================
        EDUCATION
@@ -676,6 +921,7 @@
       display: flex;
       flex-direction: column;
     }
+
     .edu-item {
       padding: 1.5rem 0;
       border-top: 1px solid var(--rule);
@@ -684,7 +930,11 @@
       gap: 1.5rem;
       align-items: baseline;
     }
-    .edu-item:last-child { border-bottom: 1px solid var(--rule); }
+
+    .edu-item:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
     .edu-main h3 {
       font-family: var(--serif);
       font-size: 1.15rem;
@@ -694,11 +944,13 @@
       margin-bottom: .25rem;
       line-height: 1.3;
     }
+
     .edu-desc {
       font-size: .88rem;
       color: var(--ink-dim);
       line-height: 1.5;
     }
+
     .edu-gpa {
       font-family: var(--mono);
       font-size: .72rem;
@@ -706,6 +958,7 @@
       letter-spacing: .04em;
       margin-top: .2rem;
     }
+
     .edu-date {
       font-family: var(--mono);
       font-size: .7rem;
@@ -714,9 +967,16 @@
       white-space: nowrap;
       text-align: right;
     }
+
     @media (max-width: 560px) {
-      .edu-item { grid-template-columns: 1fr; gap: .3rem; }
-      .edu-date { text-align: left; }
+      .edu-item {
+        grid-template-columns: 1fr;
+        gap: .3rem;
+      }
+
+      .edu-date {
+        text-align: left;
+      }
     }
 
     /* =====================================================
@@ -727,6 +987,7 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1rem;
     }
+
     .cert-card {
       padding: 1.5rem 1.4rem;
       background: var(--bg-raised);
@@ -734,11 +995,13 @@
       border-left: 2px solid var(--accent);
       transition: all var(--trans);
     }
+
     .cert-card:hover {
       border-color: var(--rule-hi);
       border-left-color: var(--accent);
       transform: translateY(-2px);
     }
+
     .cert-issuer {
       font-family: var(--mono);
       font-size: .65rem;
@@ -747,6 +1010,7 @@
       text-transform: uppercase;
       margin-bottom: .5rem;
     }
+
     .cert-card h3 {
       font-family: var(--serif);
       font-size: 1.05rem;
@@ -756,6 +1020,7 @@
       line-height: 1.35;
       margin-bottom: .5rem;
     }
+
     .cert-date {
       font-family: var(--mono);
       font-size: .68rem;
@@ -770,6 +1035,7 @@
       display: flex;
       flex-direction: column;
     }
+
     .skill-row {
       padding: 1.4rem 0;
       border-top: 1px solid var(--rule);
@@ -778,10 +1044,18 @@
       gap: 1.8rem;
       align-items: start;
     }
-    .skill-row:last-child { border-bottom: 1px solid var(--rule); }
-    @media (max-width: 720px) {
-      .skill-row { grid-template-columns: 1fr; gap: .6rem; }
+
+    .skill-row:last-child {
+      border-bottom: 1px solid var(--rule);
     }
+
+    @media (max-width: 720px) {
+      .skill-row {
+        grid-template-columns: 1fr;
+        gap: .6rem;
+      }
+    }
+
     .skill-cat {
       font-family: var(--mono);
       font-size: .7rem;
@@ -790,13 +1064,18 @@
       text-transform: uppercase;
       padding-top: .15rem;
     }
+
     .skill-items {
       font-family: var(--serif);
       font-size: 1.05rem;
       line-height: 1.7;
       color: var(--ink);
     }
-    .skill-items .sep { color: var(--ink-faint); margin: 0 .5rem; }
+
+    .skill-items .sep {
+      color: var(--ink-faint);
+      margin: 0 .5rem;
+    }
 
     /* =====================================================
        HONORS
@@ -805,6 +1084,7 @@
       display: flex;
       flex-direction: column;
     }
+
     .honor {
       padding: 1.1rem 0;
       border-top: 1px solid var(--rule);
@@ -813,14 +1093,23 @@
       gap: 1.5rem;
       align-items: baseline;
     }
-    .honor:last-child { border-bottom: 1px solid var(--rule); }
+
+    .honor:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
     .honor-name {
       font-family: var(--serif);
       font-size: 1rem;
       color: var(--ink);
       font-style: italic;
     }
-    .honor-name strong { font-style: normal; font-weight: 500; }
+
+    .honor-name strong {
+      font-style: normal;
+      font-weight: 500;
+    }
+
     .honor-date {
       font-family: var(--mono);
       font-size: .68rem;
@@ -836,6 +1125,7 @@
       text-align: left;
       padding: 6rem 0 5rem;
     }
+
     .contact h2 {
       font-family: var(--serif);
       font-size: clamp(2.4rem, 5vw, 4rem);
@@ -847,7 +1137,12 @@
       margin-bottom: 1rem;
       max-width: 15ch;
     }
-    .contact h2 em { color: var(--accent); font-style: italic; }
+
+    .contact h2 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
     .contact-sub {
       font-family: var(--serif);
       font-size: 1.15rem;
@@ -856,6 +1151,7 @@
       max-width: 52ch;
       margin-bottom: 2.2rem;
     }
+
     .contact-links {
       display: flex;
       flex-wrap: wrap;
@@ -880,8 +1176,15 @@
       color: var(--ink-faint);
       letter-spacing: .06em;
     }
-    footer .f-right { color: var(--ink-dim); }
-    footer .f-right::before { content: '— '; color: var(--accent); }
+
+    footer .f-right {
+      color: var(--ink-dim);
+    }
+
+    footer .f-right::before {
+      content: '— ';
+      color: var(--accent);
+    }
 
     /* =====================================================
        SCROLL REVEAL
@@ -891,15 +1194,32 @@
       transform: translateY(16px);
       transition: opacity .8s var(--ease), transform .8s var(--ease);
     }
-    .reveal.show { opacity: 1; transform: none; }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -940,11 +1260,12 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:alharbi.ams@outlook.com?subject=Hello%20Abdulrahman">
+            <a class="btn btn-primary" href="#" onclick="showEmail(event)">
               <span>Get in touch</span>
               <span class="arr" aria-hidden="true">→</span>
             </a>
-            <a class="btn" href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank" rel="me noopener">LinkedIn</a>
+            <a class="btn" href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank"
+              rel="me noopener">LinkedIn</a>
           </div>
 
           <!-- Featured thesis metrics — the headline of the whole page -->
@@ -968,7 +1289,8 @@
         </div>
 
         <div class="hero-portrait">
-          <img src="images/6.jpg" width="220" height="275" alt="Portrait of Abdulrahman Alharbi" loading="eager" decoding="async" />
+          <img src="images/6.jpg" width="220" height="275" alt="Portrait of Abdulrahman Alharbi" loading="eager"
+            decoding="async" />
         </div>
       </div>
     </div>
@@ -997,7 +1319,7 @@
             Alongside the degree I worked on the <em>Mobile Team</em> at UNLV's Office of Information
             Technology as a Software Engineer in Test, building end-to-end Detox automation across iOS
             and Android. My research extends into <em>adversarial machine learning</em>, <em>federated
-            learning</em>, and <em>differential privacy</em>, three pillars of secure and trustworthy AI.
+              learning</em>, and <em>differential privacy</em>, three pillars of secure and trustworthy AI.
           </p>
           <p>
             Native Arabic, fluent English. SDAIA-certified in AI fundamentals and advanced applications.
@@ -1031,11 +1353,12 @@
           <p class="featured-context">
             <span>University of Nevada, Las Vegas · 2025 – 2026</span>
             &nbsp;·&nbsp;
-            <a class="link-inline" href="https://oasis.library.unlv.edu/thesesdissertations/" target="_blank" rel="noopener">View on UNLV Repository →</a>
+            <a class="link-inline" href="https://oasis.library.unlv.edu/thesesdissertations/" target="_blank"
+              rel="noopener">View on UNLV Repository →</a>
           </p>
           <p class="featured-desc">
             Malware beaconing to command-and-control infrastructure often creates <strong>periodic
-            callback behavior</strong> in network flow logs, even when payloads are encrypted. This
+              callback behavior</strong> in network flow logs, even when payloads are encrypted. This
             research builds a machine-learning pipeline that ranks suspicious communication units
             for analyst review using only flow timestamps, engineering nine periodicity-based
             features, including inter-arrival time regularity, FFT-based spectral concentration,
@@ -1084,7 +1407,7 @@
               <p class="research-desc">
                 Trained four neural network classifiers across different architectures and data
                 splits to systematically study model robustness. Implemented two <strong>white-box
-                adversarial attacks</strong> beyond FGSM/PGD, then designed defenses including
+                  adversarial attacks</strong> beyond FGSM/PGD, then designed defenses including
                 adversarial training and defensive distillation, measuring attack success,
                 transferability, inference cost, and the robustness–utility trade-off.
               </p>
@@ -1175,9 +1498,13 @@
               <h3>Software Engineer in Test — Mobile Team</h3>
               <p class="job-org">University of Nevada, Las Vegas — Office of Information Technology</p>
               <ul>
-                <li>Built and maintained <strong>end-to-end automated test suites in Detox</strong>, the standard React Native end-to-end testing framework, covering critical user flows across iOS and Android ahead of each release.</li>
-                <li>Validated application functionality and reliability across release cycles, partnering with the development team on debugging and release-readiness assessment.</li>
-                <li>Authored and updated technical documentation for the team's mobile testing infrastructure to support continuity and onboarding within the Mobile Team.</li>
+                <li>Built and maintained <strong>end-to-end automated test suites in Detox</strong>, the standard React
+                  Native end-to-end testing framework, covering critical user flows across iOS and Android ahead of each
+                  release.</li>
+                <li>Validated application functionality and reliability across release cycles, partnering with the
+                  development team on debugging and release-readiness assessment.</li>
+                <li>Authored and updated technical documentation for the team's mobile testing infrastructure to support
+                  continuity and onboarding within the Mobile Team.</li>
               </ul>
             </div>
           </div>
@@ -1188,13 +1515,18 @@
               <h3>Team Lead — Engineering Project</h3>
               <p class="job-org">University of Nevada, Las Vegas</p>
               <ul>
-                <li>Led a software engineering team of more than 10 members in the design and development of a <strong>full-stack tutoring marketplace platform</strong>, enabling instructor onboarding, scheduling, session management, and secure service transactions across a complete end-to-end workflow.</li>
-                <li>Established team engineering practices on a shared GitHub repository, code review, branching, and pull request workflows, and ran agile ceremonies across the semester.</li>
-                <li>Drove architecture-first design decisions with UML modeling, unit testing, and CI/CD, balancing feature velocity against maintainability for a production-grade release.</li>
+                <li>Led a software engineering team of more than 10 members in the design and development of a
+                  <strong>full-stack tutoring marketplace platform</strong>, enabling instructor onboarding, scheduling,
+                  session management, and secure service transactions across a complete end-to-end workflow.</li>
+                <li>Established team engineering practices on a shared GitHub repository, code review, branching, and
+                  pull request workflows, and ran agile ceremonies across the semester.</li>
+                <li>Drove architecture-first design decisions with UML modeling, unit testing, and CI/CD, balancing
+                  feature velocity against maintainability for a production-grade release.</li>
               </ul>
             </div>
             <div class="job-image">
-              <img src="images/4.jpg" alt="Capstone team's tutoring marketplace platform" loading="lazy" decoding="async" />
+              <img src="images/4.jpg" alt="Capstone team's tutoring marketplace platform" loading="lazy"
+                decoding="async" />
             </div>
           </div>
         </div>
@@ -1301,7 +1633,8 @@
             <div class="skill-items">
               Python <span class="sep">·</span> Java <span class="sep">·</span> C / C++
               <span class="sep">·</span> SQL <span class="sep">·</span> JavaScript <span class="sep">·</span> TypeScript
-              <span class="sep">·</span> Git &amp; GitHub <span class="sep">·</span> Agile <span class="sep">·</span> CI/CD
+              <span class="sep">·</span> Git &amp; GitHub <span class="sep">·</span> Agile <span class="sep">·</span>
+              CI/CD
               <span class="sep">·</span> Unit &amp; end-to-end testing (Detox)
             </div>
           </div>
@@ -1358,11 +1691,12 @@
             technology ecosystem.
           </p>
           <div class="contact-links">
-            <a class="btn btn-primary" href="mailto:alharbi.ams@outlook.com?subject=Hello%20Abdulrahman">
+            <a class="btn btn-primary" href="#" onclick="showEmail(event)">
               <span>Get in touch</span>
               <span class="arr" aria-hidden="true">→</span>
             </a>
-            <a class="btn" href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank" rel="me noopener">LinkedIn</a>
+            <a class="btn" href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank"
+              rel="me noopener">LinkedIn</a>
           </div>
         </div>
       </section>
@@ -1420,6 +1754,10 @@
   <script>
     (function () {
       'use strict';
+      window.showEmail = function (event) {
+        event.preventDefault();
+        alert('Email: alharbi.ams@outlook.com');
+      };
 
       /* ---------- Scroll reveal ---------- */
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1449,4 +1787,5 @@
     })();
   </script>
 </body>
+
 </html>
