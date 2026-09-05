@@ -30,8 +30,8 @@ const { hero, name, links, cta } = site;
           <Button href={links.linkedin} target="_blank" rel="me noopener">{cta.secondary}</Button>
         </div>
 
-        <MetricStrip metrics={thesis.data.featured.metrics} variant="hero" labelledBy="hero-metrics-caption" />
-        <p class="hero-metric-caption" id="hero-metrics-caption">{hero.metricsCaption}</p>
+        <MetricStrip metrics={thesis.data.featured.metrics} variant="hero" />
+        <p class="hero-metric-caption">{hero.metricsCaption}</p>
       </div>
 
       <div class="hero-portrait">

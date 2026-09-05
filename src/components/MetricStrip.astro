@@ -16,13 +16,12 @@ type Metric = NonNullable<CollectionEntry<'research'>['data']['featured']>['metr
 interface Props {
   metrics: Metric[];
   variant: 'hero' | 'featured';
-  labelledBy?: string;
 }
 
-const { metrics, variant, labelledBy } = Astro.props;
+const { metrics, variant } = Astro.props;
 ---
 
-<dl class:list={['metrics', `metrics--${variant}`]} aria-labelledby={labelledBy}>
+<dl class:list={['metrics', `metrics--${variant}`]}>
   {metrics.map((m) => (
     <div class="metric">
       <dt class="metric-label">{variant === 'hero' ? (m.shortLabel ?? m.label) : m.label}</dt>

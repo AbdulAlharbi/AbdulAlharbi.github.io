@@ -6,20 +6,20 @@ import Demo from '../layouts/Demo.astro';
 
 <Demo title="Snake Game">
   <h1>Snake Game</h1>
-  <canvas id="gameCanvas" width="400" height="400" aria-label="Snake game board"></canvas>
+  <canvas id="gameCanvas" width="400" height="400">Snake game board (requires JavaScript and a canvas-capable browser).</canvas>
 
   <div class="controls">
     <div class="controls-grid">
-      <button class="arrow-btn btn-up" id="upBtn" aria-label="Up">▲</button>
-      <button class="arrow-btn btn-left" id="leftBtn" aria-label="Left">◀</button>
-      <button class="arrow-btn btn-right" id="rightBtn" aria-label="Right">▶</button>
-      <button class="arrow-btn btn-down" id="downBtn" aria-label="Down">▼</button>
+      <button type="button" class="arrow-btn btn-up" id="upBtn" aria-label="Up">▲</button>
+      <button type="button" class="arrow-btn btn-left" id="leftBtn" aria-label="Left">◀</button>
+      <button type="button" class="arrow-btn btn-right" id="rightBtn" aria-label="Right">▶</button>
+      <button type="button" class="arrow-btn btn-down" id="downBtn" aria-label="Down">▼</button>
     </div>
   </div>
 
   <div id="gameOverOverlay" role="dialog" aria-modal="true" aria-labelledby="gameOverText">
     <h2 id="gameOverText">Game Over Loser!</h2>
-    <button class="play-again-btn" id="playAgainBtn">Play Again</button>
+    <button type="button" class="play-again-btn" id="playAgainBtn">Play Again</button>
   </div>
 
   <script src="../scripts/demos/snake.ts"></script>
