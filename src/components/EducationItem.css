@@ -24,29 +24,29 @@
   font-weight: 500;
   font-style: italic;
   color: var(--ink);
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
   line-height: 1.3;
 }
 
 .edu-desc {
-  font-size: .88rem;
+  font-size: 0.88rem;
   color: var(--ink-dim);
   line-height: 1.5;
 }
 
 .edu-gpa {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: 0.72rem;
   color: var(--accent);
-  letter-spacing: .04em;
-  margin-top: .2rem;
+  letter-spacing: 0.04em;
+  margin-top: 0.2rem;
 }
 
 .edu-date {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: var(--ink-dim);
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   white-space: nowrap;
   text-align: right;
 }
@@ -54,7 +54,7 @@
 @media (max-width: 560px) {
   .edu-item {
     grid-template-columns: 1fr;
-    gap: .3rem;
+    gap: 0.3rem;
   }
 
   .edu-date {

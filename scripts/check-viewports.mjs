@@ -34,7 +34,9 @@ for (const path of PAGES) {
             const r = el.getBoundingClientRect();
             if (r.width === 0 && r.height === 0) continue; // hidden
             if (r.width < minTarget || r.height < minTarget) {
-              small.push(`${el.tagName.toLowerCase()} "${(el.textContent || '').trim().slice(0, 24)}" ${Math.round(r.width)}x${Math.round(r.height)}`);
+              small.push(
+                `${el.tagName.toLowerCase()} "${(el.textContent || '').trim().slice(0, 24)}" ${Math.round(r.width)}x${Math.round(r.height)}`,
+              );
             }
           }
         }

@@ -5,11 +5,11 @@ name:
   short: Alharbi
 
 meta:
-  title: "Abdulrahman Alharbi — AI & Cybersecurity"
-  description: "Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV. Thesis on machine-learning detection of APT beaconing in encrypted network traffic. Mobile software engineer in test."
-  ogDescription: "Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV."
+  title: 'Abdulrahman Alharbi — AI & Cybersecurity'
+  description: 'Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV. Thesis on machine-learning detection of APT beaconing in encrypted network traffic. Mobile software engineer in test.'
+  ogDescription: 'Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV.'
   ogImage: /og.jpg
-  themeColor: "#f6f3ec"
+  themeColor: '#f6f3ec'
 
 links:
   email: alharbi.ams@outlook.com
@@ -20,7 +20,7 @@ cta:
   secondary: LinkedIn
 
 hero:
-  status: "Riyadh, Saudi Arabia · Available 2026"
+  status: 'Riyadh, Saudi Arabia · Available 2026'
   lede: >-
     Saudi computer scientist working at the intersection of <em>artificial intelligence</em>
     and <em>cybersecurity</em> — with research in APT beaconing detection, adversarial machine
@@ -28,7 +28,7 @@ hero:
   portrait:
     src: ../assets/portrait.jpg
     alt: Portrait of Abdulrahman Alharbi
-  metricsCaption: "M.S. Thesis Results — APT C2 Beaconing Detection"
+  metricsCaption: 'M.S. Thesis Results — APT C2 Beaconing Detection'
 
 about:
   paragraphs:
@@ -63,7 +63,7 @@ contact:
     technology ecosystem.
 
 footer:
-  credit: "Designed & built by Abdulrahman"
+  credit: 'Designed & built by Abdulrahman'
   demos:
     - { label: Pomodoro, href: /pomodoro.html }
     - { label: Snake, href: /snake.html }

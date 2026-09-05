@@ -4,7 +4,9 @@
 .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity .8s var(--ease), transform .8s var(--ease);
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
 }
 
 .reveal.show {

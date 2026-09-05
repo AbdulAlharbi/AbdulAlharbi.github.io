@@ -34,7 +34,7 @@
 }
 
 .metrics--hero .metric {
-  gap: .3rem;
+  gap: 0.3rem;
 }
 
 .metrics--hero .metric-value {
@@ -49,9 +49,9 @@
 
 .metrics--hero .metric-label {
   font-family: var(--mono);
-  font-size: .62rem;
+  font-size: 0.62rem;
   color: var(--ink-dim);
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.3;
 }
@@ -74,7 +74,7 @@
 }
 
 .metrics--featured .metric {
-  gap: .4rem;
+  gap: 0.4rem;
 }
 
 .metrics--featured .metric-value {
@@ -89,17 +89,17 @@
 
 .metrics--featured .metric-label {
   font-family: var(--mono);
-  font-size: .65rem;
+  font-size: 0.65rem;
   color: var(--ink);
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .metrics--featured .metric-note {
   font-family: var(--mono);
-  font-size: .6rem;
+  font-size: 0.6rem;
   color: var(--ink-dim);
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
 }
 
 @media (max-width: 620px) {

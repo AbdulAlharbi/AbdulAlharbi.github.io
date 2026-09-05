@@ -22,11 +22,13 @@ const { metrics, variant } = Astro.props;
 ---
 
 <dl class:list={['metrics', `metrics--${variant}`]}>
-  {metrics.map((m) => (
-    <div class="metric">
-      <dt class="metric-label">{variant === 'hero' ? (m.shortLabel ?? m.label) : m.label}</dt>
-      <dd class="metric-value">{m.value}</dd>
-      {variant === 'featured' && m.note && <dd class="metric-note">{m.note}</dd>}
-    </div>
-  ))}
+  {
+    metrics.map((m) => (
+      <div class="metric">
+        <dt class="metric-label">{variant === 'hero' ? (m.shortLabel ?? m.label) : m.label}</dt>
+        <dd class="metric-value">{m.value}</dd>
+        {variant === 'featured' && m.note && <dd class="metric-note">{m.note}</dd>}
+      </div>
+    ))
+  }
 </dl>

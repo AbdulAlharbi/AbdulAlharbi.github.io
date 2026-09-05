@@ -9,7 +9,7 @@
   max-width: var(--measure);
 }
 
-.about-text p+p {
+.about-text p + p {
   margin-top: 1.2rem;
 }
 
@@ -26,11 +26,11 @@
 
 .interests-label {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: var(--accent);
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: .9rem;
+  margin-bottom: 0.9rem;
 }
 
 .interests-list {

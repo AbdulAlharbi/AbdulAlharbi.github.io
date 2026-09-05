@@ -75,10 +75,11 @@ h1 {
 /* GAME OVER OVERLAY */
 #gameOverOverlay {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   color: #0f0;
   display: none; /* hidden by default */
   justify-content: center;

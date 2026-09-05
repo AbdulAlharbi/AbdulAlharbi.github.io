@@ -11,9 +11,9 @@ footer {
   flex-wrap: wrap;
   gap: 1rem;
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: 0.68rem;
   color: var(--ink-dim);
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
 }
 
 footer .f-right {
@@ -27,12 +27,12 @@ footer .f-right::before {
 
 .f-demos {
   display: flex;
-  gap: .6rem;
+  gap: 0.6rem;
 }
 
 .f-demos a {
   color: var(--ink-dim);
-  padding: .2rem 0;
+  padding: 0.2rem 0;
 }
 
 .f-demos a:hover {

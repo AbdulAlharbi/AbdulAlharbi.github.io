@@ -3,7 +3,9 @@
 .link-inline {
   color: var(--accent);
   border-bottom: 1px solid var(--accent-line);
-  transition: color var(--trans), border-color var(--trans);
+  transition:
+    color var(--trans),
+    border-color var(--trans);
 }
 
 .link-inline:hover {

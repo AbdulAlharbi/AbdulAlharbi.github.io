@@ -32,8 +32,8 @@
 
 .honor-date {
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: 0.68rem;
   color: var(--ink-dim);
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
 }

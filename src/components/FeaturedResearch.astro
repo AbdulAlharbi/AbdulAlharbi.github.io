@@ -19,7 +19,9 @@ if (!featured) throw new Error(`Research entry "${entry.id}" has no featured blo
   <div class="featured-label">{featured.label}</div>
   <h3 class="serif">{title}</h3>
   <p class="featured-context">
-    <span>{context} · {period}</span> &nbsp;·&nbsp; <InlineLink href={featured.link.url}>{featured.link.label}</InlineLink>
+    <span>{context} · {period}</span> &nbsp;·&nbsp; <InlineLink href={featured.link.url}
+      >{featured.link.label}</InlineLink
+    >
   </p>
   <p class="featured-desc" set:html={description} />
   <MetricStrip metrics={featured.metrics} variant="featured" />

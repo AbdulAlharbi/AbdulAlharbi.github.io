@@ -1,8 +1,8 @@
 # Work experience, most recent first.
 - id: unlv-oit-sdet
   order: 1
-  role: "Software Engineer in Test — Mobile Team"
-  org: "University of Nevada, Las Vegas — Office of Information Technology"
+  role: 'Software Engineer in Test — Mobile Team'
+  org: 'University of Nevada, Las Vegas — Office of Information Technology'
   dates: { start: Aug 2025, end: May 2026 }
   bullets:
     - >-
@@ -18,7 +18,7 @@
 
 - id: unlv-capstone-lead
   order: 2
-  role: "Team Lead — Engineering Project"
+  role: 'Team Lead — Engineering Project'
   org: University of Nevada, Las Vegas
   dates: { start: Jan 2025, end: May 2025 }
   bullets:

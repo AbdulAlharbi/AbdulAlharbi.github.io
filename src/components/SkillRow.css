@@ -21,17 +21,17 @@
 @media (max-width: 720px) {
   .skill-row {
     grid-template-columns: 1fr;
-    gap: .6rem;
+    gap: 0.6rem;
   }
 }
 
 .skill-cat {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: var(--accent);
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding-top: .15rem;
+  padding-top: 0.15rem;
 }
 
 .skill-items {
@@ -43,5 +43,5 @@
 
 .skill-items .sep {
   color: var(--ink-dim);
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 }

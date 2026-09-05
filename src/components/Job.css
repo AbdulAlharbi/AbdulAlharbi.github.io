@@ -18,7 +18,7 @@
 }
 
 .job-image {
-  margin-top: .35rem;
+  margin-top: 0.35rem;
 }
 
 .job-image img {
@@ -47,16 +47,16 @@
 @media (max-width: 720px) {
   .job {
     grid-template-columns: 1fr;
-    gap: .6rem;
+    gap: 0.6rem;
   }
 }
 
 .job-date {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: var(--ink-dim);
-  letter-spacing: .06em;
-  padding-top: .35rem;
+  letter-spacing: 0.06em;
+  padding-top: 0.35rem;
 }
 
 .job-body h3 {
@@ -66,14 +66,14 @@
   font-style: italic;
   color: var(--ink);
   line-height: 1.3;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
 .job-org {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: 0.72rem;
   color: var(--accent);
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   margin-bottom: 1rem;
 }
 
@@ -81,11 +81,11 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: .6rem;
+  gap: 0.6rem;
 }
 
 .job-body li {
-  font-size: .93rem;
+  font-size: 0.93rem;
   line-height: 1.65;
   color: var(--ink-dim);
   padding-left: 1.3rem;
@@ -97,7 +97,7 @@
   content: '';
   position: absolute;
   left: 0;
-  top: .7em;
+  top: 0.7em;
   width: 8px;
   height: 1px;
   background: var(--accent);

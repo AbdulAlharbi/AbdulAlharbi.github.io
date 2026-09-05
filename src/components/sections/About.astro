@@ -15,9 +15,14 @@ const { about } = await getSite();
   <div class="interests reveal">
     <div class="interests-label">{about.interests.label}</div>
     <p class="interests-list">
-      {about.interests.items.map((item, i) => (
-        <>{i > 0 && ' · '}<span>{item}</span></>
-      ))}
+      {
+        about.interests.items.map((item, i) => (
+          <>
+            {i > 0 && ' · '}
+            <span>{item}</span>
+          </>
+        ))
+      }
     </p>
   </div>
 </Section>

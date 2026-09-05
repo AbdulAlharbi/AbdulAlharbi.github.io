@@ -1,9 +1,9 @@
 # Independent projects, in display order.
 - id: exec-advisor
   order: 1
-  title: "Executive Advisor — Multi-Agent AI Business Analysis"
+  title: 'Executive Advisor — Multi-Agent AI Business Analysis'
   context: Independent Project
-  period: "2026"
+  period: '2026'
   links:
     - { label: Live overview, url: https://abdulalharbi.github.io/exec-advisor/ }
     - { label: Source, url: https://github.com/AbdulAlharbi/exec-advisor }
@@ -23,9 +23,9 @@
 
 - id: soc-autopilot
   order: 2
-  title: "SOC Autopilot — Autonomous Multi-Agent Incident Response"
+  title: 'SOC Autopilot — Autonomous Multi-Agent Incident Response'
   context: Independent Project
-  period: "2026"
+  period: '2026'
   links:
     - { label: Live overview, url: https://abdulalharbi.github.io/soc-autopilot/ }
     - { label: Source, url: https://github.com/AbdulAlharbi/soc-autopilot }
@@ -42,9 +42,9 @@
 
 - id: simple-drive
   order: 3
-  title: "Simple Drive — Pluggable Blob Storage API"
+  title: 'Simple Drive — Pluggable Blob Storage API'
   context: Independent Project
-  period: "2026"
+  period: '2026'
   links:
     - { label: Live overview, url: https://abdulalharbi.github.io/simple-drive/ }
     - { label: Source, url: https://github.com/AbdulAlharbi/simple-drive }
@@ -58,4 +58,4 @@
     config-driven factory, so adding one touches a single class. <strong>34 tests</strong> across unit
     and integration layers, CI on every push, and a Docker Compose setup that runs it against a real
     minio server.
-  tags: [Ruby on Rails, AWS SigV4 (from scratch), Adapter Pattern, "S3 · FTP · SQL", Docker]
+  tags: [Ruby on Rails, AWS SigV4 (from scratch), Adapter Pattern, 'S3 · FTP · SQL', Docker]

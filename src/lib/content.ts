@@ -9,7 +9,9 @@ import { getCollection, getEntry, type CollectionEntry, type CollectionKey } fro
 type OrderedCollection = Exclude<CollectionKey, 'site'>;
 
 /** A collection's entries in display order. */
-export async function getOrdered<C extends OrderedCollection>(name: C): Promise<CollectionEntry<C>[]> {
+export async function getOrdered<C extends OrderedCollection>(
+  name: C,
+): Promise<CollectionEntry<C>[]> {
   const entries = await getCollection(name);
   return entries.sort((a, b) => a.data.order - b.data.order || a.id.localeCompare(b.id));
 }

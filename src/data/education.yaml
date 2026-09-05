@@ -19,7 +19,7 @@
   order: 3
   institution: Prince Sultan University
   location: Riyadh, KSA
-  degree: "B.S. Information Systems — Cyber Security (34 credits completed)"
+  degree: 'B.S. Information Systems — Cyber Security (34 credits completed)'
   dates: { start: Sep 2020, end: May 2022 }
   kind: university
 
@@ -27,7 +27,7 @@
   order: 4
   institution: Carleton University
   location: Ottawa, Canada
-  degree: "B.S. Information Technology — Optical Systems (27 credits completed)"
+  degree: 'B.S. Information Technology — Optical Systems (27 credits completed)'
   dates: { start: Sep 2019, end: Aug 2020 }
   kind: university
 
@@ -36,5 +36,5 @@
   institution: Ridgemont High School
   location: Ottawa, Canada
   degree: High School Diploma
-  dates: { start: "2016", end: "2019" }
+  dates: { start: '2016', end: '2019' }
   kind: school

@@ -13,7 +13,7 @@
   --rule-hi: rgba(20, 18, 16, 0.22);
   --accent: #996200;
   --accent-hi: #7a4e00;
-  --accent-dim: rgba(153, 98, 0, 0.10);
+  --accent-dim: rgba(153, 98, 0, 0.1);
   --accent-line: rgba(153, 98, 0, 0.5);
 
   /* Typography */
@@ -25,7 +25,6 @@
   --measure: 68ch;
   --col: 720px;
   --col-wide: 980px;
-  --ease: cubic-bezier(.22, 1, .36, 1);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --trans: 0.35s var(--ease);
 }
-

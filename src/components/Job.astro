@@ -28,18 +28,20 @@ const { role, org, dates, bullets, image } = Astro.props.job;
       {bullets.map((b) => <li set:html={b} />)}
     </ul>
   </div>
-  {image && (
-    <div class="job-image">
-      <Image
-        src={image.src}
-        alt={image.alt}
-        width={1377}
-        height={744}
-        widths={[459, 918, 1377]}
-        sizes="(max-width: 720px) calc(100vw - 3rem), 238px"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-  )}
+  {
+    image && (
+      <div class="job-image">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={1377}
+          height={744}
+          widths={[459, 918, 1377]}
+          sizes="(max-width: 720px) calc(100vw - 3rem), 238px"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    )
+  }
 </div>

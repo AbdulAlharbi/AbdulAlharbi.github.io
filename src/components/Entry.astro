@@ -27,9 +27,14 @@ const { number, title, context, period, links = [], description, tags } = Astro.
   <div class="entry-body">
     <h3 class="serif">{title}</h3>
     <p class="entry-meta">
-      {context} · {period}{links.map((link, i) => (
-        <>{i === 0 ? ' · ' : '  ·  '}<InlineLink href={link.url}>{link.label}</InlineLink></>
-      ))}
+      {context} · {period}{
+        links.map((link, i) => (
+          <>
+            {i === 0 ? ' · ' : '  ·  '}
+            <InlineLink href={link.url}>{link.label}</InlineLink>
+          </>
+        ))
+      }
     </p>
     <p class="entry-desc" set:html={description} />
     <TagList tags={tags} />

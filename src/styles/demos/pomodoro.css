@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #006666 0%, #004F4F 100%);
+  background: linear-gradient(135deg, #006666 0%, #004f4f 100%);
   color: #333;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ header h1 {
   font-weight: 700;
   font-size: 2rem;
   color: #fff;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer styling */
@@ -124,7 +124,9 @@ main {
   border-radius: 4px;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.2);
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
 }
 
 .session-btn:hover {

@@ -11,9 +11,13 @@ const items = site.sections.filter((s) => s.nav);
   <nav class="nav" aria-label="Primary">
     <a class="nav-brand" href="#top">{site.name.short}</a>
     <ul class="nav-links">
-      {items.map((s) => (
-        <li class:list={{ 'nav-optional': !s.navMobile }}><a href={`#${s.id}`}>{s.title}</a></li>
-      ))}
+      {
+        items.map((s) => (
+          <li class:list={{ 'nav-optional': !s.navMobile }}>
+            <a href={`#${s.id}`}>{s.title}</a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </div>

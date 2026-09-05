@@ -17,6 +17,20 @@ const { primary = false, arrow = false, class: className, ...rest } = Astro.prop
 ---
 
 <a class:list={['btn', { 'btn-primary': primary }, className]} {...rest}>
-  {arrow ? <span><slot /></span> : <slot />}
-  {arrow && <span class="arr" aria-hidden="true">→</span>}
+  {
+    arrow ? (
+      <span>
+        <slot />
+      </span>
+    ) : (
+      <slot />
+    )
+  }
+  {
+    arrow && (
+      <span class="arr" aria-hidden="true">
+        →
+      </span>
+    )
+  }
 </a>

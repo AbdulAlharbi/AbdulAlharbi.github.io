@@ -12,13 +12,15 @@ import { file, glob } from 'astro/loaders';
 
 /** Inline HTML limited to emphasis. Anything else is a schema error. */
 const INLINE_TAGS = ['em', 'strong', 'code'] as const;
-const rich = z.string().refine(
-  (s) =>
-    [...s.matchAll(/<\/?([a-z0-9]+)[^>]*>/gi)].every((m) =>
-      (INLINE_TAGS as readonly string[]).includes(m[1]!.toLowerCase()),
-    ),
-  { message: `Only inline <${INLINE_TAGS.join('>, <')}> tags are allowed` },
-);
+const rich = z
+  .string()
+  .refine(
+    (s) =>
+      [...s.matchAll(/<\/?([a-z0-9]+)[^>]*>/gi)].every((m) =>
+        (INLINE_TAGS as readonly string[]).includes(m[1]!.toLowerCase()),
+      ),
+    { message: `Only inline <${INLINE_TAGS.join('>, <')}> tags are allowed` },
+  );
 
 const url = z.string().url();
 const link = z.object({ label: z.string(), url });
@@ -45,54 +47,54 @@ const site = defineCollection({
   // and fails the build if the file is missing.
   schema: ({ image }) =>
     z.object({
-    name: z.object({ given: z.string(), family: z.string(), short: z.string() }),
-    meta: z.object({
-      title: z.string(),
-      description: z.string(),
-      ogDescription: z.string(),
-      ogImage: z.string(),
-      themeColor: z.string(),
-    }),
-    links: z.object({ email: z.string().email(), linkedin: url }),
-    cta: z.object({ primary: z.string(), secondary: z.string() }),
-    hero: z.object({
-      status: z.string(),
-      lede: rich,
-      portrait: z.object({ src: image(), alt: z.string() }),
-      metricsCaption: z.string(),
-    }),
-    about: z.object({
-      paragraphs: z.array(rich).min(1),
-      interests: z.object({ label: z.string(), items: z.array(z.string()).min(1) }),
-    }),
-    contact: z.object({ heading: rich, sub: z.string() }),
-    footer: z.object({
-      credit: z.string(),
-      /** Standalone demo pages, linked from the footer. */
-      demos: z.array(z.object({ label: z.string(), href: z.string().startsWith('/') })),
-    }),
-    /**
-     * Ordered section registry. Drives the section numbering, the nav, and
-     * the anchor ids, so adding a section is a data change, not a layout one.
-     */
-    sections: z
-      .array(
-        z.object({
-          id: z.string().regex(/^[a-z][a-z0-9-]*$/),
-          title: z.string(),
-          nav: z.boolean().default(false),
-          /** Nav entries the phone-width nav may drop to fit. */
-          navMobile: z.boolean().default(true),
-        }),
-      )
-      .min(1),
-    person: z.object({
-      jobTitle: z.string(),
-      nationality: z.string(),
-      address: z.object({ locality: z.string(), country: z.string() }),
-      knowsAbout: z.array(z.string()),
-      knowsLanguage: z.array(z.string()),
-    }),
+      name: z.object({ given: z.string(), family: z.string(), short: z.string() }),
+      meta: z.object({
+        title: z.string(),
+        description: z.string(),
+        ogDescription: z.string(),
+        ogImage: z.string(),
+        themeColor: z.string(),
+      }),
+      links: z.object({ email: z.string().email(), linkedin: url }),
+      cta: z.object({ primary: z.string(), secondary: z.string() }),
+      hero: z.object({
+        status: z.string(),
+        lede: rich,
+        portrait: z.object({ src: image(), alt: z.string() }),
+        metricsCaption: z.string(),
+      }),
+      about: z.object({
+        paragraphs: z.array(rich).min(1),
+        interests: z.object({ label: z.string(), items: z.array(z.string()).min(1) }),
+      }),
+      contact: z.object({ heading: rich, sub: z.string() }),
+      footer: z.object({
+        credit: z.string(),
+        /** Standalone demo pages, linked from the footer. */
+        demos: z.array(z.object({ label: z.string(), href: z.string().startsWith('/') })),
+      }),
+      /**
+       * Ordered section registry. Drives the section numbering, the nav, and
+       * the anchor ids, so adding a section is a data change, not a layout one.
+       */
+      sections: z
+        .array(
+          z.object({
+            id: z.string().regex(/^[a-z][a-z0-9-]*$/),
+            title: z.string(),
+            nav: z.boolean().default(false),
+            /** Nav entries the phone-width nav may drop to fit. */
+            navMobile: z.boolean().default(true),
+          }),
+        )
+        .min(1),
+      person: z.object({
+        jobTitle: z.string(),
+        nationality: z.string(),
+        address: z.object({ locality: z.string(), country: z.string() }),
+        knowsAbout: z.array(z.string()),
+        knowsLanguage: z.array(z.string()),
+      }),
     }),
 });
 
@@ -166,9 +168,7 @@ const skills = defineCollection({
   schema: z.object({
     ...ordered,
     category: z.string(),
-    items: z
-      .array(z.union([z.string(), z.object({ name: z.string(), level: z.string() })]))
-      .min(1),
+    items: z.array(z.union([z.string(), z.object({ name: z.string(), level: z.string() })])).min(1),
   }),
 });
 

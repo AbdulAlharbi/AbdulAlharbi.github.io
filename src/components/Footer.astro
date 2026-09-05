@@ -11,9 +11,14 @@ const year = new Date().getFullYear();
   <span>© {year} {site.name.given} {site.name.family}</span>
   <nav class="f-demos" aria-label="Demos">
     <span>Demos</span>
-    {site.footer.demos.map((d, i) => (
-      <>{i > 0 && <span aria-hidden="true">·</span>}<a href={d.href}>{d.label}</a></>
-    ))}
+    {
+      site.footer.demos.map((d, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true">·</span>}
+          <a href={d.href}>{d.label}</a>
+        </>
+      ))
+    }
   </nav>
   <span class="f-right">{site.footer.credit}</span>
 </footer>

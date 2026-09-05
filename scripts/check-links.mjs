@@ -12,7 +12,8 @@ import { LinkChecker } from 'linkinator';
 const checker = new LinkChecker();
 const broken = [];
 checker.on('link', (link) => {
-  if (link.state === 'BROKEN') broken.push(`${link.status ?? 'ERR'} ${link.url} (on ${link.parent})`);
+  if (link.state === 'BROKEN')
+    broken.push(`${link.status ?? 'ERR'} ${link.url} (on ${link.parent})`);
 });
 
 const result = await checker.check({
