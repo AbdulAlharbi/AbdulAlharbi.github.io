@@ -1,0 +1,14 @@
+---
+/** Honours, from the honors collection. */
+import Section from '../Section.astro';
+import Honor from '../Honor.astro';
+import { getOrdered } from '../../lib/content';
+
+const honors = await getOrdered('honors');
+---
+
+<Section id="honors">
+  <div class="honors-list reveal">
+    {honors.map((h) => <Honor honor={h.data} />)}
+  </div>
+</Section>

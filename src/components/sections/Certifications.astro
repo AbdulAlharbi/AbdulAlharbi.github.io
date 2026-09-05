@@ -1,0 +1,14 @@
+---
+/** Certifications, from the certifications collection. */
+import Section from '../Section.astro';
+import CertCard from '../CertCard.astro';
+import { getOrdered } from '../../lib/content';
+
+const certs = await getOrdered('certifications');
+---
+
+<Section id="certifications">
+  <div class="cert-grid reveal">
+    {certs.map((c) => <CertCard cert={c.data} />)}
+  </div>
+</Section>

@@ -1,0 +1,17 @@
+---
+/** A certification card: issuer, title, date. */
+import './CertCard.css';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  cert: CollectionEntry<'certifications'>['data'];
+}
+
+const { issuer, title, date } = Astro.props.cert;
+---
+
+<div class="cert-card">
+  <div class="cert-issuer">{issuer}</div>
+  <h3>{title}</h3>
+  <p class="cert-date">{date}</p>
+</div>

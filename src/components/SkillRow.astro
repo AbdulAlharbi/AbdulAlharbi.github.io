@@ -1,0 +1,26 @@
+---
+/**
+ * One skill category and its items, separated by faint middle dots.
+ * Items may be plain strings or { name, level } pairs (languages).
+ */
+import './SkillRow.css';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  row: CollectionEntry<'skills'>['data'];
+}
+
+const { category, items } = Astro.props.row;
+---
+
+<div class="skill-row">
+  <div class="skill-cat">{category}</div>
+  <div class="skill-items">
+    {items.map((item, i) => (
+      <>
+        {i > 0 && <>{' '}<span class="sep">·</span>{' '}</>}
+        {typeof item === 'string' ? item : <>{item.name}{' '}<span class="sep">—</span>{' '}{item.level}</>}
+      </>
+    ))}
+  </div>
+</div>

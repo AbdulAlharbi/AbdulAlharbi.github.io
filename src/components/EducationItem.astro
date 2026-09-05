@@ -1,0 +1,20 @@
+---
+/** One degree or school: institution, programme, optional GPA, dates. */
+import './EducationItem.css';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  item: CollectionEntry<'education'>['data'];
+}
+
+const { institution, location, degree, gpa, dates } = Astro.props.item;
+---
+
+<div class="edu-item">
+  <div class="edu-main">
+    <h3>{institution}{location && ` · ${location}`}</h3>
+    <p class="edu-desc">{degree}</p>
+    {gpa && <p class="edu-gpa">GPA {gpa}</p>}
+  </div>
+  <div class="edu-date">{dates.start} — {dates.end}</div>
+</div>

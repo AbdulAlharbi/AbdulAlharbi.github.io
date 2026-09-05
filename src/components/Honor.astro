@@ -1,0 +1,16 @@
+---
+/** One honour: name, detail, date. */
+import './Honor.css';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  honor: CollectionEntry<'honors'>['data'];
+}
+
+const { name, detail, date } = Astro.props.honor;
+---
+
+<div class="honor">
+  <div class="honor-name"><strong>{name}</strong> — {detail}</div>
+  <div class="honor-date">{date}</div>
+</div>

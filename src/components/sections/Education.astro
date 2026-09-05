@@ -1,0 +1,14 @@
+---
+/** Education history, from the education collection. */
+import Section from '../Section.astro';
+import EducationItem from '../EducationItem.astro';
+import { getOrdered } from '../../lib/content';
+
+const items = await getOrdered('education');
+---
+
+<Section id="education">
+  <div class="edu-list reveal">
+    {items.map((e) => <EducationItem item={e.data} />)}
+  </div>
+</Section>

@@ -1,0 +1,47 @@
+/* SkillRow: one category row, and the list that holds them */
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-row {
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+.skill-row:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (max-width: 720px) {
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: .6rem;
+  }
+}
+
+.skill-cat {
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--accent);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding-top: .15rem;
+}
+
+.skill-items {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.skill-items .sep {
+  color: var(--ink-faint);
+  margin: 0 .5rem;
+}

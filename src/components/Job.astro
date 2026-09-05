@@ -1,0 +1,27 @@
+---
+/** One position: dates, role, organisation, bullet points, optional image. */
+import './Job.css';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  job: CollectionEntry<'experience'>['data'];
+}
+
+const { role, org, dates, bullets, image } = Astro.props.job;
+---
+
+<div class:list={['job', { 'job--has-image': !!image }]}>
+  <div class="job-date">{dates.start} — {dates.end}</div>
+  <div class="job-body">
+    <h3>{role}</h3>
+    <p class="job-org">{org}</p>
+    <ul>
+      {bullets.map((b) => <li set:html={b} />)}
+    </ul>
+  </div>
+  {image && (
+    <div class="job-image">
+      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+    </div>
+  )}
+</div>

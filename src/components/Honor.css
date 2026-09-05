@@ -1,0 +1,39 @@
+/* Honor: one honour row, and the list that holds them */
+
+.honors-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.honor {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+
+.honor:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.honor-name {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.honor-name strong {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.honor-date {
+  font-family: var(--mono);
+  font-size: .68rem;
+  color: var(--ink-dim);
+  letter-spacing: .04em;
+  white-space: nowrap;
+}

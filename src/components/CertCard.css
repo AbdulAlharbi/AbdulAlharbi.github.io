@@ -1,0 +1,47 @@
+/* CertCard: certification card, and the grid that holds them */
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.cert-card {
+  padding: 1.5rem 1.4rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--accent);
+  transition: all var(--trans);
+}
+
+.cert-card:hover {
+  border-color: var(--rule-hi);
+  border-left-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.cert-issuer {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--accent);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.cert-card h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: .5rem;
+}
+
+.cert-date {
+  font-family: var(--mono);
+  font-size: .68rem;
+  color: var(--ink-dim);
+  letter-spacing: .04em;
+}

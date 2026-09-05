@@ -1,0 +1,14 @@
+---
+/** Work experience, from the experience collection. */
+import Section from '../Section.astro';
+import Job from '../Job.astro';
+import { getOrdered } from '../../lib/content';
+
+const jobs = await getOrdered('experience');
+---
+
+<Section id="work">
+  <div class="reveal">
+    {jobs.map((j) => <Job job={j.data} />)}
+  </div>
+</Section>

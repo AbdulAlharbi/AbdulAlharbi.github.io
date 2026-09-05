@@ -1,0 +1,14 @@
+---
+/** Skill categories, from the skills collection. */
+import Section from '../Section.astro';
+import SkillRow from '../SkillRow.astro';
+import { getOrdered } from '../../lib/content';
+
+const rows = await getOrdered('skills');
+---
+
+<Section id="skills">
+  <div class="skills-list reveal">
+    {rows.map((r) => <SkillRow row={r.data} />)}
+  </div>
+</Section>

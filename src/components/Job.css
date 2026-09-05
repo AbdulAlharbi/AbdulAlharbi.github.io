@@ -1,0 +1,97 @@
+/* Job: one position, with the three-column variant when it carries an image */
+
+.job {
+  padding: 2rem 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 2rem;
+}
+
+.job:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Job variant: with image to the right of bullets */
+.job--has-image {
+  grid-template-columns: 10rem 1fr 14rem;
+}
+
+.job-image {
+  margin-top: .35rem;
+}
+
+.job-image img {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 2px;
+  border: 1px solid var(--rule-hi);
+  filter: grayscale(0.08) contrast(1.02);
+}
+
+@media (max-width: 720px) {
+  .job {
+    grid-template-columns: 1fr;
+    gap: .6rem;
+  }
+}
+
+.job-date {
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--ink-dim);
+  letter-spacing: .06em;
+  padding-top: .35rem;
+}
+
+.job-body h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: .3rem;
+}
+
+.job-org {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--accent);
+  letter-spacing: .04em;
+  margin-bottom: 1rem;
+}
+
+.job-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.job-body li {
+  font-size: .93rem;
+  line-height: 1.65;
+  color: var(--ink-dim);
+  padding-left: 1.3rem;
+  position: relative;
+  max-width: 62ch;
+}
+
+.job-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .7em;
+  width: 8px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.job-body li strong {
+  color: var(--ink);
+  font-weight: 500;
+}

@@ -2,13 +2,17 @@
 import Base from '../layouts/Base.astro';
 import PersonJsonLd from '../components/PersonJsonLd.astro';
 import Nav from '../components/Nav.astro';
-import Section from '../components/Section.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/sections/Hero.astro';
 import About from '../components/sections/About.astro';
 import Contact from '../components/sections/Contact.astro';
 import Research from '../components/sections/Research.astro';
 import Projects from '../components/sections/Projects.astro';
+import Work from '../components/sections/Work.astro';
+import Education from '../components/sections/Education.astro';
+import Certifications from '../components/sections/Certifications.astro';
+import Skills from '../components/sections/Skills.astro';
+import Honors from '../components/sections/Honors.astro';
 import { getSite } from '../lib/content';
 
 const site = await getSite();
@@ -31,168 +35,17 @@ const site = await getSite();
 
       <Research />
 
-      <!-- WORK -->
-      <Section id="work">
-
-        <div class="reveal">
-          <div class="job">
-            <div class="job-date">Aug 2025 — May 2026</div>
-            <div class="job-body">
-              <h3>Software Engineer in Test — Mobile Team</h3>
-              <p class="job-org">University of Nevada, Las Vegas — Office of Information Technology</p>
-              <ul>
-                <li>Built and maintained <strong>end-to-end automated test suites in Detox</strong>, the standard React
-                  Native end-to-end testing framework, covering critical user flows across iOS and Android ahead of each
-                  release.</li>
-                <li>Validated application functionality and reliability across release cycles, partnering with the
-                  development team on debugging and release-readiness assessment.</li>
-                <li>Authored and updated technical documentation for the team's mobile testing infrastructure to support
-                  continuity and onboarding within the Mobile Team.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="job job--has-image">
-            <div class="job-date">Jan 2025 — May 2025</div>
-            <div class="job-body">
-              <h3>Team Lead — Engineering Project</h3>
-              <p class="job-org">University of Nevada, Las Vegas</p>
-              <ul>
-                <li>Led a software engineering team of more than 10 members in the design and development of a <strong>full-stack tutoring marketplace platform</strong>, enabling instructor onboarding, scheduling,
-                  session management, and secure service transactions across a complete end-to-end workflow.
-                </li>
-                <li>Established team engineering practices on a shared GitHub repository, code review, branching, and
-                  pull request workflows, and ran agile ceremonies across the semester.</li>
-                <li>Drove architecture-first design decisions with UML modeling, unit testing, and CI/CD, balancing
-                  feature velocity against maintainability for a production-grade release.</li>
-              </ul>
-            </div>
-            <div class="job-image">
-              <img src="images/4.jpg" alt="Capstone team's tutoring marketplace platform" loading="lazy"
-                decoding="async" />
-            </div>
-          </div>
-        </div>
-      </Section>
+      <Work />
 
       <Projects />
 
-      <!-- EDUCATION -->
-      <Section id="education">
+      <Education />
 
-        <div class="edu-list reveal">
-          <div class="edu-item">
-            <div class="edu-main">
-              <h3>University of Nevada, Las Vegas</h3>
-              <p class="edu-desc">M.S. Computer Science</p>
-              <p class="edu-gpa">GPA 3.91 / 4.00</p>
-            </div>
-            <div class="edu-date">Aug 2025 — Aug 2026</div>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <h3>University of Nevada, Las Vegas</h3>
-              <p class="edu-desc">B.S. Computer Science — Information Assurance (Cybersecurity) · Dean's List</p>
-              <p class="edu-gpa">GPA 3.50 / 4.00</p>
-            </div>
-            <div class="edu-date">Sep 2022 — May 2025</div>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <h3>Prince Sultan University · Riyadh, KSA</h3>
-              <p class="edu-desc">B.S. Information Systems — Cyber Security (34 credits completed)</p>
-            </div>
-            <div class="edu-date">Sep 2020 — May 2022</div>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <h3>Carleton University · Ottawa, Canada</h3>
-              <p class="edu-desc">B.S. Information Technology — Optical Systems (27 credits completed)</p>
-            </div>
-            <div class="edu-date">Sep 2019 — Aug 2020</div>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <h3>Ridgemont High School · Ottawa, Canada</h3>
-              <p class="edu-desc">High School Diploma</p>
-            </div>
-            <div class="edu-date">2016 — 2019</div>
-          </div>
-        </div>
-      </Section>
+      <Certifications />
 
-      <!-- CERTIFICATIONS -->
-      <Section id="certifications">
-        <div class="cert-grid reveal">
-          <div class="cert-card">
-            <div class="cert-issuer">Saudi Data &amp; AI Authority</div>
-            <h3>Fundamentals of Artificial Intelligence</h3>
-            <p class="cert-date">August 2025</p>
-          </div>
-          <div class="cert-card">
-            <div class="cert-issuer">Saudi Data &amp; AI Authority</div>
-            <h3>AI Concepts &amp; Advanced Applications</h3>
-            <p class="cert-date">August 2025</p>
-          </div>
-          <div class="cert-card">
-            <div class="cert-issuer">AWS Academy</div>
-            <h3>Cloud Foundations Graduate</h3>
-            <p class="cert-date">2024</p>
-          </div>
-        </div>
-      </Section>
+      <Skills />
 
-      <!-- SKILLS -->
-      <Section id="skills">
-        <div class="skills-list reveal">
-          <div class="skill-row">
-            <div class="skill-cat">Machine Learning &amp; AI</div>
-            <div class="skill-items">
-              PyTorch <span class="sep">·</span> scikit-learn <span class="sep">·</span> TensorFlow <span class="sep">·</span> Adversarial ML <span class="sep">·</span> Federated Learning <span class="sep">·</span> Differential Privacy <span class="sep">·</span> Anomaly Detection <span class="sep">·</span> Feature engineering for time-series &amp; network data
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-cat">Cybersecurity</div>
-            <div class="skill-items">
-              APT &amp; beaconing detection <span class="sep">·</span> Network traffic analysis <span class="sep">·</span> Applied cryptography <span class="sep">·</span> Information assurance
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-cat">Software Engineering</div>
-            <div class="skill-items">
-              Python <span class="sep">·</span> Java <span class="sep">·</span> C / C++ <span class="sep">·</span> SQL <span class="sep">·</span> JavaScript <span class="sep">·</span> TypeScript <span class="sep">·</span> Git &amp; GitHub <span class="sep">·</span> Agile <span class="sep">·</span> CI/CD <span class="sep">·</span> Unit &amp; end-to-end testing (Detox)
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-cat">Cloud &amp; Infrastructure</div>
-            <div class="skill-items">
-              AWS (EC2, S3, Lambda) <span class="sep">·</span> PostgreSQL <span class="sep">·</span> MongoDB <span class="sep">·</span> Linux
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-cat">Languages</div>
-            <div class="skill-items">
-              Arabic <span class="sep">—</span> Native <span class="sep">·</span> English <span class="sep">—</span> Fluent
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <!-- HONORS -->
-      <Section id="honors">
-        <div class="honors-list reveal">
-          <div class="honor">
-            <div class="honor-name"> <strong>Saudi Arabian Cultural Mission</strong> — Full Scholarship
-            </div>
-            <div class="honor-date">2022 — 2025</div>
-          </div>
-          <div class="honor">
-            <div class="honor-name"> <strong>Howard R. Hughes College of Engineering</strong> — Dean's List, UNLV
-            </div>
-            <div class="honor-date">Multiple Semesters</div>
-          </div>
-        </div>
-      </Section>
+      <Honors />
 
       <Contact />
 
