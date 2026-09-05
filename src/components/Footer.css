@@ -38,3 +38,15 @@ footer .f-right::before {
 .f-demos a:hover {
   color: var(--accent);
 }
+
+@media (max-width: 720px) {
+  .f-demos {
+    align-items: center;
+  }
+
+  .f-demos a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

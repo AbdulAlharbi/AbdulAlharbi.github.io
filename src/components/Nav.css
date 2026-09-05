@@ -60,9 +60,17 @@
   color: var(--accent);
 }
 
+/* Phones: keep the bar the same height but give every link a 44px tall
+   hit area (WCAG 2.5.8 asks for 24px; 44px is the touch guideline). */
 @media (max-width: 720px) {
   .nav {
-    padding: .85rem 1.1rem;
+    padding: .5rem 1.1rem;
+  }
+
+  .nav-brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 
   .nav-links {
@@ -70,13 +78,31 @@
   }
 
   .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     font-size: .65rem;
-    padding: .4rem .5rem;
+    padding: 0 .5rem;
     letter-spacing: .04em;
   }
 
   /* Sections marked navMobile: false in site.yaml; still reachable by scrolling. */
   .nav-links li.nav-optional {
     display: none;
+  }
+}
+
+/* Small phones (320px class): tighten the links so all four fit without overflow. */
+@media (max-width: 380px) {
+  .nav {
+    padding-left: .8rem;
+    padding-right: .8rem;
+    gap: .5rem;
+  }
+
+  .nav-links a {
+    font-size: .6rem;
+    padding: 0 .35rem;
+    letter-spacing: .02em;
   }
 }

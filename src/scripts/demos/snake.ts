@@ -13,6 +13,7 @@ const rows = canvas.height / GRID;
 
 const overlay = document.getElementById('gameOverOverlay') as HTMLElement;
 const gameOverText = document.getElementById('gameOverText') as HTMLElement;
+const playAgainBtn = document.getElementById('playAgainBtn') as HTMLButtonElement;
 
 let snake: Point[] = [{ x: 10, y: 10 }];
 let direction: Point = { x: 1, y: 0 };
@@ -71,6 +72,7 @@ function endGame(): void {
   window.clearInterval(gameInterval);
   gameOverText.textContent = `Game Over Loser! Your Score: ${score}`;
   overlay.style.display = 'flex';
+  playAgainBtn.focus();
 }
 
 /** Turn unless it would reverse straight into the body. */
@@ -94,6 +96,6 @@ document.getElementById('leftBtn')!.addEventListener('click', () => steer(KEYS.A
 document.getElementById('upBtn')!.addEventListener('click', () => steer(KEYS.ArrowUp!));
 document.getElementById('rightBtn')!.addEventListener('click', () => steer(KEYS.ArrowRight!));
 document.getElementById('downBtn')!.addEventListener('click', () => steer(KEYS.ArrowDown!));
-document.getElementById('playAgainBtn')!.addEventListener('click', startGame);
+playAgainBtn.addEventListener('click', startGame);
 
 startGame();

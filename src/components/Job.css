@@ -32,6 +32,18 @@
   filter: grayscale(0.08) contrast(1.02);
 }
 
+/* Tablets: two columns, image below the bullets. Three columns only fit above 900px. */
+@media (max-width: 900px) {
+  .job--has-image {
+    grid-template-columns: 10rem 1fr;
+  }
+
+  .job-image {
+    grid-column: 2;
+    max-width: 20rem;
+  }
+}
+
 @media (max-width: 720px) {
   .job {
     grid-template-columns: 1fr;
