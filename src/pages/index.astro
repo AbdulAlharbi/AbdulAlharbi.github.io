@@ -1,0 +1,585 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Abdulrahman Alharbi — AI & Cybersecurity"
+  description="Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV. Thesis on machine-learning detection of APT beaconing in encrypted network traffic. Mobile software engineer in test."
+> <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ==========================================================
+       NAV
+  ========================================================== -->
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Primary"> <a class="nav-brand" href="#top">Alharbi</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ==========================================================
+       HERO
+  ========================================================== -->
+  <header id="top">
+    <div class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="hero-meta"> <span class="dot" aria-hidden="true"></span> <span>Riyadh, Saudi Arabia · Available 2026</span>
+          </p>
+
+          <h1 class="serif">Abdulrahman <em>Alharbi</em>.</h1>
+
+          <p class="hero-lede">
+            Saudi computer scientist working at the intersection of <em>artificial intelligence</em> and <em>cybersecurity</em> — with research in APT beaconing detection, adversarial machine
+            learning, federated learning, and privacy-preserving systems.
+          </p>
+
+          <div class="hero-actions"> <a class="btn btn-primary" href="#" onclick="showEmail(event)"> <span>Get in touch</span> <span class="arr" aria-hidden="true">→</span>
+            </a> <a class="btn" href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank"
+              rel="me noopener">LinkedIn</a>
+          </div>
+
+          <!-- Featured thesis metrics — the headline of the whole page -->
+          <div class="hero-metric" aria-label="Thesis results">
+            <div class="m">
+              <div class="m-value">0.852</div>
+              <div class="m-label">Average Precision</div>
+            </div>
+            <div class="m">
+              <div class="m-value">1.0</div>
+              <div class="m-label">Recall @ 50</div>
+            </div>
+            <div class="m">
+              <div class="m-value">99%</div>
+              <div class="m-label">Workload Reduction</div>
+            </div>
+          </div>
+          <p class="hero-metric-caption">
+            M.S. Thesis Results — APT C2 Beaconing Detection
+          </p>
+        </div>
+
+        <div class="hero-portrait">
+          <img src="images/6.jpg" width="220" height="275" alt="Portrait of Abdulrahman Alharbi" loading="eager"
+            decoding="async" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       MAIN
+  ========================================================== -->
+  <main id="main">
+    <div class="col-wide">
+
+      <!-- ABOUT -->
+      <section id="about" aria-labelledby="about-h">
+        <div class="sec-head reveal">
+          <h2 id="about-h">About</h2> <span class="section-index">§ 01</span>
+        </div>
+        <div class="about-text reveal">
+          <p>
+            Saudi computer scientist with an M.S. in Computer Science from the University of Nevada,
+            Las Vegas, focused on <em>AI and cybersecurity</em>. My thesis builds a machine-learning
+            pipeline that detects advanced persistent threats hiding in encrypted network traffic,
+            turning raw flow timestamps into a ranked shortlist that reduces analyst workload by up to 99%.
+          </p>
+          <p>
+            Alongside the degree I worked on the <em>Mobile Team</em> at UNLV's Office of Information
+            Technology as a Software Engineer in Test, building end-to-end Detox automation across iOS
+            and Android. My research extends into <em>adversarial machine learning</em>, <em>federated
+              learning</em>, and <em>differential privacy</em>, three pillars of secure and trustworthy AI.
+          </p>
+          <p>
+            Native Arabic, fluent English. SDAIA-certified in AI fundamentals and advanced applications.
+            Based in Riyadh.
+          </p>
+        </div>
+
+        <div class="interests reveal">
+          <div class="interests-label">Research Interests</div>
+          <p class="interests-list"> <span>AI for Cybersecurity</span> · <span>Network Traffic Analysis</span> · <span>APT &amp; Beaconing Detection</span> · <span>Adversarial ML</span> · <span>Privacy-Preserving Machine Learning</span> · <span>Secure AI Systems</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- RESEARCH -->
+      <section id="research" aria-labelledby="research-h">
+        <div class="sec-head reveal">
+          <h2 id="research-h">Research</h2> <span class="section-index">§ 02</span>
+        </div>
+
+        <!-- FEATURED: THESIS -->
+        <article class="featured reveal">
+          <div class="featured-label">★ Featured — M.S. Thesis</div>
+          <h3 class="serif">
+            Periodicity-Based Triage of APT Command-and-Control Beaconing in Network Flows Using Machine Learning
+          </h3>
+          <p class="featured-context"> <span>University of Nevada, Las Vegas · 2025 – 2026</span> &nbsp;·&nbsp; <a class="link-inline" href="https://oasis.library.unlv.edu/thesesdissertations/" target="_blank"
+              rel="noopener">View on UNLV Repository →</a>
+          </p>
+          <p class="featured-desc">
+            Malware beaconing to command-and-control infrastructure often creates <strong>periodic
+              callback behavior</strong> in network flow logs, even when payloads are encrypted. This
+            research builds a machine-learning pipeline that ranks suspicious communication units
+            for analyst review using only flow timestamps, engineering nine periodicity-based
+            features, including inter-arrival time regularity, FFT-based spectral concentration,
+            autocorrelation, and sub-window stability, and training a supervised Random Forest
+            ranker on CTU-13 with controlled synthetic beacon injection. The pipeline is validated
+            across five CTU-13 scenarios covering different malware families and C2 styles.
+          </p>
+
+          <div class="featured-metrics">
+            <div class="fm">
+              <div class="fm-value">0.852</div>
+              <div class="fm-label">Average Precision</div>
+              <div class="fm-sub">vs. 0.046 heuristic baseline</div>
+            </div>
+            <div class="fm">
+              <div class="fm-value">1.0</div>
+              <div class="fm-label">Recall @ 50</div>
+              <div class="fm-sub">all channels in top-K shortlist</div>
+            </div>
+            <div class="fm">
+              <div class="fm-value">99%</div>
+              <div class="fm-label">Analyst Workload ↓</div>
+              <div class="fm-sub">candidate units filtered</div>
+            </div>
+          </div>
+
+          <div class="featured-tags"> <span class="tag">Random Forest</span> <span class="tag">FFT</span> <span class="tag">Autocorrelation</span> <span class="tag">CTU-13</span> <span class="tag">NetFlow</span> <span class="tag">Python</span> <span class="tag">scikit-learn</span>
+          </div>
+        </article>
+
+        <!-- OTHER RESEARCH PROJECTS -->
+        <div class="research-list reveal">
+
+          <div class="research-item">
+            <div class="research-num">02</div>
+            <div class="research-body">
+              <h3 class="serif">Adversarial Attacks and Defenses on Deep Learning Models</h3>
+              <p class="research-meta">Private &amp; Secure AI · 2026</p>
+              <p class="research-desc">
+                Trained four neural network classifiers across different architectures and data
+                splits to systematically study model robustness. Implemented two <strong>white-box
+                  adversarial attacks</strong> beyond FGSM/PGD, then designed defenses including
+                adversarial training and defensive distillation, measuring attack success,
+                transferability, inference cost, and the robustness–utility trade-off.
+              </p>
+              <div class="featured-tags"> <span class="tag">PyTorch</span> <span class="tag">Adversarial ML</span> <span class="tag">Defensive Distillation</span> <span class="tag">White-box Attacks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-num">03</div>
+            <div class="research-body">
+              <h3 class="serif">Federated Learning &amp; Differential Privacy for Image Classification</h3>
+              <p class="research-meta">Private &amp; Secure AI · 2026</p>
+              <p class="research-desc">
+                Built a <strong>federated learning system</strong> simulating 20 training and 10
+                testing clients collaboratively training a CNN on CIFAR-10 via Federated Averaging
+                (FedAvg), no raw data sharing. Implemented a differentially private variant with
+                gradient clipping and multiple ε values to quantify the privacy–utility trade-off
+                across CIFAR-10/100.
+              </p>
+              <div class="featured-tags"> <span class="tag">PyTorch</span> <span class="tag">FedAvg</span> <span class="tag">Differential Privacy</span> <span class="tag">CIFAR-10/100</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-num">04</div>
+            <div class="research-body">
+              <h3 class="serif">Unsupervised Anomaly Detection in DNS Traffic</h3>
+              <p class="research-meta">AI/ML Methods for Cybersecurity · 2025</p>
+              <p class="research-desc">
+                Engineered features from raw DNS log data, including domain-name ASCII
+                transformations and statistical aggregates, and applied <strong>DBSCAN</strong> with tuned ε and minPts to isolate anomalous query patterns consistent with
+                beaconing and covert-channel behavior in unlabeled traffic.
+              </p>
+              <div class="featured-tags"> <span class="tag">DBSCAN</span> <span class="tag">Feature Engineering</span> <span class="tag">DNS</span> <span class="tag">Unsupervised</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-num">05</div>
+            <div class="research-body">
+              <h3 class="serif">Espresso Language Compiler</h3>
+              <p class="research-meta">Compiler Construction · 2024</p>
+              <p class="research-desc">
+                Built a complete compiler for Espresso (a Java subset): lexical analysis, parsing,
+                semantic analysis, symbol table management, type checking, and Java bytecode
+                generation using <strong>JFlex, Java CUP, and the Jasmin assembler</strong>,
+                validated against a reference compiler across positive and negative test cases.
+              </p>
+              <div class="featured-tags"> <span class="tag">Java</span> <span class="tag">JFlex</span> <span class="tag">Java CUP</span> <span class="tag">Jasmin</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section id="work" aria-labelledby="work-h">
+        <div class="sec-head reveal">
+          <h2 id="work-h">Work</h2> <span class="section-index">§ 03</span>
+        </div>
+
+        <div class="reveal">
+          <div class="job">
+            <div class="job-date">Aug 2025 — May 2026</div>
+            <div class="job-body">
+              <h3>Software Engineer in Test — Mobile Team</h3>
+              <p class="job-org">University of Nevada, Las Vegas — Office of Information Technology</p>
+              <ul>
+                <li>Built and maintained <strong>end-to-end automated test suites in Detox</strong>, the standard React
+                  Native end-to-end testing framework, covering critical user flows across iOS and Android ahead of each
+                  release.</li>
+                <li>Validated application functionality and reliability across release cycles, partnering with the
+                  development team on debugging and release-readiness assessment.</li>
+                <li>Authored and updated technical documentation for the team's mobile testing infrastructure to support
+                  continuity and onboarding within the Mobile Team.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job job--has-image">
+            <div class="job-date">Jan 2025 — May 2025</div>
+            <div class="job-body">
+              <h3>Team Lead — Engineering Project</h3>
+              <p class="job-org">University of Nevada, Las Vegas</p>
+              <ul>
+                <li>Led a software engineering team of more than 10 members in the design and development of a <strong>full-stack tutoring marketplace platform</strong>, enabling instructor onboarding, scheduling,
+                  session management, and secure service transactions across a complete end-to-end workflow.
+                </li>
+                <li>Established team engineering practices on a shared GitHub repository, code review, branching, and
+                  pull request workflows, and ran agile ceremonies across the semester.</li>
+                <li>Drove architecture-first design decisions with UML modeling, unit testing, and CI/CD, balancing
+                  feature velocity against maintainability for a production-grade release.</li>
+              </ul>
+            </div>
+            <div class="job-image">
+              <img src="images/4.jpg" alt="Capstone team's tutoring marketplace platform" loading="lazy"
+                decoding="async" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" aria-labelledby="projects-h">
+        <div class="sec-head reveal">
+          <h2 id="projects-h">Projects</h2> <span class="section-index">§ 03.5</span>
+        </div>
+
+        <div class="research-list reveal">
+          <div class="research-item">
+            <div class="research-num">01</div>
+            <div class="research-body">
+              <h3 class="serif">Executive Advisor — Multi-Agent AI Business Analysis</h3>
+              <p class="research-meta">Independent Project · 2026 · <a class="link-inline" href="https://abdulalharbi.github.io/exec-advisor/" target="_blank"
+                  rel="noopener">Live overview →</a> &nbsp;·&nbsp; <a class="link-inline" href="https://github.com/AbdulAlharbi/exec-advisor" target="_blank"
+                  rel="noopener">Source →</a>
+              </p>
+              <p class="research-desc">
+                A multi-agent system that reads a company's business information and produces an executive
+                brief — risks, opportunities, challenged assumptions, and ranked recommendations. The hard
+                problem isn't fluency but trust: the failure mode of an LLM advisor is a confident paragraph
+                with an invented number in it. Five specialist agents run behind a <strong>grounding gate</strong> that verifies every claim's quote against its source in code before it can be cited — a
+                hallucinated figure becomes a dropped claim, never a line in the brief. A dedicated <strong>Contrarian</strong> agent may only attack, and change between runs is <strong>computed by diffing findings</strong>, never narrated by the model. Reasoning is
+                pluggable — Claude or a deterministic rule brain behind one interface — so the whole pipeline
+                and its <strong>42 tests</strong> run offline; CI runs on every push and a scheduled workflow
+                republishes the brief to GitHub Pages.
+              </p>
+              <div class="featured-tags"> <span class="tag">Multi-Agent Systems</span> <span class="tag">LLM Grounding</span> <span class="tag">Anthropic API</span> <span class="tag">Dependency Inversion</span> <span class="tag">Python</span> <span class="tag">CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-num">02</div>
+            <div class="research-body">
+              <h3 class="serif">SOC Autopilot — Autonomous Multi-Agent Incident Response</h3>
+              <p class="research-meta">Independent Project · 2026 · <a class="link-inline" href="https://abdulalharbi.github.io/soc-autopilot/" target="_blank"
+                  rel="noopener">Live overview →</a> &nbsp;·&nbsp; <a class="link-inline" href="https://github.com/AbdulAlharbi/soc-autopilot" target="_blank"
+                  rel="noopener">Source →</a>
+              </p>
+              <p class="research-desc">
+                A multi-agent system that takes ownership of the SOC alert-triage workflow end to end — an
+                Incident Commander orchestrating five specialist agents through triage, investigation, containment,
+                and reporting. The core problem isn't whether an agent <em>can</em> act, but whether it knows when
+                to <strong>stop and ask a human</strong>: containment actions are gated by an enforced autonomy
+                policy that tiers every action by blast radius, so a workstation is isolated automatically while
+                taking a production ERP server offline requires named approval. One of its four scenarios detects <strong>C2 beaconing</strong> — a direct nod to my thesis. Reasoning runs on Claude or a
+                deterministic fallback; every decision is recorded in a hash-chained audit log.
+              </p>
+              <div class="featured-tags"> <span class="tag">Multi-Agent Systems</span> <span class="tag">LLM Orchestration</span> <span class="tag">Python</span> <span class="tag">Incident Response</span> <span class="tag">Anthropic API</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-num">03</div>
+            <div class="research-body">
+              <h3 class="serif">Simple Drive — Pluggable Blob Storage API</h3>
+              <p class="research-meta">Independent Project · 2026 · <a class="link-inline" href="https://abdulalharbi.github.io/simple-drive/" target="_blank"
+                  rel="noopener">Live overview →</a> &nbsp;·&nbsp; <a class="link-inline" href="https://github.com/AbdulAlharbi/simple-drive" target="_blank"
+                  rel="noopener">Source →</a>
+              </p>
+              <p class="research-desc">
+                A Ruby on Rails API that stores and retrieves blobs through one interface backed by four
+                interchangeable storage backends — S3-compatible object storage, a database table, the local
+                filesystem, or FTP. The centerpiece is a <strong>from-scratch implementation of AWS Signature
+                  Version 4</strong>: the S3 backend speaks the S3 REST protocol directly over <code>Net::HTTP</code> with no AWS or S3 libraries anywhere, and the signer is validated byte-for-byte against AWS's
+                officially documented example signature. Backends sit behind a clean adapter pattern resolved by a
+                config-driven factory, so adding one touches a single class. <strong>34 tests</strong> across unit
+                and integration layers, CI on every push, and a Docker Compose setup that runs it against a real
+                minio server.
+              </p>
+              <div class="featured-tags"> <span class="tag">Ruby on Rails</span> <span class="tag">AWS SigV4 (from scratch)</span> <span class="tag">Adapter Pattern</span> <span class="tag">S3 · FTP · SQL</span> <span class="tag">Docker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" aria-labelledby="edu-h">
+        <div class="sec-head reveal">
+          <h2 id="edu-h">Education</h2> <span class="section-index">§ 04</span>
+        </div>
+
+        <div class="edu-list reveal">
+          <div class="edu-item">
+            <div class="edu-main">
+              <h3>University of Nevada, Las Vegas</h3>
+              <p class="edu-desc">M.S. Computer Science</p>
+              <p class="edu-gpa">GPA 3.91 / 4.00</p>
+            </div>
+            <div class="edu-date">Aug 2025 — Aug 2026</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-main">
+              <h3>University of Nevada, Las Vegas</h3>
+              <p class="edu-desc">B.S. Computer Science — Information Assurance (Cybersecurity) · Dean's List</p>
+              <p class="edu-gpa">GPA 3.50 / 4.00</p>
+            </div>
+            <div class="edu-date">Sep 2022 — May 2025</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-main">
+              <h3>Prince Sultan University · Riyadh, KSA</h3>
+              <p class="edu-desc">B.S. Information Systems — Cyber Security (34 credits completed)</p>
+            </div>
+            <div class="edu-date">Sep 2020 — May 2022</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-main">
+              <h3>Carleton University · Ottawa, Canada</h3>
+              <p class="edu-desc">B.S. Information Technology — Optical Systems (27 credits completed)</p>
+            </div>
+            <div class="edu-date">Sep 2019 — Aug 2020</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-main">
+              <h3>Ridgemont High School · Ottawa, Canada</h3>
+              <p class="edu-desc">High School Diploma</p>
+            </div>
+            <div class="edu-date">2016 — 2019</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section id="certifications" aria-labelledby="cert-h">
+        <div class="sec-head reveal">
+          <h2 id="cert-h">Certifications</h2> <span class="section-index">§ 05</span>
+        </div>
+        <div class="cert-grid reveal">
+          <div class="cert-card">
+            <div class="cert-issuer">Saudi Data &amp; AI Authority</div>
+            <h3>Fundamentals of Artificial Intelligence</h3>
+            <p class="cert-date">August 2025</p>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer">Saudi Data &amp; AI Authority</div>
+            <h3>AI Concepts &amp; Advanced Applications</h3>
+            <p class="cert-date">August 2025</p>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer">AWS Academy</div>
+            <h3>Cloud Foundations Graduate</h3>
+            <p class="cert-date">2024</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" aria-labelledby="skills-h">
+        <div class="sec-head reveal">
+          <h2 id="skills-h">Skills</h2> <span class="section-index">§ 06</span>
+        </div>
+        <div class="skills-list reveal">
+          <div class="skill-row">
+            <div class="skill-cat">Machine Learning &amp; AI</div>
+            <div class="skill-items">
+              PyTorch <span class="sep">·</span> scikit-learn <span class="sep">·</span> TensorFlow <span class="sep">·</span> Adversarial ML <span class="sep">·</span> Federated Learning <span class="sep">·</span> Differential Privacy <span class="sep">·</span> Anomaly Detection <span class="sep">·</span> Feature engineering for time-series &amp; network data
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-cat">Cybersecurity</div>
+            <div class="skill-items">
+              APT &amp; beaconing detection <span class="sep">·</span> Network traffic analysis <span class="sep">·</span> Applied cryptography <span class="sep">·</span> Information assurance
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-cat">Software Engineering</div>
+            <div class="skill-items">
+              Python <span class="sep">·</span> Java <span class="sep">·</span> C / C++ <span class="sep">·</span> SQL <span class="sep">·</span> JavaScript <span class="sep">·</span> TypeScript <span class="sep">·</span> Git &amp; GitHub <span class="sep">·</span> Agile <span class="sep">·</span> CI/CD <span class="sep">·</span> Unit &amp; end-to-end testing (Detox)
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-cat">Cloud &amp; Infrastructure</div>
+            <div class="skill-items">
+              AWS (EC2, S3, Lambda) <span class="sep">·</span> PostgreSQL <span class="sep">·</span> MongoDB <span class="sep">·</span> Linux
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-cat">Languages</div>
+            <div class="skill-items">
+              Arabic <span class="sep">—</span> Native <span class="sep">·</span> English <span class="sep">—</span> Fluent
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HONORS -->
+      <section id="honors" aria-labelledby="honors-h">
+        <div class="sec-head reveal">
+          <h2 id="honors-h">Honors</h2> <span class="section-index">§ 07</span>
+        </div>
+        <div class="honors-list reveal">
+          <div class="honor">
+            <div class="honor-name"> <strong>Saudi Arabian Cultural Mission</strong> — Full Scholarship
+            </div>
+            <div class="honor-date">2022 — 2025</div>
+          </div>
+          <div class="honor">
+            <div class="honor-name"> <strong>Howard R. Hughes College of Engineering</strong> — Dean's List, UNLV
+            </div>
+            <div class="honor-date">Multiple Semesters</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact" aria-labelledby="contact-h">
+        <div class="sec-head reveal"> <span class="section-index">§ 08</span>
+        </div>
+        <div class="reveal">
+          <h2 id="contact-h" class="serif">Let's build something <em>worthwhile</em>.</h2>
+          <p class="contact-sub">
+            Open to research and engineering roles in artificial intelligence, cybersecurity, and
+            secure systems, with particular interest in contributing to Saudi Arabia's growing
+            technology ecosystem.
+          </p>
+          <div class="contact-links"> <a class="btn btn-primary" href="#" onclick="showEmail(event)"> <span>Get in touch</span> <span class="arr" aria-hidden="true">→</span>
+            </a> <a class="btn" href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank"
+              rel="me noopener">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer> <span>© 2026 Abdulrahman Alharbi</span> <span class="f-right">Designed &amp; built by Abdulrahman</span>
+  </footer>
+
+  <!-- ==========================================================
+       JSON-LD
+  ========================================================== -->
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdulrahman Alharbi",
+    "email": "mailto:alharbi.ams@outlook.com",
+    "url": "https://abdulalharbi.github.io/",
+    "image": "images/2.png",
+    "jobTitle": "Software Engineer in Test",
+    "nationality": "Saudi Arabian",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Riyadh",
+      "addressCountry": "SA"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/abdulrahman-alharbi-191837210"
+    ],
+    "alumniOf": [
+      {"@type":"CollegeOrUniversity","name":"University of Nevada, Las Vegas"},
+      {"@type":"CollegeOrUniversity","name":"Prince Sultan University"},
+      {"@type":"CollegeOrUniversity","name":"Carleton University"}
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Cybersecurity",
+      "APT Detection",
+      "Adversarial Machine Learning",
+      "Federated Learning",
+      "Differential Privacy",
+      "Network Traffic Analysis"
+    ],
+    "knowsLanguage": ["Arabic", "English"]
+  }
+  </script>
+
+  <!-- ==========================================================
+       SCRIPTS
+  ========================================================== -->
+  <script is:inline>
+    (function () {
+      'use strict';
+      window.showEmail = function (event) {
+        event.preventDefault();
+        alert('Email: alharbi.ams@outlook.com');
+      };
+
+      /* ---------- Scroll reveal ---------- */
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
+      }
+
+      /* ---------- Active nav on scroll ---------- */
+      const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+      const sections = navLinks
+        .map(a => document.querySelector(a.getAttribute('href')))
+        .filter(Boolean);
+      const spy = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const id = '#' + entry.target.id;
+          navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+        });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      sections.forEach(s => spy.observe(s));
+    })();
+  </script>
+</Base>

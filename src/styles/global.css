@@ -1,0 +1,5 @@
+/* Single stylesheet entry point. Order matters: tokens define the custom
+   properties, base consumes them, sections build on both. */
+@import './tokens.css';
+@import './base.css';
+@import './sections.css';

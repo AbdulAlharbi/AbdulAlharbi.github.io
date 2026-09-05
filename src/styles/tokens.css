@@ -1,0 +1,31 @@
+/* Design tokens. These values are the visual identity of the site and are
+   copied verbatim from the original stylesheet. Do not change the palette. */
+
+:root {
+  /* Palette — warm cream paper with deep ink and burnished gold */
+  --bg: #f6f3ec;
+  --bg-raised: #fffcf4;
+  --bg-sunken: #ede8dc;
+  --ink: #141210;
+  --ink-dim: #5a544c;
+  --ink-faint: #a29b90;
+  --rule: rgba(20, 18, 16, 0.12);
+  --rule-hi: rgba(20, 18, 16, 0.22);
+  --accent: #996200;
+  --accent-hi: #7a4e00;
+  --accent-dim: rgba(153, 98, 0, 0.10);
+  --accent-line: rgba(153, 98, 0, 0.5);
+
+  /* Typography */
+  --serif: 'Fraunces', 'Times New Roman', Georgia, serif;
+  --sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Rhythm */
+  --measure: 68ch;
+  --col: 720px;
+  --col-wide: 980px;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --trans: 0.35s var(--ease);
+}
+
