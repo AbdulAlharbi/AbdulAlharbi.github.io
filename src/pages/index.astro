@@ -1,11 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+import PersonJsonLd from '../components/PersonJsonLd.astro';
+import { getSite } from '../lib/content';
+
+const site = await getSite();
 ---
 
-<Base
-  title="Abdulrahman Alharbi — AI & Cybersecurity"
-  description="Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV. Thesis on machine-learning detection of APT beaconing in encrypted network traffic. Mobile software engineer in test."
-> <a class="skip-link" href="#main">Skip to content</a>
+<Base title={site.meta.title} description={site.meta.description}>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ==========================================================
        NAV
@@ -505,44 +507,7 @@ import Base from '../layouts/Base.astro';
   <footer> <span>© 2026 Abdulrahman Alharbi</span> <span class="f-right">Designed &amp; built by Abdulrahman</span>
   </footer>
 
-  <!-- ==========================================================
-       JSON-LD
-  ========================================================== -->
-  <script is:inline type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Abdulrahman Alharbi",
-    "email": "mailto:alharbi.ams@outlook.com",
-    "url": "https://abdulalharbi.github.io/",
-    "image": "images/2.png",
-    "jobTitle": "Software Engineer in Test",
-    "nationality": "Saudi Arabian",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Riyadh",
-      "addressCountry": "SA"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/abdulrahman-alharbi-191837210"
-    ],
-    "alumniOf": [
-      {"@type":"CollegeOrUniversity","name":"University of Nevada, Las Vegas"},
-      {"@type":"CollegeOrUniversity","name":"Prince Sultan University"},
-      {"@type":"CollegeOrUniversity","name":"Carleton University"}
-    ],
-    "knowsAbout": [
-      "Artificial Intelligence",
-      "Cybersecurity",
-      "APT Detection",
-      "Adversarial Machine Learning",
-      "Federated Learning",
-      "Differential Privacy",
-      "Network Traffic Analysis"
-    ],
-    "knowsLanguage": ["Arabic", "English"]
-  }
-  </script>
+  <PersonJsonLd />
 
   <!-- ==========================================================
        SCRIPTS

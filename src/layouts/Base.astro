@@ -1,5 +1,11 @@
 ---
+/**
+ * Document shell for the main site: metadata, fonts, and the stylesheet.
+ * Page-specific values come in as props; site-wide ones come from the data
+ * layer, so nothing about the author is hard-coded here.
+ */
 import '../styles/global.css';
+import { getSite } from '../lib/content';
 
 interface Props {
   title: string;
@@ -7,6 +13,13 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const site = await getSite();
+
+// Absolute URLs: Open Graph scrapers reject relative image paths. With
+// build.format "file" the index page's pathname is /index.html; the
+// canonical form of the home page is the bare origin.
+const canonical = new URL(Astro.url.pathname.replace(/index\.html$/, ''), Astro.site);
+const ogImage = new URL(site.meta.ogImage, Astro.site);
 ---
 
 <!doctype html>
@@ -16,13 +29,13 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f6f3ec" />
-    <link rel="canonical" href="https://abdulalharbi.github.io/" />
+    <meta name="theme-color" content={site.meta.themeColor} />
+    <link rel="canonical" href={canonical} />
     <meta name="robots" content="index,follow" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV." />
+    <meta property="og:description" content={site.meta.ogDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="images/2.png" />
+    <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Fonts: Fraunces (editorial display serif), IBM Plex Sans (body), IBM Plex Mono (meta) -->

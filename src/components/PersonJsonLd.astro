@@ -1,0 +1,37 @@
+---
+/**
+ * schema.org Person record, derived from the data layer rather than
+ * maintained by hand: identity and links from site.yaml, alumniOf from the
+ * education collection. One source of truth for search engines too.
+ */
+import { getOrdered, getSite } from '../lib/content';
+
+const site = await getSite();
+const education = await getOrdered('education');
+
+const alumniOf = [
+  ...new Set(education.filter((e) => e.data.kind === 'university').map((e) => e.data.institution)),
+].map((name) => ({ '@type': 'CollegeOrUniversity', name }));
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: `${site.name.given} ${site.name.family}`,
+  email: `mailto:${site.links.email}`,
+  url: Astro.site?.href,
+  image: new URL(site.meta.ogImage, Astro.site).href,
+  jobTitle: site.person.jobTitle,
+  nationality: site.person.nationality,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: site.person.address.locality,
+    addressCountry: site.person.address.country,
+  },
+  sameAs: [site.links.linkedin],
+  alumniOf,
+  knowsAbout: site.person.knowsAbout,
+  knowsLanguage: site.person.knowsLanguage,
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(person)} />
