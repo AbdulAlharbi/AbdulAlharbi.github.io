@@ -3,7 +3,7 @@
   order: 1
   institution: University of Nevada, Las Vegas
   degree: M.S. Computer Science
-  gpa: 3.91 / 4.00
+  gpa: 3.92 / 4.00
   dates: { start: Aug 2025, end: Aug 2026 }
   kind: university
 
@@ -11,7 +11,7 @@
   order: 2
   institution: University of Nevada, Las Vegas
   degree: "B.S. Computer Science — Information Assurance (Cybersecurity) · Dean's List"
-  gpa: 3.50 / 4.00
+  # gpa: 3.50 / 4.00
   dates: { start: Sep 2022, end: May 2025 }
   kind: university
 
