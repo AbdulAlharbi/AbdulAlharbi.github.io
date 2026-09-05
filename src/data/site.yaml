@@ -8,7 +8,7 @@ meta:
   title: "Abdulrahman Alharbi — AI & Cybersecurity"
   description: "Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV. Thesis on machine-learning detection of APT beaconing in encrypted network traffic. Mobile software engineer in test."
   ogDescription: "Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV."
-  ogImage: images/2.png
+  ogImage: /og.jpg
   themeColor: "#f6f3ec"
 
 links:
@@ -26,10 +26,8 @@ hero:
     and <em>cybersecurity</em> — with research in APT beaconing detection, adversarial machine
     learning, federated learning, and privacy-preserving systems.
   portrait:
-    src: images/6.jpg
+    src: ../assets/portrait.jpg
     alt: Portrait of Abdulrahman Alharbi
-    width: 220
-    height: 275
   metricsCaption: "M.S. Thesis Results — APT C2 Beaconing Detection"
 
 about:

@@ -22,7 +22,6 @@ const rich = z.string().refine(
 
 const url = z.string().url();
 const link = z.object({ label: z.string(), url });
-const image = z.object({ src: z.string(), alt: z.string() });
 const dateRange = z.object({ start: z.string(), end: z.string() });
 
 /**
@@ -42,7 +41,10 @@ const metric = z.object({
 /** Site-wide identity, copy, and the section registry. One entry. */
 const site = defineCollection({
   loader: glob({ pattern: 'site.yaml', base: './src/data' }),
-  schema: z.object({
+  // image() resolves a path relative to the data file to a build-time asset
+  // and fails the build if the file is missing.
+  schema: ({ image }) =>
+    z.object({
     name: z.object({ given: z.string(), family: z.string(), short: z.string() }),
     meta: z.object({
       title: z.string(),
@@ -56,7 +58,7 @@ const site = defineCollection({
     hero: z.object({
       status: z.string(),
       lede: rich,
-      portrait: image.extend({ width: z.number().int(), height: z.number().int() }),
+      portrait: z.object({ src: image(), alt: z.string() }),
       metricsCaption: z.string(),
     }),
     about: z.object({
@@ -91,7 +93,7 @@ const site = defineCollection({
       knowsAbout: z.array(z.string()),
       knowsLanguage: z.array(z.string()),
     }),
-  }),
+    }),
 });
 
 const research = defineCollection({
@@ -129,14 +131,15 @@ const projects = defineCollection({
 
 const experience = defineCollection({
   loader: file('./src/data/experience.yaml'),
-  schema: z.object({
-    ...ordered,
-    role: z.string(),
-    org: z.string(),
-    dates: dateRange,
-    bullets: z.array(rich).min(1),
-    image: image.optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      ...ordered,
+      role: z.string(),
+      org: z.string(),
+      dates: dateRange,
+      bullets: z.array(rich).min(1),
+      image: z.object({ src: image(), alt: z.string() }).optional(),
+    }),
 });
 
 const education = defineCollection({

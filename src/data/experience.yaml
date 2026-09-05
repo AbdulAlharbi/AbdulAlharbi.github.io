@@ -33,5 +33,5 @@
       Drove architecture-first design decisions with UML modeling, unit testing, and CI/CD, balancing
       feature velocity against maintainability for a production-grade release.
   image:
-    src: images/4.jpg
+    src: ../assets/capstone-platform.jpg
     alt: Capstone team's tutoring marketplace platform

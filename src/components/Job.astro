@@ -1,6 +1,15 @@
 ---
-/** One position: dates, role, organisation, bullet points, optional image. */
+/**
+ * One position: dates, role, organisation, bullet points, optional image.
+ *
+ * The image sizes are multiples of 459, one third of the source's 2754x1488
+ * reduced to 459x248, so every generated candidate has an exact integer
+ * height and the same aspect ratio. Browsers size the box from the chosen
+ * candidate, so this keeps the layout identical across candidates and
+ * reserves the exact box before the lazy load (no layout shift on phones).
+ */
 import './Job.css';
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -21,7 +30,16 @@ const { role, org, dates, bullets, image } = Astro.props.job;
   </div>
   {image && (
     <div class="job-image">
-      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={1377}
+        height={744}
+        widths={[459, 918, 1377]}
+        sizes="(max-width: 720px) calc(100vw - 3rem), 238px"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   )}
 </div>

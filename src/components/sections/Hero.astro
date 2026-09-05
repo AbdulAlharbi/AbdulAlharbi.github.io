@@ -1,6 +1,7 @@
 ---
 /** Page header: identity, lede, calls to action, portrait, thesis metrics. */
 import './Hero.css';
+import { Image } from 'astro:assets';
 import Button from '../Button.astro';
 import MetricStrip from '../MetricStrip.astro';
 import { getOrdered, getSite } from '../../lib/content';
@@ -34,11 +35,12 @@ const { hero, name, links, cta } = site;
       </div>
 
       <div class="hero-portrait">
-        <img
+        <Image
           src={hero.portrait.src}
-          width={hero.portrait.width}
-          height={hero.portrait.height}
           alt={hero.portrait.alt}
+          width={220}
+          height={275}
+          densities={[1, 2]}
           loading="eager"
           decoding="async"
         />
