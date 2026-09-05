@@ -10,11 +10,26 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:html": "html-validate \"dist/**/*.html\"",
+    "check:links": "node scripts/check-links.mjs",
+    "check:a11y": "node scripts/with-preview.mjs pa11y-ci --config pa11yci.config.cjs",
+    "check:viewports": "node scripts/with-preview.mjs node scripts/check-viewports.mjs",
+    "check:lighthouse": "lhci autorun",
+    "verify": "npm run check && npm run build && npm run format:check && npm run lint:html && npm run check:links && npm run check:a11y && npm run check:viewports && npm run check:lighthouse"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@lhci/cli": "^0.15.1",
     "astro": "^7.3.1",
+    "html-validate": "^11.13.0",
+    "linkinator": "^8.1.0",
+    "pa11y-ci": "^4.1.1",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "puppeteer": "^24.43.1",
     "sharp": "^0.35.4",
     "typescript": "^5.9.3"
   }

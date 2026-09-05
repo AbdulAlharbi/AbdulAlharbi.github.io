@@ -1,0 +1,11 @@
+dist/
+node_modules/
+.astro/
+.lighthouseci/
+package-lock.json
+public/
+# Legacy pre-build files, removed once deployment moves to Actions
+/index.html
+/pomodoro.html
+/pomodoro.css
+/snake.html
