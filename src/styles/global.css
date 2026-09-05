@@ -1,5 +1,8 @@
 /* Single stylesheet entry point. Order matters: tokens define the custom
-   properties, base consumes them, sections build on both. */
+   properties, base consumes them, section styles build on both, and motion
+   comes last so its reduced-motion overrides win. Component stylesheets are
+   imported by their components and bundled after these. */
 @import './tokens.css';
 @import './base.css';
 @import './sections.css';
+@import './motion.css';

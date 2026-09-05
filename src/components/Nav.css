@@ -1,0 +1,82 @@
+/* Nav: sticky primary navigation */
+
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  max-width: var(--col-wide);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ink);
+  letter-spacing: .01em;
+}
+
+.nav-brand::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 400;
+  color: var(--ink-dim);
+  padding: .45rem .7rem;
+  letter-spacing: .06em;
+  transition: color var(--trans);
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-links a.active {
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .nav {
+    padding: .85rem 1.1rem;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a {
+    font-size: .65rem;
+    padding: .4rem .5rem;
+    letter-spacing: .04em;
+  }
+
+  /* Sections marked navMobile: false in site.yaml; still reachable by scrolling. */
+  .nav-links li.nav-optional {
+    display: none;
+  }
+}

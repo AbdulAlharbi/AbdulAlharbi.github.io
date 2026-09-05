@@ -1,0 +1,26 @@
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 2rem 1.5rem;
+  max-width: var(--col-wide);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: .68rem;
+  color: var(--ink-faint);
+  letter-spacing: .06em;
+}
+
+footer .f-right {
+  color: var(--ink-dim);
+}
+
+footer .f-right::before {
+  content: '— ';
+  color: var(--accent);
+}

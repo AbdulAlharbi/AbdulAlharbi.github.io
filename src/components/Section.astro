@@ -1,0 +1,34 @@
+---
+/**
+ * A numbered page section. The id must exist in the section registry in
+ * site.yaml; the heading text and the "§ 0N" index come from there, so the
+ * numbering can never drift from the order sections appear in.
+ *
+ * `bare` renders the header strip with the index only, for sections that
+ * carry their own display heading (the contact closer).
+ */
+import './Section.css';
+import { getSite } from '../lib/content';
+
+interface Props {
+  id: string;
+  class?: string;
+  bare?: boolean;
+}
+
+const { id, class: className, bare = false } = Astro.props;
+const site = await getSite();
+const position = site.sections.findIndex((s) => s.id === id);
+if (position < 0) throw new Error(`Section "${id}" is not in site.yaml sections`);
+const section = site.sections[position]!;
+const index = String(position + 1).padStart(2, '0');
+const headingId = `${id}-h`;
+---
+
+<section id={id} class={className} aria-labelledby={headingId}>
+  <div class="sec-head reveal">
+    {!bare && <h2 id={headingId}>{section.title}</h2>}
+    <span class="section-index">§ {index}</span>
+  </div>
+  <slot />
+</section>

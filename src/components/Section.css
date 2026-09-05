@@ -1,0 +1,34 @@
+/* Section: shared section rhythm and the numbered header */
+
+section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 720px) {
+  section {
+    padding: 3.5rem 0;
+  }
+}
+
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sec-head h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  flex: 1;
+}
+
+.sec-head .section-index {
+  flex-shrink: 0;
+}
