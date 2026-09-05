@@ -1,0 +1,76 @@
+# Quality gates on every push and pull request; deployment to GitHub Pages
+# only from main, and only from the exact build that passed the gates.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Build and quality gates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Cache the Chrome that Puppeteer downloads
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+      - name: Type-check templates and data against the schemas
+        run: npm run check
+      - run: npm run build
+      - run: npm run format:check
+      - name: Validate the built HTML
+        run: npm run lint:html
+      - name: Check every link
+        run: npm run check:links
+      - name: Accessibility (axe + HTML CodeSniffer, WCAG 2 AA)
+        run: npm run check:a11y
+      - name: Responsive layout and tap targets
+        run: npm run check:viewports
+      - name: Lighthouse budget
+        run: npm run check:lighthouse
+      - name: Keep the Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse
+          path: .lighthouseci
+          if-no-files-found: ignore
+      - name: Package the site for deployment
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: quality
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
