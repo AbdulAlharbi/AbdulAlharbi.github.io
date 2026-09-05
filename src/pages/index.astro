@@ -25,9 +25,6 @@ const site = await getSite();
 
   <Hero />
 
-  <!-- ==========================================================
-       MAIN
-  ========================================================== -->
   <main id="main">
     <div class="col-wide">
 
@@ -56,42 +53,5 @@ const site = await getSite();
 
   <PersonJsonLd />
 
-  <!-- ==========================================================
-       SCRIPTS
-  ========================================================== -->
-  <script is:inline>
-    (function () {
-      'use strict';
-      window.showEmail = function (event) {
-        event.preventDefault();
-        alert('Email: alharbi.ams@outlook.com');
-      };
-
-      /* ---------- Scroll reveal ---------- */
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const io = new IntersectionObserver(entries => {
-          entries.forEach(e => {
-            if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
-          });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-      } else {
-        document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
-      }
-
-      /* ---------- Active nav on scroll ---------- */
-      const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-      const sections = navLinks
-        .map(a => document.querySelector(a.getAttribute('href')))
-        .filter(Boolean);
-      const spy = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const id = '#' + entry.target.id;
-          navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
-        });
-      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-      sections.forEach(s => spy.observe(s));
-    })();
-  </script>
+  <script src="../scripts/enhance.ts"></script>
 </Base>

@@ -25,7 +25,7 @@ const { hero, name, links, cta } = site;
         <p class="hero-lede" set:html={hero.lede} />
 
         <div class="hero-actions">
-          <Button href="#" primary arrow onclick="showEmail(event)">{cta.primary}</Button>
+          <Button href={`mailto:${links.email}`} primary arrow>{cta.primary}</Button>
           <Button href={links.linkedin} target="_blank" rel="me noopener">{cta.secondary}</Button>
         </div>
 
