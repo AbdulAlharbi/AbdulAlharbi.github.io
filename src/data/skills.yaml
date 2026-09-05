@@ -1,0 +1,53 @@
+# Skill rows. Items are plain strings, or { name, level } pairs for languages.
+- id: ml-ai
+  order: 1
+  category: Machine Learning & AI
+  items:
+    - PyTorch
+    - scikit-learn
+    - TensorFlow
+    - Adversarial ML
+    - Federated Learning
+    - Differential Privacy
+    - Anomaly Detection
+    - Feature engineering for time-series & network data
+
+- id: cybersecurity
+  order: 2
+  category: Cybersecurity
+  items:
+    - APT & beaconing detection
+    - Network traffic analysis
+    - Applied cryptography
+    - Information assurance
+
+- id: software-engineering
+  order: 3
+  category: Software Engineering
+  items:
+    - Python
+    - Java
+    - C / C++
+    - SQL
+    - JavaScript
+    - TypeScript
+    - Git & GitHub
+    - Agile
+    - CI/CD
+    - Unit & end-to-end testing (Detox)
+
+- id: cloud-infrastructure
+  order: 4
+  category: Cloud & Infrastructure
+  items:
+    - AWS (EC2, S3, Lambda)
+    - PostgreSQL
+    - MongoDB
+    - Linux
+
+- id: languages
+  order: 5
+  category: Languages
+  items:
+    - { name: Arabic, level: Native }
+    - { name: English, level: Fluent }

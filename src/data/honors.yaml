@@ -1,0 +1,11 @@
+- id: sacm-scholarship
+  order: 1
+  name: Saudi Arabian Cultural Mission
+  detail: Full Scholarship
+  date: "2022 — 2025"
+
+- id: unlv-deans-list
+  order: 2
+  name: Howard R. Hughes College of Engineering
+  detail: Dean's List, UNLV
+  date: Multiple Semesters

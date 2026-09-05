@@ -1,0 +1,61 @@
+# Independent projects, in display order.
+- id: exec-advisor
+  order: 1
+  title: "Executive Advisor — Multi-Agent AI Business Analysis"
+  context: Independent Project
+  period: "2026"
+  links:
+    - { label: Live overview, url: https://abdulalharbi.github.io/exec-advisor/ }
+    - { label: Source, url: https://github.com/AbdulAlharbi/exec-advisor }
+  description: >-
+    A multi-agent system that reads a company's business information and produces an executive
+    brief — risks, opportunities, challenged assumptions, and ranked recommendations. The hard
+    problem isn't fluency but trust: the failure mode of an LLM advisor is a confident paragraph
+    with an invented number in it. Five specialist agents run behind a <strong>grounding gate</strong>
+    that verifies every claim's quote against its source in code before it can be cited — a
+    hallucinated figure becomes a dropped claim, never a line in the brief. A dedicated
+    <strong>Contrarian</strong> agent may only attack, and change between runs is
+    <strong>computed by diffing findings</strong>, never narrated by the model. Reasoning is
+    pluggable — Claude or a deterministic rule brain behind one interface — so the whole pipeline
+    and its <strong>42 tests</strong> run offline; CI runs on every push and a scheduled workflow
+    republishes the brief to GitHub Pages.
+  tags: [Multi-Agent Systems, LLM Grounding, Anthropic API, Dependency Inversion, Python, CI/CD]
+
+- id: soc-autopilot
+  order: 2
+  title: "SOC Autopilot — Autonomous Multi-Agent Incident Response"
+  context: Independent Project
+  period: "2026"
+  links:
+    - { label: Live overview, url: https://abdulalharbi.github.io/soc-autopilot/ }
+    - { label: Source, url: https://github.com/AbdulAlharbi/soc-autopilot }
+  description: >-
+    A multi-agent system that takes ownership of the SOC alert-triage workflow end to end — an
+    Incident Commander orchestrating five specialist agents through triage, investigation, containment,
+    and reporting. The core problem isn't whether an agent <em>can</em> act, but whether it knows when
+    to <strong>stop and ask a human</strong>: containment actions are gated by an enforced autonomy
+    policy that tiers every action by blast radius, so a workstation is isolated automatically while
+    taking a production ERP server offline requires named approval. One of its four scenarios detects
+    <strong>C2 beaconing</strong> — a direct nod to my thesis. Reasoning runs on Claude or a
+    deterministic fallback; every decision is recorded in a hash-chained audit log.
+  tags: [Multi-Agent Systems, LLM Orchestration, Python, Incident Response, Anthropic API]
+
+- id: simple-drive
+  order: 3
+  title: "Simple Drive — Pluggable Blob Storage API"
+  context: Independent Project
+  period: "2026"
+  links:
+    - { label: Live overview, url: https://abdulalharbi.github.io/simple-drive/ }
+    - { label: Source, url: https://github.com/AbdulAlharbi/simple-drive }
+  description: >-
+    A Ruby on Rails API that stores and retrieves blobs through one interface backed by four
+    interchangeable storage backends — S3-compatible object storage, a database table, the local
+    filesystem, or FTP. The centerpiece is a <strong>from-scratch implementation of AWS Signature
+    Version 4</strong>: the S3 backend speaks the S3 REST protocol directly over <code>Net::HTTP</code>
+    with no AWS or S3 libraries anywhere, and the signer is validated byte-for-byte against AWS's
+    officially documented example signature. Backends sit behind a clean adapter pattern resolved by a
+    config-driven factory, so adding one touches a single class. <strong>34 tests</strong> across unit
+    and integration layers, CI on every push, and a Docker Compose setup that runs it against a real
+    minio server.
+  tags: [Ruby on Rails, AWS SigV4 (from scratch), Adapter Pattern, "S3 · FTP · SQL", Docker]

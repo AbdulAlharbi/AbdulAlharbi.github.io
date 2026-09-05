@@ -1,0 +1,76 @@
+# Research, in display order. The first entry carries `featured` and is
+# rendered as the thesis card; its metrics also feed the hero strip.
+- id: apt-beaconing-triage
+  order: 1
+  title: Periodicity-Based Triage of APT Command-and-Control Beaconing in Network Flows Using Machine Learning
+  context: University of Nevada, Las Vegas
+  period: "2025 – 2026"
+  featured:
+    label: "★ Featured — M.S. Thesis"
+    link:
+      label: View on UNLV Repository
+      url: https://oasis.library.unlv.edu/thesesdissertations/
+    metrics:
+      - { value: "0.852", label: Average Precision, note: vs. 0.046 heuristic baseline }
+      - { value: "1.0", label: "Recall @ 50", note: all channels in top-K shortlist }
+      - { value: "99%", label: "Analyst Workload ↓", shortLabel: Workload Reduction, note: candidate units filtered }
+  description: >-
+    Malware beaconing to command-and-control infrastructure often creates <strong>periodic
+    callback behavior</strong> in network flow logs, even when payloads are encrypted. This
+    research builds a machine-learning pipeline that ranks suspicious communication units
+    for analyst review using only flow timestamps, engineering nine periodicity-based
+    features, including inter-arrival time regularity, FFT-based spectral concentration,
+    autocorrelation, and sub-window stability, and training a supervised Random Forest
+    ranker on CTU-13 with controlled synthetic beacon injection. The pipeline is validated
+    across five CTU-13 scenarios covering different malware families and C2 styles.
+  tags: [Random Forest, FFT, Autocorrelation, CTU-13, NetFlow, Python, scikit-learn]
+
+- id: adversarial-attacks-defenses
+  order: 2
+  title: Adversarial Attacks and Defenses on Deep Learning Models
+  context: Private & Secure AI
+  period: "2026"
+  description: >-
+    Trained four neural network classifiers across different architectures and data
+    splits to systematically study model robustness. Implemented two <strong>white-box
+    adversarial attacks</strong> beyond FGSM/PGD, then designed defenses including
+    adversarial training and defensive distillation, measuring attack success,
+    transferability, inference cost, and the robustness–utility trade-off.
+  tags: [PyTorch, Adversarial ML, Defensive Distillation, White-box Attacks]
+
+- id: federated-learning-dp
+  order: 3
+  title: Federated Learning & Differential Privacy for Image Classification
+  context: Private & Secure AI
+  period: "2026"
+  description: >-
+    Built a <strong>federated learning system</strong> simulating 20 training and 10
+    testing clients collaboratively training a CNN on CIFAR-10 via Federated Averaging
+    (FedAvg), no raw data sharing. Implemented a differentially private variant with
+    gradient clipping and multiple ε values to quantify the privacy–utility trade-off
+    across CIFAR-10/100.
+  tags: [PyTorch, FedAvg, Differential Privacy, CIFAR-10/100]
+
+- id: dns-anomaly-detection
+  order: 4
+  title: Unsupervised Anomaly Detection in DNS Traffic
+  context: AI/ML Methods for Cybersecurity
+  period: "2025"
+  description: >-
+    Engineered features from raw DNS log data, including domain-name ASCII
+    transformations and statistical aggregates, and applied <strong>DBSCAN</strong>
+    with tuned ε and minPts to isolate anomalous query patterns consistent with
+    beaconing and covert-channel behavior in unlabeled traffic.
+  tags: [DBSCAN, Feature Engineering, DNS, Unsupervised]
+
+- id: espresso-compiler
+  order: 5
+  title: Espresso Language Compiler
+  context: Compiler Construction
+  period: "2024"
+  description: >-
+    Built a complete compiler for Espresso (a Java subset): lexical analysis, parsing,
+    semantic analysis, symbol table management, type checking, and Java bytecode
+    generation using <strong>JFlex, Java CUP, and the Jasmin assembler</strong>,
+    validated against a reference compiler across positive and negative test cases.
+  tags: [Java, JFlex, Java CUP, Jasmin]

@@ -1,0 +1,95 @@
+# Site-wide identity and copy. Section order here drives numbering and the nav.
+name:
+  given: Abdulrahman
+  family: Alharbi
+  short: Alharbi
+
+meta:
+  title: "Abdulrahman Alharbi — AI & Cybersecurity"
+  description: "Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV. Thesis on machine-learning detection of APT beaconing in encrypted network traffic. Mobile software engineer in test."
+  ogDescription: "Saudi computer scientist — M.S. in AI & Cybersecurity at UNLV."
+  ogImage: images/2.png
+  themeColor: "#f6f3ec"
+
+links:
+  email: alharbi.ams@outlook.com
+  linkedin: https://www.linkedin.com/in/abdulrahman-alharbi-191837210
+
+cta:
+  primary: Get in touch
+  secondary: LinkedIn
+
+hero:
+  status: "Riyadh, Saudi Arabia · Available 2026"
+  lede: >-
+    Saudi computer scientist working at the intersection of <em>artificial intelligence</em>
+    and <em>cybersecurity</em> — with research in APT beaconing detection, adversarial machine
+    learning, federated learning, and privacy-preserving systems.
+  portrait:
+    src: images/6.jpg
+    alt: Portrait of Abdulrahman Alharbi
+    width: 220
+    height: 275
+  metricsCaption: "M.S. Thesis Results — APT C2 Beaconing Detection"
+
+about:
+  paragraphs:
+    - >-
+      Saudi computer scientist with an M.S. in Computer Science from the University of Nevada,
+      Las Vegas, focused on <em>AI and cybersecurity</em>. My thesis builds a machine-learning
+      pipeline that detects advanced persistent threats hiding in encrypted network traffic,
+      turning raw flow timestamps into a ranked shortlist that reduces analyst workload by up to 99%.
+    - >-
+      Alongside the degree I worked on the <em>Mobile Team</em> at UNLV's Office of Information
+      Technology as a Software Engineer in Test, building end-to-end Detox automation across iOS
+      and Android. My research extends into <em>adversarial machine learning</em>, <em>federated
+      learning</em>, and <em>differential privacy</em>, three pillars of secure and trustworthy AI.
+    - >-
+      Native Arabic, fluent English. SDAIA-certified in AI fundamentals and advanced applications.
+      Based in Riyadh.
+  interests:
+    label: Research Interests
+    items:
+      - AI for Cybersecurity
+      - Network Traffic Analysis
+      - APT & Beaconing Detection
+      - Adversarial ML
+      - Privacy-Preserving Machine Learning
+      - Secure AI Systems
+
+contact:
+  heading: "Let's build something <em>worthwhile</em>."
+  sub: >-
+    Open to research and engineering roles in artificial intelligence, cybersecurity, and
+    secure systems, with particular interest in contributing to Saudi Arabia's growing
+    technology ecosystem.
+
+footer:
+  credit: "Designed & built by Abdulrahman"
+
+sections:
+  - { id: about, title: About, nav: true }
+  - { id: research, title: Research, nav: true }
+  - { id: work, title: Work, nav: true }
+  - { id: projects, title: Projects }
+  - { id: education, title: Education, nav: true, navMobile: false }
+  - { id: certifications, title: Certifications }
+  - { id: skills, title: Skills }
+  - { id: honors, title: Honors }
+  - { id: contact, title: Contact, nav: true }
+
+# Extra facts for the schema.org Person record. Everything else in the
+# structured data is derived from the collections.
+person:
+  jobTitle: Software Engineer in Test
+  nationality: Saudi Arabian
+  address: { locality: Riyadh, country: SA }
+  knowsAbout:
+    - Artificial Intelligence
+    - Cybersecurity
+    - APT Detection
+    - Adversarial Machine Learning
+    - Federated Learning
+    - Differential Privacy
+    - Network Traffic Analysis
+  knowsLanguage: [Arabic, English]

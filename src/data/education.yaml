@@ -1,0 +1,40 @@
+# Education, most recent first.
+- id: unlv-ms
+  order: 1
+  institution: University of Nevada, Las Vegas
+  degree: M.S. Computer Science
+  gpa: 3.91 / 4.00
+  dates: { start: Aug 2025, end: Aug 2026 }
+  kind: university
+
+- id: unlv-bs
+  order: 2
+  institution: University of Nevada, Las Vegas
+  degree: "B.S. Computer Science — Information Assurance (Cybersecurity) · Dean's List"
+  gpa: 3.50 / 4.00
+  dates: { start: Sep 2022, end: May 2025 }
+  kind: university
+
+- id: psu
+  order: 3
+  institution: Prince Sultan University
+  location: Riyadh, KSA
+  degree: "B.S. Information Systems — Cyber Security (34 credits completed)"
+  dates: { start: Sep 2020, end: May 2022 }
+  kind: university
+
+- id: carleton
+  order: 4
+  institution: Carleton University
+  location: Ottawa, Canada
+  degree: "B.S. Information Technology — Optical Systems (27 credits completed)"
+  dates: { start: Sep 2019, end: Aug 2020 }
+  kind: university
+
+- id: ridgemont
+  order: 5
+  institution: Ridgemont High School
+  location: Ottawa, Canada
+  degree: High School Diploma
+  dates: { start: "2016", end: "2019" }
+  kind: school

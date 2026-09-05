@@ -1,0 +1,17 @@
+- id: sdaia-fundamentals
+  order: 1
+  issuer: Saudi Data & AI Authority
+  title: Fundamentals of Artificial Intelligence
+  date: August 2025
+
+- id: sdaia-advanced
+  order: 2
+  issuer: Saudi Data & AI Authority
+  title: AI Concepts & Advanced Applications
+  date: August 2025
+
+- id: aws-cloud-foundations
+  order: 3
+  issuer: AWS Academy
+  title: Cloud Foundations Graduate
+  date: "2024"

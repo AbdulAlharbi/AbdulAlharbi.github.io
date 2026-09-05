@@ -1,0 +1,37 @@
+# Work experience, most recent first.
+- id: unlv-oit-sdet
+  order: 1
+  role: "Software Engineer in Test — Mobile Team"
+  org: "University of Nevada, Las Vegas — Office of Information Technology"
+  dates: { start: Aug 2025, end: May 2026 }
+  bullets:
+    - >-
+      Built and maintained <strong>end-to-end automated test suites in Detox</strong>, the standard React
+      Native end-to-end testing framework, covering critical user flows across iOS and Android ahead of each
+      release.
+    - >-
+      Validated application functionality and reliability across release cycles, partnering with the
+      development team on debugging and release-readiness assessment.
+    - >-
+      Authored and updated technical documentation for the team's mobile testing infrastructure to support
+      continuity and onboarding within the Mobile Team.
+
+- id: unlv-capstone-lead
+  order: 2
+  role: "Team Lead — Engineering Project"
+  org: University of Nevada, Las Vegas
+  dates: { start: Jan 2025, end: May 2025 }
+  bullets:
+    - >-
+      Led a software engineering team of more than 10 members in the design and development of a
+      <strong>full-stack tutoring marketplace platform</strong>, enabling instructor onboarding, scheduling,
+      session management, and secure service transactions across a complete end-to-end workflow.
+    - >-
+      Established team engineering practices on a shared GitHub repository, code review, branching, and
+      pull request workflows, and ran agile ceremonies across the semester.
+    - >-
+      Drove architecture-first design decisions with UML modeling, unit testing, and CI/CD, balancing
+      feature velocity against maintainability for a production-grade release.
+  image:
+    src: images/4.jpg
+    alt: Capstone team's tutoring marketplace platform
