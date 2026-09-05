@@ -178,15 +178,15 @@ building.
 All gates run locally with the same commands CI uses. `npm run verify` runs
 the whole set.
 
-| Gate               | Tool                    | What it enforces                                                                                                   |
-| ------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `check`            | `astro check`           | Templates type-check; data matches the schemas                                                                     |
-| `format:check`     | Prettier                | Consistent formatting of source files                                                                              |
-| `lint:html`        | html-validate           | The built HTML is valid and follows the recommended rules                                                          |
-| `check:links`      | linkinator              | Every internal and external link, image and stylesheet resolves                                                    |
-| `check:a11y`       | pa11y-ci (axe + HTMLCS) | WCAG 2 AA on every page at phone and desktop viewports; measured contrast failures are errors, needs-review is not |
-| `check:viewports`  | Puppeteer               | No horizontal overflow at 320/375/768/1280; 24 px minimum tap targets on touch widths                              |
-| `check:lighthouse` | Lighthouse CI           | Performance ≥ 0.90, accessibility ≥ 0.95, best practices and SEO ≥ 0.90, CLS ≤ 0.1; LCP over 2.5 s warns           |
+| Gate               | Tool                    | What it enforces                                                                                                                                                                                          |
+| ------------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `check`            | `astro check`           | Templates type-check; data matches the schemas                                                                                                                                                            |
+| `format:check`     | Prettier                | Consistent formatting of source files                                                                                                                                                                     |
+| `lint:html`        | html-validate           | The built HTML is valid and follows the recommended rules                                                                                                                                                 |
+| `check:links`      | linkinator              | Every internal and external link, image and stylesheet resolves                                                                                                                                           |
+| `check:a11y`       | pa11y-ci (axe + HTMLCS) | WCAG 2 AA on every page at phone and desktop viewports, with motion forced to reduce and the email disclosure opened so nothing goes untested; measured contrast failures are errors, needs-review is not |
+| `check:viewports`  | Puppeteer               | No horizontal overflow at 320/375/768/1280; 24 px minimum tap targets on touch widths                                                                                                                     |
+| `check:lighthouse` | Lighthouse CI           | Performance ≥ 0.90, accessibility ≥ 0.95, best practices and SEO ≥ 0.90, CLS ≤ 0.1; LCP over 2.5 s warns                                                                                                  |
 
 There are no unit tests. A document site is verified by checking what it
 produces, and each gate above is a property a visitor would notice if it

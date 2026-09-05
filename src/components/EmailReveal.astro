@@ -1,0 +1,49 @@
+---
+/**
+ * "Get in touch" control. Instead of handing the visitor off to a mail
+ * client, it discloses the address in place, selectable and copyable.
+ *
+ * Built on <details>/<summary> so the whole thing works with no JavaScript:
+ * the browser gives us the toggle, the keyboard support, the button role and
+ * the aria-expanded state for free. scripts/enhance.ts adds only what the
+ * element does not do natively — Escape, click-outside, and the copy button,
+ * which stays `hidden` until script confirms a clipboard to write to.
+ *
+ * The summary carries the same .btn classes as Button.astro, so the closed
+ * state is pixel-identical to the link it replaces.
+ */
+import './Button.css';
+import './EmailReveal.css';
+
+interface Props {
+  /** Unique per instance: the page renders this control twice. */
+  id: string;
+  label: string;
+  email: string;
+  panel: { label: string; copy: string; copied: string; copyFailed: string };
+}
+
+const { id, label, email, panel } = Astro.props;
+---
+
+<details
+  class="email-reveal"
+  id={id}
+  data-copied={panel.copied}
+  data-copy-failed={panel.copyFailed}
+>
+  <summary class="btn btn-primary">
+    <span>{label}</span>
+    <span class="arr" aria-hidden="true">→</span>
+  </summary>
+
+  <div class="email-reveal-panel">
+    <p class="email-reveal-label">{panel.label}</p>
+    <p class="email-reveal-address">{email}</p>
+    <div class="email-reveal-foot">
+      <button type="button" class="email-reveal-copy" data-email={email} hidden>{panel.copy}</button
+      >
+      <p class="email-reveal-status" role="status"></p>
+    </div>
+  </div>
+</details>

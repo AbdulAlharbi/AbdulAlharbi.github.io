@@ -3,6 +3,7 @@
 import './Contact.css';
 import Section from '../Section.astro';
 import Button from '../Button.astro';
+import EmailReveal from '../EmailReveal.astro';
 import { getSite } from '../../lib/content';
 
 const { contact, links, cta } = await getSite();
@@ -13,7 +14,12 @@ const { contact, links, cta } = await getSite();
     <h2 id="contact-h" class="serif" set:html={contact.heading} />
     <p class="contact-sub">{contact.sub}</p>
     <div class="contact-links">
-      <Button href={`mailto:${links.email}`} primary arrow>{cta.primary}</Button>
+      <EmailReveal
+        id="contact-email"
+        label={cta.primary}
+        email={links.email}
+        panel={cta.emailPanel}
+      />
       <Button href={links.linkedin} target="_blank" rel="me noopener">{cta.secondary}</Button>
     </div>
   </div>

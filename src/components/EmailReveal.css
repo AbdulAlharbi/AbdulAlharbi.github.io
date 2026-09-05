@@ -1,0 +1,107 @@
+/* EmailReveal: the disclosure panel behind the "Get in touch" button.
+   The summary itself is styled by Button.css; everything here is the panel,
+   which is absolutely positioned so opening it never moves the page. */
+
+.email-reveal {
+  position: relative;
+}
+
+/* Closed, this must render exactly like the <a class="btn"> it replaces:
+   no list marker, no display: list-item, same inline-flex box. */
+.email-reveal > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.email-reveal > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* The arrow points along the button when closed and down into the panel
+   when open, so the control reads as a disclosure rather than a link. */
+.email-reveal[open] > summary .arr {
+  transform: rotate(90deg);
+}
+
+.email-reveal[open] > summary:hover .arr {
+  transform: rotate(90deg) translateX(3px);
+}
+
+.email-reveal-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  z-index: 50;
+  min-width: max(100%, 17rem);
+  padding: 0.9rem 1.1rem 1rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule-hi);
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(20, 18, 16, 0.12);
+}
+
+.email-reveal-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 0.35rem;
+}
+
+.email-reveal-address {
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: var(--ink);
+  word-break: break-all;
+  /* One click or tap selects the whole address, which is the only way to
+     copy it by hand on iOS without fighting the word selection. */
+  user-select: all;
+  -webkit-user-select: all;
+}
+
+.email-reveal-foot {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.email-reveal-copy {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: none;
+  border: 1px solid var(--rule-hi);
+  border-radius: 2px;
+  padding: 0.5rem 0.8rem;
+  min-height: 24px;
+  cursor: pointer;
+  transition: all var(--trans);
+}
+
+.email-reveal-copy:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.email-reveal-status {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-hi);
+}
+
+.email-reveal-status:empty {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .email-reveal-panel {
+    min-width: min(17rem, calc(100vw - 3rem));
+  }
+}

@@ -3,6 +3,7 @@
 import './Hero.css';
 import { Image } from 'astro:assets';
 import Button from '../Button.astro';
+import EmailReveal from '../EmailReveal.astro';
 import MetricStrip from '../MetricStrip.astro';
 import { getOrdered, getSite } from '../../lib/content';
 
@@ -26,7 +27,12 @@ const { hero, name, links, cta } = site;
         <p class="hero-lede" set:html={hero.lede} />
 
         <div class="hero-actions">
-          <Button href={`mailto:${links.email}`} primary arrow>{cta.primary}</Button>
+          <EmailReveal
+            id="hero-email"
+            label={cta.primary}
+            email={links.email}
+            panel={cta.emailPanel}
+          />
           <Button href={links.linkedin} target="_blank" rel="me noopener">{cta.secondary}</Button>
         </div>
 

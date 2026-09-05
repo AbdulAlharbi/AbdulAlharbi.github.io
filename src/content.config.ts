@@ -57,7 +57,17 @@ const site = defineCollection({
         themeColor: z.string(),
       }),
       links: z.object({ email: z.email(), linkedin: url }),
-      cta: z.object({ primary: z.string(), secondary: z.string() }),
+      cta: z.object({
+        primary: z.string(),
+        secondary: z.string(),
+        /** Labels and messages inside the email disclosure panel. */
+        emailPanel: z.object({
+          label: z.string(),
+          copy: z.string(),
+          copied: z.string(),
+          copyFailed: z.string(),
+        }),
+      }),
       hero: z.object({
         status: z.string(),
         lede: rich,

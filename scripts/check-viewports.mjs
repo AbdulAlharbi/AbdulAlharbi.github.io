@@ -14,7 +14,7 @@ const PAGES = ['/', '/pomodoro.html', '/snake.html'];
 const WIDTHS = [320, 375, 768, 1280];
 const TOUCH_MAX_WIDTH = 768;
 const MIN_TARGET = 24;
-const TARGETS = '.nav-links a, .nav-brand, a.btn, .f-demos a, button';
+const TARGETS = '.nav-links a, .nav-brand, .btn, .f-demos a, button';
 
 const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
 const page = await browser.newPage();

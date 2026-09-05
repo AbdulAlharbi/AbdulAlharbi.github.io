@@ -18,6 +18,13 @@ links:
 cta:
   primary: Get in touch
   secondary: LinkedIn
+  # Copy for the disclosure panel behind the primary button, which shows the
+  # address in place rather than opening the visitor's mail client.
+  emailPanel:
+    label: Email address
+    copy: Copy address
+    copied: Copied to clipboard
+    copyFailed: Select the address above to copy it
 
 hero:
   status: 'Riyadh, Saudi Arabia · Available 2026'
