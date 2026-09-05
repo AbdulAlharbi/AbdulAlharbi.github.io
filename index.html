@@ -1517,7 +1517,8 @@
               <ul>
                 <li>Led a software engineering team of more than 10 members in the design and development of a
                   <strong>full-stack tutoring marketplace platform</strong>, enabling instructor onboarding, scheduling,
-                  session management, and secure service transactions across a complete end-to-end workflow.</li>
+                  session management, and secure service transactions across a complete end-to-end workflow.
+                </li>
                 <li>Established team engineering practices on a shared GitHub repository, code review, branching, and
                   pull request workflows, and ran agile ceremonies across the semester.</li>
                 <li>Drove architecture-first design decisions with UML modeling, unit testing, and CI/CD, balancing
@@ -1527,6 +1528,111 @@
             <div class="job-image">
               <img src="images/4.jpg" alt="Capstone team's tutoring marketplace platform" loading="lazy"
                 decoding="async" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" aria-labelledby="projects-h">
+        <div class="sec-head reveal">
+          <h2 id="projects-h">Projects</h2>
+          <span class="section-index">§ 03.5</span>
+        </div>
+
+        <div class="research-list reveal">
+          <div class="research-item">
+            <div class="research-num">01</div>
+            <div class="research-body">
+              <h3 class="serif">Executive Advisor — Multi-Agent AI Business Analysis</h3>
+              <p class="research-meta">Independent Project · 2026 ·
+                <a class="link-inline" href="https://abdulalharbi.github.io/exec-advisor/" target="_blank"
+                  rel="noopener">Live overview →</a>
+                &nbsp;·&nbsp;
+                <a class="link-inline" href="https://github.com/AbdulAlharbi/exec-advisor" target="_blank"
+                  rel="noopener">Source →</a>
+              </p>
+              <p class="research-desc">
+                A multi-agent system that reads a company's business information and produces an executive
+                brief — risks, opportunities, challenged assumptions, and ranked recommendations. The hard
+                problem isn't fluency but trust: the failure mode of an LLM advisor is a confident paragraph
+                with an invented number in it. Five specialist agents run behind a <strong>grounding gate</strong>
+                that verifies every claim's quote against its source in code before it can be cited — a
+                hallucinated figure becomes a dropped claim, never a line in the brief. A dedicated
+                <strong>Contrarian</strong> agent may only attack, and change between runs is
+                <strong>computed by diffing findings</strong>, never narrated by the model. Reasoning is
+                pluggable — Claude or a deterministic rule brain behind one interface — so the whole pipeline
+                and its <strong>42 tests</strong> run offline; CI runs on every push and a scheduled workflow
+                republishes the brief to GitHub Pages.
+              </p>
+              <div class="featured-tags">
+                <span class="tag">Multi-Agent Systems</span>
+                <span class="tag">LLM Grounding</span>
+                <span class="tag">Anthropic API</span>
+                <span class="tag">Dependency Inversion</span>
+                <span class="tag">Python</span>
+                <span class="tag">CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-num">02</div>
+            <div class="research-body">
+              <h3 class="serif">SOC Autopilot — Autonomous Multi-Agent Incident Response</h3>
+              <p class="research-meta">Independent Project · 2026 ·
+                <a class="link-inline" href="https://abdulalharbi.github.io/soc-autopilot/" target="_blank"
+                  rel="noopener">Live overview →</a>
+                &nbsp;·&nbsp;
+                <a class="link-inline" href="https://github.com/AbdulAlharbi/soc-autopilot" target="_blank"
+                  rel="noopener">Source →</a>
+              </p>
+              <p class="research-desc">
+                A multi-agent system that takes ownership of the SOC alert-triage workflow end to end — an
+                Incident Commander orchestrating five specialist agents through triage, investigation, containment,
+                and reporting. The core problem isn't whether an agent <em>can</em> act, but whether it knows when
+                to <strong>stop and ask a human</strong>: containment actions are gated by an enforced autonomy
+                policy that tiers every action by blast radius, so a workstation is isolated automatically while
+                taking a production ERP server offline requires named approval. One of its four scenarios detects
+                <strong>C2 beaconing</strong> — a direct nod to my thesis. Reasoning runs on Claude or a
+                deterministic fallback; every decision is recorded in a hash-chained audit log.
+              </p>
+              <div class="featured-tags">
+                <span class="tag">Multi-Agent Systems</span>
+                <span class="tag">LLM Orchestration</span>
+                <span class="tag">Python</span>
+                <span class="tag">Incident Response</span>
+                <span class="tag">Anthropic API</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-num">03</div>
+            <div class="research-body">
+              <h3 class="serif">Simple Drive — Pluggable Blob Storage API</h3>
+              <p class="research-meta">Independent Project · 2026 ·
+                <a class="link-inline" href="https://github.com/AbdulAlharbi/simple-drive" target="_blank"
+                  rel="noopener">Source →</a>
+              </p>
+              <p class="research-desc">
+                A Ruby on Rails API that stores and retrieves blobs through one interface backed by four
+                interchangeable storage backends — S3-compatible object storage, a database table, the local
+                filesystem, or FTP. The centerpiece is a <strong>from-scratch implementation of AWS Signature
+                  Version 4</strong>: the S3 backend speaks the S3 REST protocol directly over <code>Net::HTTP</code>
+                with no AWS or S3 libraries anywhere, and the signer is validated byte-for-byte against AWS's
+                officially documented example signature. Backends sit behind a clean adapter pattern resolved by a
+                config-driven factory, so adding one touches a single class. <strong>34 tests</strong> across unit
+                and integration layers, CI on every push, and a Docker Compose setup that runs it against a real
+                minio server.
+              </p>
+              <div class="featured-tags">
+                <span class="tag">Ruby on Rails</span>
+                <span class="tag">AWS SigV4 (from scratch)</span>
+                <span class="tag">Adapter Pattern</span>
+                <span class="tag">S3 · FTP · SQL</span>
+                <span class="tag">Docker</span>
+              </div>
             </div>
           </div>
         </div>
