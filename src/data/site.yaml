@@ -72,7 +72,7 @@ sections:
   - { id: about, title: About, nav: true }
   - { id: research, title: Research, nav: true }
   - { id: work, title: Work, nav: true }
-  - { id: projects, title: Projects }
+  - { id: projects, title: Projects, nav: true }
   - { id: education, title: Education, nav: true, navMobile: false }
   - { id: certifications, title: Certifications }
   - { id: skills, title: Skills }
