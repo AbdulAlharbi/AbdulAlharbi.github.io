@@ -22,7 +22,7 @@ const rich = z
     { message: `Only inline <${INLINE_TAGS.join('>, <')}> tags are allowed` },
   );
 
-const url = z.string().url();
+const url = z.url();
 const link = z.object({ label: z.string(), url });
 const dateRange = z.object({ start: z.string(), end: z.string() });
 
@@ -55,7 +55,7 @@ const site = defineCollection({
         ogImage: z.string(),
         themeColor: z.string(),
       }),
-      links: z.object({ email: z.string().email(), linkedin: url }),
+      links: z.object({ email: z.email(), linkedin: url }),
       cta: z.object({ primary: z.string(), secondary: z.string() }),
       hero: z.object({
         status: z.string(),
