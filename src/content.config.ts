@@ -7,7 +7,8 @@
  * a data file fails the build instead of shipping, and the components depend
  * on the shape of the data rather than on any particular content.
  */
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro:schema';
 import { file, glob } from 'astro/loaders';
 
 /** Inline HTML limited to emphasis. Anything else is a schema error. */
