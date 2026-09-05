@@ -64,7 +64,11 @@ const site = defineCollection({
       interests: z.object({ label: z.string(), items: z.array(z.string()).min(1) }),
     }),
     contact: z.object({ heading: rich, sub: z.string() }),
-    footer: z.object({ credit: z.string() }),
+    footer: z.object({
+      credit: z.string(),
+      /** Standalone demo pages, linked from the footer. */
+      demos: z.array(z.object({ label: z.string(), href: z.string().startsWith('/') })),
+    }),
     /**
      * Ordered section registry. Drives the section numbering, the nav, and
      * the anchor ids, so adding a section is a data change, not a layout one.

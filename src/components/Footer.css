@@ -24,3 +24,17 @@ footer .f-right::before {
   content: '— ';
   color: var(--accent);
 }
+
+.f-demos {
+  display: flex;
+  gap: .6rem;
+}
+
+.f-demos a {
+  color: var(--ink-dim);
+  padding: .2rem 0;
+}
+
+.f-demos a:hover {
+  color: var(--accent);
+}

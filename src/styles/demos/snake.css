@@ -1,0 +1,103 @@
+/* Snake demo. Kept on its own palette, separate from the site design system. */
+
+/* Body / Canvas Styling */
+body {
+  background: #000;
+  color: #0f0;
+  font-family: monospace;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin: 20px 0;
+}
+#gameCanvas {
+  background: #111;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #0f0;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+}
+
+/* On-screen controls container */
+.controls {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+.controls .arrow-btn {
+  background-color: #222;
+  color: #0f0;
+  border: 2px solid #0f0;
+  font-size: 1.2rem;
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  cursor: pointer;
+}
+.arrow-btn:active {
+  background-color: #333;
+}
+
+/* We arrange the arrows in a cross shape */
+.controls-grid {
+  display: grid;
+  grid-template-columns: 60px 60px 60px;
+  grid-template-rows: 60px 60px 60px;
+  grid-gap: 5px;
+  /* center the grid horizontally */
+  margin: 0 auto;
+}
+/* Place the up arrow in the center top cell */
+.btn-up {
+  grid-column: 2;
+  grid-row: 1;
+}
+/* Place left arrow in the first column, second row */
+.btn-left {
+  grid-column: 1;
+  grid-row: 2;
+}
+/* Place right arrow in the third column, second row */
+.btn-right {
+  grid-column: 3;
+  grid-row: 2;
+}
+/* Place down arrow in the center bottom cell */
+.btn-down {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* GAME OVER OVERLAY */
+#gameOverOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  color: #0f0;
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 999; /* on top of everything */
+}
+#gameOverOverlay h2 {
+  margin-bottom: 1rem;
+}
+.play-again-btn {
+  background-color: #222;
+  color: #0f0;
+  border: 2px solid #0f0;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.play-again-btn:active {
+  background-color: #333;
+}

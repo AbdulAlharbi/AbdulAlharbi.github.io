@@ -66,6 +66,9 @@ contact:
 
 footer:
   credit: "Designed & built by Abdulrahman"
+  demos:
+    - { label: Pomodoro, href: /pomodoro.html }
+    - { label: Snake, href: /snake.html }
 
 sections:
   - { id: about, title: About, nav: true }

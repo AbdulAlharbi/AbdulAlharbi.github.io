@@ -1,0 +1,26 @@
+---
+/** Snake demo: canvas game with keyboard and on-screen controls. */
+import '../styles/demos/snake.css';
+import Demo from '../layouts/Demo.astro';
+---
+
+<Demo title="Snake Game">
+  <h1>Snake Game</h1>
+  <canvas id="gameCanvas" width="400" height="400" aria-label="Snake game board"></canvas>
+
+  <div class="controls">
+    <div class="controls-grid">
+      <button class="arrow-btn btn-up" id="upBtn" aria-label="Up">▲</button>
+      <button class="arrow-btn btn-left" id="leftBtn" aria-label="Left">◀</button>
+      <button class="arrow-btn btn-right" id="rightBtn" aria-label="Right">▶</button>
+      <button class="arrow-btn btn-down" id="downBtn" aria-label="Down">▼</button>
+    </div>
+  </div>
+
+  <div id="gameOverOverlay" role="dialog" aria-modal="true" aria-labelledby="gameOverText">
+    <h2 id="gameOverText">Game Over Loser!</h2>
+    <button class="play-again-btn" id="playAgainBtn">Play Again</button>
+  </div>
+
+  <script src="../scripts/demos/snake.ts"></script>
+</Demo>

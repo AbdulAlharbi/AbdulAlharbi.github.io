@@ -1,0 +1,27 @@
+---
+/**
+ * Minimal document shell for the standalone demos. Deliberately does not
+ * import the site's global styles: each demo keeps its own look and is
+ * isolated from the design system, so a change to the site's tokens can
+ * never restyle a demo and vice versa.
+ */
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

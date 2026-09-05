@@ -1,0 +1,45 @@
+---
+/** Pomodoro timer demo. Built for the LessonConnect capstone; kept as a standalone page. */
+import '../styles/demos/pomodoro.css';
+import Demo from '../layouts/Demo.astro';
+---
+
+<Demo title="LessonConnect Pomodoro Timer">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  </Fragment>
+
+  <header>
+    <h1>LessonConnect Pomodoro Timer</h1>
+  </header>
+
+  <main>
+    <div class="timer-container">
+      <svg class="progress-ring" width="280" height="280" aria-hidden="true">
+        <circle class="progress-ring__background" stroke="#ccc" stroke-width="12" fill="transparent" r="125" cx="140" cy="140"></circle>
+        <circle class="progress-ring__circle" stroke="#FF6B6B" stroke-width="12" fill="transparent" r="125" cx="140" cy="140"></circle>
+      </svg>
+      <div class="time-display" id="time-display" role="timer" aria-live="off">25:00</div>
+    </div>
+
+    <div class="controls">
+      <button id="start-btn" class="btn primary">Start</button>
+      <button id="pause-btn" class="btn">Pause</button>
+      <button id="reset-btn" class="btn">Reset</button>
+    </div>
+
+    <div class="session-controls">
+      <button id="work-session" class="session-btn active">Work 25</button>
+      <button id="short-break" class="session-btn">Break 5</button>
+      <button id="long-break" class="session-btn">Break 15</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Powered by LessonConnect</p>
+    <p>&copy; 2025. Created by Abdulrahman Alharbi</p>
+  </footer>
+
+  <script src="../scripts/demos/pomodoro.ts"></script>
+</Demo>

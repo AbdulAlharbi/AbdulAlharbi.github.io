@@ -1,5 +1,5 @@
 ---
-/** Site footer. The year is the build year; the credit line is data. */
+/** Site footer: copyright (build year), links to the standalone demos, credit line. */
 import './Footer.css';
 import { getSite } from '../lib/content';
 
@@ -9,5 +9,11 @@ const year = new Date().getFullYear();
 
 <footer>
   <span>© {year} {site.name.given} {site.name.family}</span>
+  <nav class="f-demos" aria-label="Demos">
+    <span>Demos</span>
+    {site.footer.demos.map((d, i) => (
+      <>{i > 0 && <span aria-hidden="true">·</span>}<a href={d.href}>{d.label}</a></>
+    ))}
+  </nav>
   <span class="f-right">{site.footer.credit}</span>
 </footer>
