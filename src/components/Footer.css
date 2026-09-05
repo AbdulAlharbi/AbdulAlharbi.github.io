@@ -12,7 +12,7 @@ footer {
   gap: 1rem;
   font-family: var(--mono);
   font-size: .68rem;
-  color: var(--ink-faint);
+  color: var(--ink-dim);
   letter-spacing: .06em;
 }
 

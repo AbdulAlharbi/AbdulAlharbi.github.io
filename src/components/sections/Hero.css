@@ -108,7 +108,7 @@
 .hero-metric-caption {
   font-family: var(--mono);
   font-size: .65rem;
-  color: var(--ink-faint);
+  color: var(--ink-dim);
   letter-spacing: .08em;
   text-transform: uppercase;
   margin-top: .9rem;

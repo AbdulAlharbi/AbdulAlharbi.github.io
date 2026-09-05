@@ -42,6 +42,6 @@
 }
 
 .skill-items .sep {
-  color: var(--ink-faint);
+  color: var(--ink-dim);
   margin: 0 .5rem;
 }
