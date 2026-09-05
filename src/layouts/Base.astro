@@ -5,6 +5,9 @@
  * layer, so nothing about the author is hard-coded here.
  */
 import '../styles/global.css';
+// The two faces used above the fold are preloaded (declared in styles/fonts.css).
+import frauncesUrl from '@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2?url';
+import plexSansUrl from '@fontsource-variable/ibm-plex-sans/files/ibm-plex-sans-latin-wght-normal.woff2?url';
 import { getSite } from '../lib/content';
 
 interface Props {
@@ -41,13 +44,10 @@ const ogImage = new URL(site.meta.ogImage, Astro.site);
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <!-- Fonts: Fraunces (editorial display serif), IBM Plex Sans (body), IBM Plex Mono (meta) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonts: Fraunces (editorial display serif), IBM Plex Sans (body), IBM Plex Mono (meta).
+         The two faces used above the fold are preloaded; the rest arrive with the stylesheet. -->
+    <link rel="preload" href={frauncesUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={plexSansUrl} as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <slot />

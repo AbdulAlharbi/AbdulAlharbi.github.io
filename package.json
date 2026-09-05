@@ -32,5 +32,10 @@
     "puppeteer": "^24.43.1",
     "sharp": "^0.35.4",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0"
   }
 }

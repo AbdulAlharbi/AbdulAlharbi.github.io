@@ -1,7 +1,8 @@
-/* Global stylesheet entry point. Order matters: tokens define the custom
-   properties, base consumes them, and motion comes last so its reduced-motion
-   overrides win. Component stylesheets are imported by their components and
-   bundled after these. */
+/* Global stylesheet entry point. Order matters: fonts declare the faces,
+   tokens define the custom properties, base consumes them, and motion comes
+   last so its reduced-motion overrides win. Component stylesheets are
+   imported by their components and bundled after these. */
+@import './fonts.css';
 @import './tokens.css';
 @import './base.css';
 @import './motion.css';
