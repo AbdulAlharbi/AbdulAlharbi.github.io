@@ -31,3 +31,12 @@
     transform: none;
   }
 }
+
+/* Without JavaScript nothing would ever add .show, so the reveal styles
+   must not apply at all. The page is complete before the script runs. */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
