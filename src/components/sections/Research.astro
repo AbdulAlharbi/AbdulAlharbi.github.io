@@ -1,0 +1,28 @@
+---
+/** Research: the featured thesis card followed by the numbered list. */
+import Section from '../Section.astro';
+import FeaturedResearch from '../FeaturedResearch.astro';
+import Entry from '../Entry.astro';
+import { getOrdered } from '../../lib/content';
+
+const [featured, ...rest] = await getOrdered('research');
+if (!featured?.data.featured) throw new Error('The first research entry must carry the featured block');
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<Section id="research">
+  <FeaturedResearch entry={featured} />
+
+  <div class="entry-list reveal">
+    {rest.map((r, i) => (
+      <Entry
+        number={pad(i + 2)}
+        title={r.data.title}
+        context={r.data.context}
+        period={r.data.period}
+        description={r.data.description}
+        tags={r.data.tags}
+      />
+    ))}
+  </div>
+</Section>

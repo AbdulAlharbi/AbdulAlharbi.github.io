@@ -1,7 +1,9 @@
 ---
 /**
- * A row of headline figures under the hero lede. Reads the metric objects
- * from the featured research entry, so the numbers have one source.
+ * A row of headline figures. One component, two visual variants: the compact
+ * `hero` strip under the lede and the larger `featured` strip inside the
+ * thesis card. Both read the same metric objects, so the numbers can only
+ * ever come from one place in the data.
  *
  * Markup is a description list: each figure is a term (the label) with its
  * value as the description, visually reordered so the value sits on top.
@@ -13,7 +15,7 @@ type Metric = NonNullable<CollectionEntry<'research'>['data']['featured']>['metr
 
 interface Props {
   metrics: Metric[];
-  variant: 'hero';
+  variant: 'hero' | 'featured';
   labelledBy?: string;
 }
 
@@ -23,8 +25,9 @@ const { metrics, variant, labelledBy } = Astro.props;
 <dl class:list={['metrics', `metrics--${variant}`]} aria-labelledby={labelledBy}>
   {metrics.map((m) => (
     <div class="metric">
-      <dt class="metric-label">{m.shortLabel ?? m.label}</dt>
+      <dt class="metric-label">{variant === 'hero' ? (m.shortLabel ?? m.label) : m.label}</dt>
       <dd class="metric-value">{m.value}</dd>
+      {variant === 'featured' && m.note && <dd class="metric-note">{m.note}</dd>}
     </div>
   ))}
 </dl>

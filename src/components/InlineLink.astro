@@ -1,0 +1,12 @@
+---
+/** External text link with the accent underline and a trailing arrow. */
+import './InlineLink.css';
+
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a class="link-inline" href={href} target="_blank" rel="noopener"><slot /> →</a>

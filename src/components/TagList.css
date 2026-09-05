@@ -1,0 +1,23 @@
+/* TagList: technology tags */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: .68rem;
+  color: var(--ink-dim);
+  padding: .35rem .7rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  letter-spacing: .03em;
+  transition: all var(--trans);
+}
+
+.tag:hover {
+  border-color: var(--accent-line);
+  color: var(--ink);
+}

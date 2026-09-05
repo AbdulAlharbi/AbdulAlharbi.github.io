@@ -1,0 +1,25 @@
+---
+/** Independent projects, as a numbered list with live and source links. */
+import Section from '../Section.astro';
+import Entry from '../Entry.astro';
+import { getOrdered } from '../../lib/content';
+
+const projects = await getOrdered('projects');
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<Section id="projects">
+  <div class="entry-list reveal">
+    {projects.map((p, i) => (
+      <Entry
+        number={pad(i + 1)}
+        title={p.data.title}
+        context={p.data.context}
+        period={p.data.period}
+        links={p.data.links}
+        description={p.data.description}
+        tags={p.data.tags}
+      />
+    ))}
+  </div>
+</Section>

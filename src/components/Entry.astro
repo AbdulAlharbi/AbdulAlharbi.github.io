@@ -1,0 +1,37 @@
+---
+/**
+ * A numbered list entry: title, meta line, description, tags. The same
+ * component renders research items and independent projects; the only
+ * difference is whether the meta line carries links.
+ */
+import './Entry.css';
+import InlineLink from './InlineLink.astro';
+import TagList from './TagList.astro';
+
+interface Props {
+  number: string;
+  title: string;
+  context: string;
+  period: string;
+  links?: { label: string; url: string }[];
+  /** Inline HTML restricted by the content schema. */
+  description: string;
+  tags: string[];
+}
+
+const { number, title, context, period, links = [], description, tags } = Astro.props;
+---
+
+<div class="entry">
+  <div class="entry-num">{number}</div>
+  <div class="entry-body">
+    <h3 class="serif">{title}</h3>
+    <p class="entry-meta">
+      {context} · {period}{links.map((link, i) => (
+        <>{i === 0 ? ' · ' : '  ·  '}<InlineLink href={link.url}>{link.label}</InlineLink></>
+      ))}
+    </p>
+    <p class="entry-desc" set:html={description} />
+    <TagList tags={tags} />
+  </div>
+</div>

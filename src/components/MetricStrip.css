@@ -66,3 +66,45 @@
     font-size: 1.6rem;
   }
 }
+
+/* Featured variant: the larger strip inside the thesis card */
+.metrics--featured {
+  padding: 1.8rem 0;
+  margin-bottom: 1.8rem;
+}
+
+.metrics--featured .metric {
+  gap: .4rem;
+}
+
+.metrics--featured .metric-value {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.metrics--featured .metric-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--ink);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.metrics--featured .metric-note {
+  font-family: var(--mono);
+  font-size: .6rem;
+  color: var(--ink-faint);
+  letter-spacing: .06em;
+}
+
+@media (max-width: 620px) {
+  .metrics--featured {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}

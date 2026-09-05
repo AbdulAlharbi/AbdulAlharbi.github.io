@@ -1,0 +1,72 @@
+/* Entry: numbered list entry shared by research and projects, and its list */
+
+.entry-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry {
+  padding: 2rem 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.entry:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (max-width: 720px) {
+  .entry {
+    grid-template-columns: 1fr;
+    gap: .8rem;
+  }
+}
+
+.entry-num {
+  font-family: var(--mono);
+  font-size: .75rem;
+  color: var(--accent);
+  letter-spacing: .08em;
+  padding-top: .35rem;
+  min-width: 3ch;
+}
+
+.entry-body h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: .5rem;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+
+.entry-meta {
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--ink-dim);
+  letter-spacing: .05em;
+  margin-bottom: .9rem;
+}
+
+.entry-desc {
+  font-size: .95rem;
+  line-height: 1.65;
+  color: var(--ink-dim);
+  max-width: 62ch;
+  margin-bottom: 1rem;
+}
+
+.entry-desc strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.entry-body .tags .tag {
+  font-size: .64rem;
+  padding: .28rem .6rem;
+}
