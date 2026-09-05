@@ -1,0 +1,30 @@
+---
+/**
+ * A row of headline figures under the hero lede. Reads the metric objects
+ * from the featured research entry, so the numbers have one source.
+ *
+ * Markup is a description list: each figure is a term (the label) with its
+ * value as the description, visually reordered so the value sits on top.
+ */
+import './MetricStrip.css';
+import type { CollectionEntry } from 'astro:content';
+
+type Metric = NonNullable<CollectionEntry<'research'>['data']['featured']>['metrics'][number];
+
+interface Props {
+  metrics: Metric[];
+  variant: 'hero';
+  labelledBy?: string;
+}
+
+const { metrics, variant, labelledBy } = Astro.props;
+---
+
+<dl class:list={['metrics', `metrics--${variant}`]} aria-labelledby={labelledBy}>
+  {metrics.map((m) => (
+    <div class="metric">
+      <dt class="metric-label">{m.shortLabel ?? m.label}</dt>
+      <dd class="metric-value">{m.value}</dd>
+    </div>
+  ))}
+</dl>

@@ -1,0 +1,23 @@
+---
+/** About: prose paragraphs and the research-interest line, from site.yaml. */
+import './About.css';
+import Section from '../Section.astro';
+import { getSite } from '../../lib/content';
+
+const { about } = await getSite();
+---
+
+<Section id="about">
+  <div class="about-text reveal">
+    {about.paragraphs.map((p) => <p set:html={p} />)}
+  </div>
+
+  <div class="interests reveal">
+    <div class="interests-label">{about.interests.label}</div>
+    <p class="interests-list">
+      {about.interests.items.map((item, i) => (
+        <>{i > 0 && ' · '}<span>{item}</span></>
+      ))}
+    </p>
+  </div>
+</Section>

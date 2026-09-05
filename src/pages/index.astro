@@ -4,6 +4,9 @@ import PersonJsonLd from '../components/PersonJsonLd.astro';
 import Nav from '../components/Nav.astro';
 import Section from '../components/Section.astro';
 import Footer from '../components/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Contact from '../components/sections/Contact.astro';
 import { getSite } from '../lib/content';
 
 const site = await getSite();
@@ -14,55 +17,7 @@ const site = await getSite();
 
   <Nav />
 
-  <!-- ==========================================================
-       HERO
-  ========================================================== -->
-  <header id="top">
-    <div class="hero">
-      <div class="hero-inner">
-        <div>
-          <p class="hero-meta"> <span class="dot" aria-hidden="true"></span> <span>Riyadh, Saudi Arabia · Available 2026</span>
-          </p>
-
-          <h1 class="serif">Abdulrahman <em>Alharbi</em>.</h1>
-
-          <p class="hero-lede">
-            Saudi computer scientist working at the intersection of <em>artificial intelligence</em> and <em>cybersecurity</em> — with research in APT beaconing detection, adversarial machine
-            learning, federated learning, and privacy-preserving systems.
-          </p>
-
-          <div class="hero-actions"> <a class="btn btn-primary" href="#" onclick="showEmail(event)"> <span>Get in touch</span> <span class="arr" aria-hidden="true">→</span>
-            </a> <a class="btn" href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank"
-              rel="me noopener">LinkedIn</a>
-          </div>
-
-          <!-- Featured thesis metrics — the headline of the whole page -->
-          <div class="hero-metric" aria-label="Thesis results">
-            <div class="m">
-              <div class="m-value">0.852</div>
-              <div class="m-label">Average Precision</div>
-            </div>
-            <div class="m">
-              <div class="m-value">1.0</div>
-              <div class="m-label">Recall @ 50</div>
-            </div>
-            <div class="m">
-              <div class="m-value">99%</div>
-              <div class="m-label">Workload Reduction</div>
-            </div>
-          </div>
-          <p class="hero-metric-caption">
-            M.S. Thesis Results — APT C2 Beaconing Detection
-          </p>
-        </div>
-
-        <div class="hero-portrait">
-          <img src="images/6.jpg" width="220" height="275" alt="Portrait of Abdulrahman Alharbi" loading="eager"
-            decoding="async" />
-        </div>
-      </div>
-    </div>
-  </header>
+  <Hero />
 
   <!-- ==========================================================
        MAIN
@@ -70,33 +25,7 @@ const site = await getSite();
   <main id="main">
     <div class="col-wide">
 
-      <!-- ABOUT -->
-      <Section id="about">
-        <div class="about-text reveal">
-          <p>
-            Saudi computer scientist with an M.S. in Computer Science from the University of Nevada,
-            Las Vegas, focused on <em>AI and cybersecurity</em>. My thesis builds a machine-learning
-            pipeline that detects advanced persistent threats hiding in encrypted network traffic,
-            turning raw flow timestamps into a ranked shortlist that reduces analyst workload by up to 99%.
-          </p>
-          <p>
-            Alongside the degree I worked on the <em>Mobile Team</em> at UNLV's Office of Information
-            Technology as a Software Engineer in Test, building end-to-end Detox automation across iOS
-            and Android. My research extends into <em>adversarial machine learning</em>, <em>federated
-              learning</em>, and <em>differential privacy</em>, three pillars of secure and trustworthy AI.
-          </p>
-          <p>
-            Native Arabic, fluent English. SDAIA-certified in AI fundamentals and advanced applications.
-            Based in Riyadh.
-          </p>
-        </div>
-
-        <div class="interests reveal">
-          <div class="interests-label">Research Interests</div>
-          <p class="interests-list"> <span>AI for Cybersecurity</span> · <span>Network Traffic Analysis</span> · <span>APT &amp; Beaconing Detection</span> · <span>Adversarial ML</span> · <span>Privacy-Preserving Machine Learning</span> · <span>Secure AI Systems</span>
-          </p>
-        </div>
-      </Section>
+      <About />
 
       <!-- RESEARCH -->
       <Section id="research">
@@ -449,21 +378,7 @@ const site = await getSite();
         </div>
       </Section>
 
-      <!-- CONTACT -->
-      <Section id="contact" class="contact" bare>
-        <div class="reveal">
-          <h2 id="contact-h" class="serif">Let's build something <em>worthwhile</em>.</h2>
-          <p class="contact-sub">
-            Open to research and engineering roles in artificial intelligence, cybersecurity, and
-            secure systems, with particular interest in contributing to Saudi Arabia's growing
-            technology ecosystem.
-          </p>
-          <div class="contact-links"> <a class="btn btn-primary" href="#" onclick="showEmail(event)"> <span>Get in touch</span> <span class="arr" aria-hidden="true">→</span>
-            </a> <a class="btn" href="https://www.linkedin.com/in/abdulrahman-alharbi-191837210" target="_blank"
-              rel="me noopener">LinkedIn</a>
-          </div>
-        </div>
-      </Section>
+      <Contact />
 
     </div>
   </main>

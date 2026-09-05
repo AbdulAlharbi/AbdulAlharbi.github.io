@@ -1,0 +1,68 @@
+/* MetricStrip: headline figures. A description list laid out as a grid,
+   value shown above its label. Variants carry the size differences. */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Visual order: value, label, note. DOM order keeps the term (label) first. */
+.metric-value {
+  order: 1;
+}
+
+.metric-label {
+  order: 2;
+}
+
+.metric-note {
+  order: 3;
+}
+
+/* Hero variant: the compact strip under the lede */
+.metrics--hero {
+  padding: 1.4rem 0;
+  max-width: 560px;
+}
+
+.metrics--hero .metric {
+  gap: .3rem;
+}
+
+.metrics--hero .metric-value {
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.metrics--hero .metric-label {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--ink-dim);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+@media (max-width: 520px) {
+  .metrics--hero {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .metrics--hero .metric-value {
+    font-size: 1.6rem;
+  }
+}

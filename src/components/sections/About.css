@@ -1,0 +1,46 @@
+/* About: prose and research interests */
+
+.about-text {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink);
+  max-width: var(--measure);
+}
+
+.about-text p+p {
+  margin-top: 1.2rem;
+}
+
+.about-text em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.interests {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.interests-label {
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--accent);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: .9rem;
+}
+
+.interests-list {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-dim);
+  line-height: 1.75;
+}
+
+.interests-list span {
+  color: var(--ink);
+}

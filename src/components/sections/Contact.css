@@ -1,0 +1,38 @@
+/* Contact: closing call to action */
+
+.contact {
+  text-align: left;
+  padding: 6rem 0 5rem;
+}
+
+.contact h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  max-width: 15ch;
+}
+
+.contact h2 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.contact-sub {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--ink-dim);
+  line-height: 1.6;
+  max-width: 52ch;
+  margin-bottom: 2.2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
