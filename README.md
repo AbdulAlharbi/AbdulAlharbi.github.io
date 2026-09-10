@@ -227,8 +227,5 @@ is served that has not passed the gates. Output uses file-style URLs
 (`build.format: 'file'`) so `/pomodoro.html` and `/snake.html` kept their
 addresses through the migration.
 
-
----
-
 © Abdulrahman Alharbi. Content is not licensed for reuse; the build setup may
 be used freely.
