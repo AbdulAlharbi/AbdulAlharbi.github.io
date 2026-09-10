@@ -227,16 +227,6 @@ is served that has not passed the gates. Output uses file-style URLs
 (`build.format: 'file'`) so `/pomodoro.html` and `/snake.html` kept their
 addresses through the migration.
 
-## How the migration was verified
-
-The site was rebuilt from a single 1,899-line `index.html` into the structure
-above over a series of small commits. Each step was checked against the
-original page with headless Chrome: full-page screenshots at 375, 768 and
-1280 px, compared pixel for pixel (threshold 0), plus a diff of the rendered
-text. Structural commits were required to produce zero differing pixels;
-deliberate changes (computed section numbers, the footer's demo links, touch
-targets, contrast, resampled photos) had to account for every differing band.
-The commit messages carry the numbers.
 
 ---
 
